@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate Trigger Awakeners Guide - Elite Pilot Profiles & Abilities</title>
+    <meta name="description" content="Discover Fate Trigger's elite Awakeners - skilled pilots with unique abilities and specializations. Learn about each pilot's background, skills, and tactical advantages in Fate Trigger.">
+    <meta name="keywords" content="fate trigger awakeners, fate trigger pilots, elite pilots, fate trigger characters, pilot abilities, fate trigger skills, mecha pilots, fate trigger profiles">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fate-trigger.com/awakeners">
+    <meta property="og:title" content="Fate Trigger Awakeners Guide - Elite Pilot Profiles & Abilities">
+    <meta property="og:description" content="Discover Fate Trigger's elite Awakeners and their unique abilities for strategic mecha combat.">
+    <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="apple-touch-icon" href="static/logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/base.css?v=1.0.0">
+    
+    <style>
+        .awakeners-hero {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
+                        url('page_content2/jpg/illuminati_bg.d60uke53.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--secondary-color);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .awakeners-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+
+        .awakeners-hero p {
+            font-size: 1.3rem;
+            color: var(--light-accent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .awakeners-content {
+            padding: 4rem 0;
+            background: var(--secondary-color);
+        }
+
+        .awakeners-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .awakeners-intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .awakeners-intro p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .awakeners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .awakener-card {
+            background: var(--secondary-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .awakener-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px var(--shadow-color);
+        }
+
+        .awakener-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .awakener-info {
+            padding: 2rem;
+        }
+
+        .awakener-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .awakener-title {
+            background: var(--gradient-primary);
+            color: var(--secondary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .awakener-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .awakener-description {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .awakener-abilities {
+            margin-bottom: 1.5rem;
+        }
+
+        .awakener-abilities h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .ability-item {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .ability-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .ability-description {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .awakener-background {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .awakener-background h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .awakener-background p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .skills-section {
+            background: var(--bg-color);
+            padding: 4rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .tips-section {
+            background: var(--secondary-color);
+            padding: 4rem 0;
+        }
+
+        .tips-list {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .tip-item {
+            background: var(--secondary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-item:hover {
+            transform: translateX(10px);
+        }
+
+        .tip-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .tip-item p {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .awakeners-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .awakeners-hero p {
+                font-size: 1.1rem;
+            }
+
+            .awakeners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awakener-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li class="dropdown">
+                        <a href="/guides">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/map">Map</a></li>
+                            <li><a href="/weapons">Weapons</a></li>
+                            <li><a href="/awakeners" class="active">Awakeners</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <button class="close-menu">&times;</button>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/media">Media</a></li>
+                <li><a href="/guides">Guides</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/weapons">Weapons</a></li>
+                <li><a href="/awakeners">Awakeners</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Awakeners Hero -->
+        <section class="awakeners-hero">
+            <div class="container">
+                <h1>AWAKENERS</h1>
+                <p>Meet the elite pilots of Fate Trigger. These skilled Awakeners bring unique abilities, specialized skills, and tactical advantages to the battlefield. Master their capabilities to dominate in mecha combat.</p>
+            </div>
+        </section>
+
+        <!-- Awakeners Introduction -->
+        <section class="awakeners-content">
+            <div class="container">
+                <div class="awakeners-intro">
+                    <h2>Elite Pilot Profiles in Fate Trigger</h2>
+                    <p>Fate Trigger's Awakeners are the elite pilots who have mastered the art of mecha combat. Each Awakener brings unique abilities, specialized skills, and tactical advantages to the battlefield. Understanding their backgrounds, abilities, and optimal playstyles is crucial for success in competitive Fate Trigger matches.</p>
+                </div>
+
+                <!-- Awakeners Grid -->
+                <div class="awakeners-grid">
+                    <div class="awakener-card">
+                        <img src="page_content2/png/role_hxl.c_kmaujq.png" alt="HXL Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Assault Specialist</div>
+                            <h3 class="awakener-name">HXL</h3>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">95</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">80</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">HXL is a fearless assault specialist who excels in aggressive combat situations in Fate Trigger. Known for exceptional close-range combat skills and tactical positioning, HXL dominates the front lines with precision and determination.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Berserker Rush</div>
+                                    <div class="ability-description">Increases movement speed and damage output for a short duration, perfect for aggressive pushes in Fate Trigger battles.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Combat Reflexes</div>
+                                    <div class="ability-description">Enhanced reaction time and weapon switching speed, allowing for rapid tactical adjustments during combat.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Shield Breaker</div>
+                                    <div class="ability-description">Attacks deal increased damage to enemy shields and defensive systems, making HXL effective against fortified positions.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Background</h4>
+                                <p>HXL rose through the ranks of the military through sheer determination and combat prowess. Having survived countless battles in Fate Trigger's most dangerous warzones, HXL brings unmatched aggression and tactical insight to every engagement.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="page_content2/png/role_kme.kdwhab7o.png" alt="KME Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Tactical Commander</div>
+                            <h3 class="awakener-name">KME</h3>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">80</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">95</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">KME is a strategic mastermind who excels at battlefield coordination and tactical planning in Fate Trigger. With exceptional leadership skills and analytical thinking, KME guides teams to victory through superior strategy and team coordination.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Battlefield Analysis</div>
+                                    <div class="ability-description">Provides enhanced map awareness and enemy position tracking, giving tactical advantages to the entire team in Fate Trigger.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Command Presence</div>
+                                    <div class="ability-description">Boosts nearby allies' combat effectiveness and coordination, making KME invaluable for team-based strategies.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Strategic Planning</div>
+                                    <div class="ability-description">Reduces ability cooldowns for teammates and provides enhanced resource management during extended engagements.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Background</h4>
+                                <p>KME's military career began in the strategic planning division, where their analytical mind and natural leadership abilities quickly distinguished them. In Fate Trigger, KME has become known for turning the tide of battle through superior tactical thinking and team coordination.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="page_content2/png/role_ly.xbjzk7vu.png" alt="LY Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Reconnaissance Expert</div>
+                            <h3 class="awakener-name">LY</h3>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">70</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">95</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">LY is a reconnaissance specialist who excels at gathering intelligence and providing battlefield support in Fate Trigger. With exceptional mobility and stealth capabilities, LY operates behind enemy lines to gather crucial information and disrupt enemy operations.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Stealth Mode</div>
+                                    <div class="ability-description">Temporarily becomes invisible to enemy detection systems, allowing for covert movement and surprise attacks in Fate Trigger.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Intel Gathering</div>
+                                    <div class="ability-description">Reveals enemy positions and movements to teammates, providing crucial tactical information for strategic planning.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Rapid Deployment</div>
+                                    <div class="ability-description">Enhanced movement speed and jump capabilities, allowing LY to traverse difficult terrain and reach strategic positions quickly.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Background</h4>
+                                <p>LY's background in intelligence operations and reconnaissance missions has made them an invaluable asset in Fate Trigger's complex battlefield scenarios. Their ability to gather information and operate independently has saved countless missions and provided crucial advantages in competitive matches.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="page_content2/png/role_md.cdgbxyxk.png" alt="MD Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Defensive Specialist</div>
+                            <h3 class="awakener-name">MD</h3>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">70</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">MD is a defensive specialist who excels at holding strategic positions and protecting teammates in Fate Trigger. With enhanced defensive capabilities and area control skills, MD creates safe zones for team operations and controls key battlefield objectives.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Fortress Mode</div>
+                                    <div class="ability-description">Increases defensive capabilities and creates a protective barrier that reduces incoming damage for nearby allies in Fate Trigger.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Area Denial</div>
+                                    <div class="ability-description">Deploys defensive systems that prevent enemy movement through key areas, controlling battlefield flow and protecting objectives.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Shield Projection</div>
+                                    <div class="ability-description">Creates temporary shields for teammates, providing additional protection during critical moments in Fate Trigger battles.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Background</h4>
+                                <p>MD's military training focused on defensive tactics and area control, making them a natural fit for Fate Trigger's strategic combat scenarios. Their ability to hold positions and protect teammates has made them a cornerstone of successful team compositions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="page_content2/png/role_ml.dfbzpmis.png" alt="ML Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Support Specialist</div>
+                            <h3 class="awakener-name">ML</h3>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">80</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">ML is a support specialist who excels at enhancing team performance and providing battlefield assistance in Fate Trigger. With unique support abilities and resource management skills, ML ensures team sustainability and optimal performance throughout extended engagements.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Resource Optimization</div>
+                                    <div class="ability-description">Reduces ammunition consumption and ability cooldowns for teammates, improving overall team efficiency in Fate Trigger battles.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Combat Enhancement</div>
+                                    <div class="ability-description">Provides temporary boosts to teammate damage output and accuracy, turning the tide of difficult engagements.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Field Repair</div>
+                                    <div class="ability-description">Can restore damaged systems and provide healing to teammates, maintaining team effectiveness during extended battles.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Background</h4>
+                                <p>ML's background in logistics and support operations has made them an essential component of successful Fate Trigger teams. Their ability to enhance team performance and maintain operational effectiveness has proven invaluable in competitive scenarios.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="page_content2/png/role_ql.by_aizja.png" alt="QL Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Sniper Specialist</div>
+                            <h3 class="awakener-name">QL</h3>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">QL is a precision sniper who excels at long-range combat and elimination of high-value targets in Fate Trigger. With exceptional accuracy and patience, QL controls battlefield sight lines and eliminates threats from a distance.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Precision Shot</div>
+                                    <div class="ability-description">Delivers devastating long-range attacks with enhanced accuracy and damage, capable of eliminating targets in a single shot.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Target Acquisition</div>
+                                    <div class="ability-description">Enhanced scope systems that reveal enemy weak points and provide tactical information about target vulnerabilities.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Steady Aim</div>
+                                    <div class="ability-description">Reduces weapon sway and increases accuracy over time, allowing for consistent long-range performance in Fate Trigger.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Background</h4>
+                                <p>QL's military career began as a marksman in elite sniper units, where their precision and patience earned them recognition. In Fate Trigger, QL has become known for their ability to control battlefield engagement distances and eliminate priority targets with surgical precision.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Awakener Skills & Specializations in Fate Trigger</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">⚔️</div>
+                        <h3>Combat Specialization</h3>
+                        <p>Master various combat techniques and weapon systems to excel in direct confrontations in Fate Trigger. Each Awakener brings unique combat styles and tactical advantages to the battlefield.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🎯</div>
+                        <h3>Tactical Expertise</h3>
+                        <p>Develop strategic thinking and battlefield awareness to outmaneuver opponents in Fate Trigger. Tactical skills include positioning, team coordination, and objective control.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🚀</div>
+                        <h3>Mobility Mastery</h3>
+                        <p>Enhance movement capabilities and positioning skills to gain tactical advantages in Fate Trigger. Mobility skills include advanced movement techniques and terrain navigation.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🛡️</div>
+                        <h3>Defensive Systems</h3>
+                        <p>Learn to utilize defensive capabilities and protective systems effectively in Fate Trigger. Defensive skills include shield management, cover usage, and area control.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Advanced Awakener Tips for Fate Trigger</h2>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <h4>Awakener Synergy</h4>
+                        <p>Learn to combine different Awakener abilities for maximum team effectiveness in Fate Trigger. Some abilities work better together, creating powerful combinations that can dominate the battlefield.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Role Specialization</h4>
+                        <p>Master specific roles and playstyles that suit each Awakener's strengths in Fate Trigger. Understanding when to be aggressive, defensive, or supportive is crucial for success.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Ability Timing</h4>
+                        <p>Perfect the timing of special abilities for maximum impact in Fate Trigger. Knowing when to use each ability can turn the tide of battle and secure victory for your team.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Map Adaptation</h4>
+                        <p>Adapt your Awakener choice to different map types and game modes in Fate Trigger. Some Awakeners excel on specific maps or in particular game scenarios.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Team Composition</h4>
+                        <p>Build effective team compositions by combining Awakeners with complementary abilities in Fate Trigger. A well-balanced team often outperforms individual skill.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Progression Paths</h4>
+                        <p>Focus on developing specific skills and abilities that align with your preferred playstyle in Fate Trigger. Specialized training often yields better results than general improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <p>Master the elite Awakeners of Fate Trigger. Learn their abilities and tactical advantages for strategic mecha combat.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/map">Map</a></li>
+                        <li><a href="/weapons">Weapons</a></li>
+                        <li><a href="/awakeners">Awakeners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/fatetrigger" target="_blank" rel="noopener">Discord</a></li>
+                        <li><a href="https://twitter.com/fatetrigger" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="https://www.youtube.com/fatetrigger" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://www.twitch.tv/fatetrigger" target="_blank" rel="noopener">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Fate Trigger. All rights reserved. | Master the Awakeners and dominate Fate Trigger battles.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 90, 160, 0.98)';
+            } else {
+                header.style.background = 'rgba(44, 90, 160, 0.95)';
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.awakener-card, .skill-card, .tip-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

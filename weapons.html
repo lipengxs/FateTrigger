@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate Trigger Weapons Guide - Striker Arsenal & Combat Systems</title>
+    <meta name="description" content="Master Fate Trigger's weapon systems with our comprehensive weapons guide. Learn about Striker armaments, combat systems, and tactical weapon combinations in Fate Trigger.">
+    <meta name="keywords" content="fate trigger weapons, fate trigger striker weapons, mecha weapons guide, fate trigger combat systems, fate trigger armaments, tactical weapons, fate trigger loadouts">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fate-trigger.com/weapons">
+    <meta property="og:title" content="Fate Trigger Weapons Guide - Striker Arsenal & Combat Systems">
+    <meta property="og:description" content="Master Fate Trigger's weapon systems with our comprehensive weapons guide and tactical tips.">
+    <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="apple-touch-icon" href="static/logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/base.css?v=1.0.0">
+    
+    <style>
+        .weapons-hero {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
+                        url('page_content2/png/weapon_video_bg.cmey_mhb.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--secondary-color);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .weapons-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+
+        .weapons-hero p {
+            font-size: 1.3rem;
+            color: var(--light-accent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .weapons-content {
+            padding: 4rem 0;
+            background: var(--secondary-color);
+        }
+
+        .weapons-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .weapons-intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .weapons-intro p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .weapon-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .weapon-category {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .weapon-category.active,
+        .weapon-category:hover {
+            background: var(--accent-color);
+            color: var(--secondary-color);
+        }
+
+        .weapons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .weapon-card {
+            background: var(--secondary-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .weapon-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px var(--shadow-color);
+        }
+
+        .weapon-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .weapon-info {
+            padding: 2rem;
+        }
+
+        .weapon-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .weapon-type {
+            background: var(--gradient-primary);
+            color: var(--secondary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .weapon-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .weapon-description {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .weapon-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .weapon-features h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .weapon-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .weapon-features li {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .weapon-features li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .loadout-section {
+            background: var(--bg-color);
+            padding: 4rem 0;
+        }
+
+        .loadout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .loadout-card {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .loadout-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .loadout-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .loadout-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .tips-section {
+            background: var(--secondary-color);
+            padding: 4rem 0;
+        }
+
+        .tips-list {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .tip-item {
+            background: var(--secondary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-item:hover {
+            transform: translateX(10px);
+        }
+
+        .tip-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .tip-item p {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .weapons-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .weapons-hero p {
+                font-size: 1.1rem;
+            }
+
+            .weapon-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .weapon-category {
+                width: 200px;
+                text-align: center;
+            }
+
+            .weapons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .loadout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .weapon-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li class="dropdown">
+                        <a href="/guides">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/map">Map</a></li>
+                            <li><a href="/weapons" class="active">Weapons</a></li>
+                            <li><a href="/awakeners">Awakeners</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <button class="close-menu">&times;</button>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/media">Media</a></li>
+                <li><a href="/guides">Guides</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/weapons">Weapons</a></li>
+                <li><a href="/awakeners">Awakeners</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Weapons Hero -->
+        <section class="weapons-hero">
+            <div class="container">
+                <h1>WEAPON</h1>
+                <p>Master the advanced weapon systems of Fate Trigger. Discover powerful armaments, tactical combinations, and strategic loadouts to dominate the battlefield with your Striker.</p>
+            </div>
+        </section>
+
+        <!-- Weapons Introduction -->
+        <section class="weapons-content">
+            <div class="container">
+                <div class="weapons-intro">
+                    <h2>Advanced Weapon Systems in Fate Trigger</h2>
+                    <p>Fate Trigger features an extensive arsenal of advanced weaponry designed for mecha combat. From energy weapons to ballistic systems, each weapon offers unique tactical advantages. Understanding weapon characteristics, damage profiles, and optimal loadouts is essential for success in Fate Trigger battles.</p>
+                </div>
+
+                <!-- Weapon Categories -->
+                <div class="weapon-categories">
+                    <button class="weapon-category active" data-category="all">All Weapons</button>
+                    <button class="weapon-category" data-category="energy">Energy Weapons</button>
+                    <button class="weapon-category" data-category="ballistic">Ballistic</button>
+                    <button class="weapon-category" data-category="explosive">Explosive</button>
+                    <button class="weapon-category" data-category="melee">Melee</button>
+                </div>
+
+                <!-- Weapons Grid -->
+                <div class="weapons-grid">
+                    <div class="weapon-card" data-category="energy">
+                        <img src="page_content2/png/pulsarsmg.gqyyktyi.png" alt="Pulsar Energy Rifle" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-type">Energy Weapon</div>
+                            <h3 class="weapon-name">Pulsar Energy Rifle</h3>
+                            <div class="weapon-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Damage</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Range</div>
+                                    <div class="stat-value">Long</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Fire Rate</div>
+                                    <div class="stat-value">Medium</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Accuracy</div>
+                                    <div class="stat-value">High</div>
+                                </div>
+                            </div>
+                            <p class="weapon-description">The Pulsar Energy Rifle is a versatile energy weapon perfect for medium to long-range engagements in Fate Trigger. Its consistent damage output and high accuracy make it ideal for precision strikes against enemy Strikers.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>High accuracy and stability</li>
+                                    <li>No ammunition requirements</li>
+                                    <li>Energy-efficient design</li>
+                                    <li>Effective against shields</li>
+                                    <li>Low recoil pattern</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic">
+                        <img src="page_content2/png/jacksonsmg.bofg7_hw.png" alt="Jackson Ballistic SMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-type">Ballistic Weapon</div>
+                            <h3 class="weapon-name">Jackson Ballistic SMG</h3>
+                            <div class="weapon-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Damage</div>
+                                    <div class="stat-value">65</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Range</div>
+                                    <div class="stat-value">Medium</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Fire Rate</div>
+                                    <div class="stat-value">High</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Accuracy</div>
+                                    <div class="stat-value">Medium</div>
+                                </div>
+                            </div>
+                            <p class="weapon-description">The Jackson Ballistic SMG excels in close to medium-range combat scenarios in Fate Trigger. Its high fire rate and mobility make it perfect for aggressive playstyles and flanking maneuvers.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>High rate of fire</li>
+                                    <li>Excellent mobility</li>
+                                    <li>Quick reload times</li>
+                                    <li>Good for close combat</li>
+                                    <li>Moderate ammunition capacity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="explosive">
+                        <img src="page_content2/png/planetcrackergl.cdhmetyx.png" alt="Planet Cracker Grenade Launcher" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-type">Explosive Weapon</div>
+                            <h3 class="weapon-name">Planet Cracker Grenade Launcher</h3>
+                            <div class="weapon-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Damage</div>
+                                    <div class="stat-value">150</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Range</div>
+                                    <div class="stat-value">Long</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Fire Rate</div>
+                                    <div class="stat-value">Low</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Area Damage</div>
+                                    <div class="stat-value">High</div>
+                                </div>
+                            </div>
+                            <p class="weapon-description">The Planet Cracker Grenade Launcher delivers devastating area-of-effect damage in Fate Trigger. Perfect for clearing enemy positions and dealing massive damage to multiple targets simultaneously.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Massive area damage</li>
+                                    <li>Can destroy cover</li>
+                                    <li>Effective against groups</li>
+                                    <li>Long-range capability</li>
+                                    <li>High impact force</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="melee">
+                        <img src="page_content2/png/gladiatorar.dbiky8zo.png" alt="Gladiator Assault Rifle" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-type">Assault Rifle</div>
+                            <h3 class="weapon-name">Gladiator Assault Rifle</h3>
+                            <div class="weapon-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Damage</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Range</div>
+                                    <div class="stat-value">Medium</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Fire Rate</div>
+                                    <div class="stat-value">Medium</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Versatility</div>
+                                    <div class="stat-value">High</div>
+                                </div>
+                            </div>
+                            <p class="weapon-description">The Gladiator Assault Rifle is a well-balanced weapon system in Fate Trigger, offering reliable performance across various combat situations. Its versatility makes it a popular choice for many pilots.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Balanced performance</li>
+                                    <li>Good damage output</li>
+                                    <li>Reliable accuracy</li>
+                                    <li>Moderate recoil</li>
+                                    <li>Versatile combat role</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="energy">
+                        <img src="page_content2/png/peregrinesmg.czpy_43s.png" alt="Peregrine Energy SMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-type">Energy SMG</div>
+                            <h3 class="weapon-name">Peregrine Energy SMG</h3>
+                            <div class="weapon-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Damage</div>
+                                    <div class="stat-value">70</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Range</div>
+                                    <div class="stat-value">Short</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Fire Rate</div>
+                                    <div class="stat-value">Very High</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">High</div>
+                                </div>
+                            </div>
+                            <p class="weapon-description">The Peregrine Energy SMG combines high mobility with rapid-fire energy projectiles in Fate Trigger. Perfect for hit-and-run tactics and close-quarters combat scenarios.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Extremely high fire rate</li>
+                                    <li>Excellent mobility</li>
+                                    <li>Energy-based projectiles</li>
+                                    <li>Quick target acquisition</li>
+                                    <li>Low energy consumption</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="explosive">
+                        <img src="page_content2/png/tempestlmg.qlx6zr9f.png" alt="Tempest Light Machine Gun" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-type">Light Machine Gun</div>
+                            <h3 class="weapon-name">Tempest Light Machine Gun</h3>
+                            <div class="weapon-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Damage</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Range</div>
+                                    <div class="stat-value">Long</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Fire Rate</div>
+                                    <div class="stat-value">Medium</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Sustained Fire</div>
+                                    <div class="stat-value">High</div>
+                                </div>
+                            </div>
+                            <p class="weapon-description">The Tempest Light Machine Gun provides sustained firepower for extended engagements in Fate Trigger. Its high damage output and large ammunition capacity make it ideal for defensive positions.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>High damage per shot</li>
+                                    <li>Large ammunition capacity</li>
+                                    <li>Excellent for suppression</li>
+                                    <li>Long-range effectiveness</li>
+                                    <li>Sustained fire capability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loadout Section -->
+        <section class="loadout-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Optimal Loadout Strategies for Fate Trigger</h2>
+                <div class="loadout-grid">
+                    <div class="loadout-card">
+                        <div class="loadout-icon">🎯</div>
+                        <h3>Balanced Loadout</h3>
+                        <p>Combine medium-range weapons with utility items for versatile combat effectiveness in Fate Trigger. Perfect for players who want adaptability across different map types and game modes.</p>
+                    </div>
+                    
+                    <div class="loadout-card">
+                        <div class="loadout-icon">⚡</div>
+                        <h3>Aggressive Loadout</h3>
+                        <p>Focus on close-range weapons and mobility enhancements for aggressive playstyles in Fate Trigger. Ideal for players who prefer fast-paced combat and flanking maneuvers.</p>
+                    </div>
+                    
+                    <div class="loadout-card">
+                        <div class="loadout-icon">🛡️</div>
+                        <h3>Defensive Loadout</h3>
+                        <p>Utilize long-range weapons and defensive systems for holding strategic positions in Fate Trigger. Great for players who excel at area control and team support.</p>
+                    </div>
+                    
+                    <div class="loadout-card">
+                        <div class="loadout-icon">💥</div>
+                        <h3>Explosive Loadout</h3>
+                        <p>Specialize in area-denial weapons and explosive ordnance for controlling battlefield zones in Fate Trigger. Perfect for disrupting enemy formations and clearing objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Advanced Weapon Tips for Fate Trigger</h2>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <h4>Weapon Synergy</h4>
+                        <p>Learn to combine different weapon types for maximum effectiveness in Fate Trigger. Energy weapons work well with ballistic systems, while explosive weapons can create opportunities for other armaments to shine.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Range Optimization</h4>
+                        <p>Match your weapon choices to your preferred engagement distances in Fate Trigger. Long-range weapons excel on open maps, while close-range options dominate in urban environments.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Ammunition Management</h4>
+                        <p>Monitor your ammunition levels and plan reloads strategically in Fate Trigger. Running out of ammo at the wrong moment can be fatal in intense combat situations.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Weapon Switching</h4>
+                        <p>Master quick weapon switching to adapt to changing combat situations in Fate Trigger. Having the right tool for each moment is crucial for survival and success.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Environmental Usage</h4>
+                        <p>Use your weapons to interact with the environment in Fate Trigger. Explosive weapons can destroy cover, while energy weapons can activate certain map features.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Team Coordination</h4>
+                        <p>Coordinate weapon choices with your team to cover different engagement ranges and combat roles in Fate Trigger. A well-balanced team loadout is often more effective than individual optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <p>Master the weapon systems of Fate Trigger with our comprehensive guide. Learn tactical loadouts and combat strategies.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/map">Map</a></li>
+                        <li><a href="/weapons">Weapons</a></li>
+                        <li><a href="/awakeners">Awakeners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/fatetrigger" target="_blank" rel="noopener">Discord</a></li>
+                        <li><a href="https://twitter.com/fatetrigger" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="https://www.youtube.com/fatetrigger" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://www.twitch.tv/fatetrigger" target="_blank" rel="noopener">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Fate Trigger. All rights reserved. | Master Fate Trigger weapons and dominate the battlefield.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Weapon Category Filtering
+        document.querySelectorAll('.weapon-category').forEach(category => {
+            category.addEventListener('click', () => {
+                document.querySelectorAll('.weapon-category').forEach(c => c.classList.remove('active'));
+                category.classList.add('active');
+                
+                const categoryType = category.dataset.category;
+                const weaponCards = document.querySelectorAll('.weapon-card');
+                
+                weaponCards.forEach(card => {
+                    if (categoryType === 'all' || card.dataset.category === categoryType) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 90, 160, 0.98)';
+            } else {
+                header.style.background = 'rgba(44, 90, 160, 0.95)';
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.weapon-card, .loadout-card, .tip-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

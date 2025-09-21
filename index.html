@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate Trigger - Epic Mecha Battle Game | Official Website</title>
+    <meta name="description" content="Experience the ultimate mecha combat in Fate Trigger, an action-packed multiplayer game featuring epic robot battles, strategic gameplay, and intense multiplayer matches. Master your Striker and dominate the battlefield in this groundbreaking gaming experience.">
+    <meta name="keywords" content="fate trigger, mecha game, robot battle, multiplayer game, action game, mecha combat, strategic gameplay, epic battles, fate trigger game, strikers, awakeners, futuristic warfare, tactical combat, multiplayer shooter">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fate-trigger.com/">
+    <meta property="og:title" content="Fate Trigger - Epic Mecha Battle Game">
+    <meta property="og:description" content="Master your Striker, engage in epic battles, and rise to victory in Fate Trigger. The ultimate mecha combat experience awaits in this revolutionary multiplayer game.">
+    <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fate Trigger - Epic Mecha Battle Game">
+    <meta name="twitter:description" content="Master your Striker, engage in epic battles, and rise to victory in Fate Trigger. The ultimate mecha combat experience awaits.">
+    <meta name="twitter:image" content="https://fate-trigger.com/static/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="apple-touch-icon" href="static/logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/base.css?v=1.0.0">
+    
+    <!-- Microsoft Validation -->
+    <meta name="msvalidate.01" content="B362957FC36C5EDDD6079B6D78330424">
+    
+    <!-- IndexNow -->
+    <meta name="yandex-verification" content="c0ded2a1a0de0c5f" />
+    <meta name="IndexNow-Key" content="B362957FC36C5EDDD6079B6D78330424">
+    <meta name="IndexNow-Url" content="https://fate-trigger.com/">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ET0ZKVLZYL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ET0ZKVLZYL');
+    </script>
+
+    <style>
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
+                        url('page_content2/jpg/illuminati_bg.d60uke53.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--secondary-color);
+            padding: 200px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(74, 144, 226, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--secondary-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: var(--light-accent);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            background: rgba(44, 90, 160, 0.9);
+            padding: 3rem;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--accent-color);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown-container h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 3rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            text-align: center;
+            min-width: 120px;
+            position: relative;
+        }
+
+        .countdown-item:not(:last-child)::after {
+            content: ':';
+            position: absolute;
+            right: -1.8rem;
+            top: 50%;
+            transform: translateY(-60%);
+            color: var(--accent-color);
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .countdown-item span {
+            font-size: 4rem;
+            font-weight: bold;
+            display: block;
+            color: var(--secondary-color);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--accent-color);
+        }
+
+        .countdown-item label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Game Introduction */
+        .introduction {
+            background: var(--secondary-color);
+            padding: 5rem 0;
+        }
+
+        .video-container {
+            margin: 3rem auto;
+            max-width: 900px;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        .game-info {
+            margin-top: 3rem;
+            text-align: left;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .game-info h3, .game-info h4 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-info h3 {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .game-info h4 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(135deg, var(--bg-color) 0%, #e6f3ff 100%);
+            padding: 5rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Screenshots Gallery */
+        .screenshots {
+            background: var(--secondary-color);
+            padding: 5rem 0;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .screenshot-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--bg-color);
+            padding: 5rem 0;
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--secondary-color);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gradient-secondary);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(44, 90, 160, 0.98);
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 60px 0 0 0;
+        }
+
+        .mobile-menu ul li {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .mobile-menu ul li a {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .close-menu {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--menu-bg);
+            min-width: 200px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 1rem 1.2rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-menu li a:hover {
+            background: rgba(74, 144, 226, 0.3);
+            color: var(--accent-color);
+        }
+
+        .dropdown-menu li:last-child a {
+            border-bottom: none;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .countdown {
+                gap: 1.5rem;
+            }
+
+            .countdown-item {
+                min-width: 80px;
+            }
+
+            .countdown-item span {
+                font-size: 2.5rem;
+            }
+
+            .countdown-item:not(:last-child)::after {
+                right: -1rem;
+                font-size: 2rem;
+            }
+
+            .countdown-item label {
+                font-size: 0.9rem;
+            }
+
+            .countdown-container {
+                padding: 2rem;
+            }
+
+            .countdown-container h2 {
+                font-size: 1.5rem;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: transparent;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+            }
+
+            .countdown-item span {
+                font-size: 2rem;
+            }
+
+            .countdown-item label {
+                font-size: 0.8rem;
+            }
+
+            .countdown-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li class="dropdown">
+                        <a href="/guides">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/map">Map</a></li>
+                            <li><a href="/weapons">Weapons</a></li>
+                            <li><a href="/awakeners">Awakeners</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <button class="close-menu">&times;</button>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/media">Media</a></li>
+                <li><a href="/guides">Guides</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/weapons">Weapons</a></li>
+                <li><a href="/awakeners">Awakeners</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Fate Trigger</h1>
+                <p class="subtitle">Master Your Striker and Dominate the Battlefield</p>
+                <div class="countdown-container">
+                    <h2>Official Release Countdown</h2>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <label>Days</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <label>Hours</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <label>Minutes</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <label>Seconds</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Introduction -->
+        <section class="introduction">
+            <div class="container">
+                <h2>Experience Fate Trigger - The Ultimate Mecha Battle</h2>
+                <p>Fate Trigger revolutionizes the mecha combat genre with its innovative gameplay mechanics, stunning visuals, and intense multiplayer battles. Join thousands of players worldwide in this epic futuristic warfare experience where strategy meets action in the most immersive way possible. Fate Trigger delivers an unparalleled gaming experience that combines tactical depth with fast-paced action, making it the definitive mecha combat game for competitive players and casual gamers alike.</p>
+                
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FwkM3ML_8aE?si=-6dAzhhFFUFS_CXx" title="Fate Trigger Official Gameplay Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                
+                <div class="game-info">
+                    <h3>About Fate Trigger</h3>
+                    <p>Fate Trigger is a groundbreaking mecha battle game that combines strategic thinking with fast-paced action in an immersive multiplayer environment. Set in the year 2157, humanity has colonized multiple star systems and developed advanced mecha technology for both exploration and warfare. The fate of entire civilizations now rests in the hands of skilled pilots who can master these incredible machines known as "Strikers".</p>
+                    
+                    <h4>Story & Background</h4>
+                    <p>In Fate Trigger, players take control of powerful robotic combat units and engage in epic battles across diverse battlefields. The game features a rich narrative where different factions compete for control of valuable resources and strategic territories. Each battle in Fate Trigger carries weight, as victories can shift the balance of power in this futuristic universe.</p>
+                    
+                    <h4>Release Information</h4>
+                    <p>Fate Trigger was officially released in 2024 and is now available on PC (Steam), PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S platforms. The game supports cross-platform play, allowing players to battle against opponents regardless of their chosen platform. Regular updates and new content ensure that the Fate Trigger experience continues to evolve.</p>
+                    
+                        <h4>Supported Languages</h4>
+                        <p>Fate Trigger supports multiple languages including English, Japanese, Chinese (Simplified & Traditional), Korean, French, German, Spanish, Portuguese, and Russian, ensuring players worldwide can enjoy the full experience with proper localization. The comprehensive language support in Fate Trigger makes it accessible to a global audience, fostering an international community of mecha combat enthusiasts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Play -->
+        <section class="features">
+            <div class="container">
+                <h2>How to Play Fate Trigger</h2>
+                <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Master Your Striker</h3>
+                            <p>Choose from dozens of unique Strikers, each with distinct abilities and playstyles in Fate Trigger. Customize your mecha with advanced weaponry, defensive systems, and specialized equipment to match your combat preferences and strategic approach. Each Striker in Fate Trigger offers unique tactical advantages, allowing players to develop personalized combat strategies that suit their individual playstyle and team composition needs.</p>
+                        </div>
+                    <div class="feature-card">
+                        <h3>Strategic Combat</h3>
+                        <p>Engage in tactical battles that require both quick reflexes and strategic thinking in Fate Trigger. Master the art of mecha combat, utilize cover effectively, and coordinate with teammates to achieve victory in intense multiplayer matches. Success in Fate Trigger demands both individual skill and team coordination.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Diverse Battlefields</h3>
+                        <p>Fight across multiple dynamic environments including urban landscapes, industrial complexes, and alien worlds in Fate Trigger. Each battlefield offers unique tactical opportunities and challenges that will test your adaptability and skill. The varied environments in Fate Trigger ensure no two battles are ever the same.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Progressive Customization</h3>
+                        <p>Unlock new weapons, abilities, and cosmetic options as you progress in Fate Trigger. Build your reputation as an elite pilot and gain access to exclusive mecha variants and advanced combat systems that give you the edge in battle. The progression system in Fate Trigger rewards both skill and dedication.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Screenshots -->
+        <section class="screenshots">
+            <div class="container">
+                <h2>Fate Trigger Game Gallery</h2>
+                <div class="screenshot-grid">
+                    <img src="page_content2/png/role_hxl.c_kmaujq.png" alt="Fate Trigger mecha combat scene showing advanced robotic warriors in intense battle">
+                    <img src="page_content2/png/role_kme.kdwhab7o.png" alt="Epic mecha battle in Fate Trigger with multiple Strikers engaging in strategic combat">
+                    <img src="page_content2/png/role_ly.xbjzk7vu.png" alt="Fate Trigger pilot customizing their mecha with advanced weaponry and equipment">
+                    <img src="page_content2/png/role_md.cdgbxyxk.png" alt="Strategic battlefield view in Fate Trigger showing mecha formations and tactical positioning">
+                    <img src="page_content2/png/role_ml.dfbzpmis.png" alt="Fate Trigger mecha in urban combat environment with destructible buildings and dynamic lighting">
+                    <img src="page_content2/png/role_ql.by_aizja.png" alt="Advanced mecha customization interface in Fate Trigger showing weapon loadouts and abilities">
+                    <img src="page_content2/png/role_sewy.3ubeni5j.png" alt="Fate Trigger multiplayer battle with multiple players coordinating attacks and strategies">
+                    <img src="page_content2/png/role_x.chdtsq7z.png" alt="Epic mecha showdown in Fate Trigger futuristic battlefield with stunning visual effects">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions About Fate Trigger</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">What is Fate Trigger and when was it released?</div>
+                        <div class="faq-answer">Fate Trigger is an epic mecha battle game that combines strategic gameplay with intense action in a multiplayer environment. The game was officially released in 2024 and is now available on PC, PlayStation, and Xbox platforms. Players can experience the ultimate mecha combat with advanced robotic warriors known as Strikers, each offering unique abilities and customization options.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What platforms is Fate Trigger available on?</div>
+                        <div class="faq-answer">Fate Trigger is available on PC (Steam), PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S. The game supports cross-platform play, allowing players to battle against opponents regardless of their chosen platform. This ensures that the Fate Trigger community remains united across all gaming systems.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How does the mecha customization system work in Fate Trigger?</div>
+                        <div class="faq-answer">Fate Trigger features an extensive customization system where players can modify their Strikers with different weapons, defensive systems, and specialized equipment. As you progress and gain experience, you'll unlock new components and abilities to create the perfect mecha for your playstyle. The customization options in Fate Trigger allow for thousands of unique combinations.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is Fate Trigger a multiplayer-only game?</div>
+                        <div class="faq-answer">While Fate Trigger excels in multiplayer battles, it also includes single-player campaign modes and training missions. Players can practice their skills against AI opponents before jumping into competitive multiplayer matches. The single-player content in Fate Trigger provides an excellent way to learn the game mechanics and story.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What makes Fate Trigger different from other mecha games?</div>
+                        <div class="faq-answer">Fate Trigger combines strategic depth with fast-paced action, featuring unique Strikers with distinct abilities, dynamic battlefields, and a progression system that rewards both skill and tactical thinking. The game's focus on team coordination and individual mastery sets it apart from traditional mecha games, offering a more immersive and competitive experience.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are there different game modes in Fate Trigger?</div>
+                        <div class="faq-answer">Yes, Fate Trigger offers multiple game modes including Team Deathmatch, Capture the Flag, King of the Hill, and special event modes. Each mode requires different strategies and teamwork, providing varied gameplay experiences for all types of players. The diverse game modes in Fate Trigger ensure there's something for every type of gamer.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How often does Fate Trigger receive updates?</div>
+                        <div class="faq-answer">Fate Trigger receives regular updates including new Strikers, weapons, maps, and gameplay improvements. The development team is committed to keeping the game fresh and balanced, with major content updates released quarterly and smaller patches as needed to maintain optimal gameplay experience.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I play Fate Trigger with friends?</div>
+                        <div class="faq-answer">Absolutely! Fate Trigger features robust friend systems and party mechanics that allow you to team up with friends for both casual and competitive matches. You can create private lobbies, join public matches together, and participate in clan-based activities. The social features in Fate Trigger make it easy to connect and play with your gaming community.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <p>Experience the ultimate mecha combat in Fate Trigger. Master your Striker and dominate the battlefield in this revolutionary multiplayer game.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/map">Map</a></li>
+                        <li><a href="/weapons">Weapons</a></li>
+                        <li><a href="/awakeners">Awakeners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/fatetrigger" target="_blank" rel="noopener">Discord</a></li>
+                        <li><a href="https://twitter.com/fatetrigger" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="https://www.youtube.com/fatetrigger" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://www.twitch.tv/fatetrigger" target="_blank" rel="noopener">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Fate Trigger. All rights reserved. | Master your Striker and experience the ultimate mecha combat in Fate Trigger.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const countDownDate = new Date("March 15, 2025 00:00:00").getTime();
+
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.querySelector(".countdown").innerHTML = "<div style='font-size: 2rem; color: var(--accent-color); font-weight: bold;'>FATE TRIGGER LAUNCHED!</div>";
+            }
+        }, 1000);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 90, 160, 0.98)';
+            } else {
+                header.style.background = 'rgba(44, 90, 160, 0.95)';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .faq-item, .screenshot-grid img').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

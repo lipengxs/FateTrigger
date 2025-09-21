@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fate Trigger Strikers Guide - Mecha Classes & Abilities</title>
+        <meta name="description" content="Master every Striker in Fate Trigger with our comprehensive mecha guide. Learn about different classes, abilities, weapons, and optimal loadouts for each robotic warrior.">
+        <meta name="keywords" content="fate trigger strikers, mecha classes, robot warriors, fate trigger abilities, mecha customization, striker guide">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://fate-trigger.com/strikers">
+        <meta property="og:title" content="Fate Trigger Strikers Guide - Mecha Classes & Abilities">
+        <meta property="og:description" content="Master every Striker in Fate Trigger with our comprehensive mecha guide. Learn about different classes, abilities, and optimal loadouts.">
+        <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
+        
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Fate Trigger Strikers Guide - Mecha Classes & Abilities">
+        <meta name="twitter:description" content="Master every Striker in Fate Trigger with our comprehensive mecha guide. Learn about different classes, abilities, and optimal loadouts.">
+        <meta name="twitter:image" content="https://fate-trigger.com/static/logo.png">
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <link rel="apple-touch-icon" href="static/logo.png">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="static/base.css?v=0.1.1">
+        
+        <style>
+            .strikers-hero {
+                background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-accent) 100%);
+                color: var(--primary-color);
+                padding: 150px 0 80px;
+                text-align: center;
+            }
+
+            .strikers-hero h1 {
+                font-size: 4rem;
+                margin-bottom: 1rem;
+                color: var(--accent-color);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .strikers-hero p {
+                font-size: 1.3rem;
+                max-width: 600px;
+                margin: 0 auto;
+                opacity: 0.9;
+            }
+
+            .strikers-content {
+                padding: 4rem 0;
+                background: var(--bg-color);
+            }
+
+            .striker-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 2rem;
+                margin-bottom: 4rem;
+            }
+
+            .striker-card {
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .striker-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .striker-image {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                background: linear-gradient(45deg, #1a1a1a, #333);
+            }
+
+            .striker-info {
+                padding: 2rem;
+            }
+
+            .striker-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            .striker-name {
+                color: var(--secondary-color);
+                font-size: 1.8rem;
+                font-weight: bold;
+                margin: 0;
+            }
+
+            .striker-class {
+                background: var(--accent-color);
+                color: var(--secondary-color);
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.9rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .striker-description {
+                color: var(--text-color);
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .striker-stats {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .stat-bar {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+                color: var(--text-color);
+                min-width: 80px;
+            }
+
+            .stat-progress {
+                flex: 1;
+                height: 8px;
+                background: rgba(196, 164, 124, 0.2);
+                border-radius: 4px;
+                overflow: hidden;
+            }
+
+            .stat-fill {
+                height: 100%;
+                background: var(--accent-color);
+                border-radius: 4px;
+                transition: width 0.3s ease;
+            }
+
+            .striker-abilities {
+                margin-bottom: 1.5rem;
+            }
+
+            .striker-abilities h4 {
+                color: var(--secondary-color);
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+            }
+
+            .ability-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .ability-item {
+                background: rgba(230, 185, 128, 0.1);
+                padding: 1rem;
+                border-radius: 8px;
+                border-left: 4px solid var(--accent-color);
+            }
+
+            .ability-name {
+                font-weight: bold;
+                color: var(--secondary-color);
+                margin-bottom: 0.5rem;
+            }
+
+            .ability-desc {
+                font-size: 0.9rem;
+                color: var(--text-color);
+                line-height: 1.4;
+            }
+
+            .striker-tips {
+                background: rgba(230, 185, 128, 0.1);
+                padding: 1rem;
+                border-radius: 8px;
+                border-left: 4px solid var(--accent-color);
+            }
+
+            .striker-tips h4 {
+                color: var(--accent-color);
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+            }
+
+            .striker-tips p {
+                color: var(--text-color);
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            .class-filter {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 3rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .filter-btn {
+                background: none;
+                border: 2px solid var(--primary-color);
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                color: var(--text-color);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+
+            .filter-btn.active,
+            .filter-btn:hover {
+                background: var(--accent-color);
+                color: var(--secondary-color);
+                border-color: var(--accent-color);
+            }
+
+            @media (max-width: 768px) {
+                .strikers-hero h1 {
+                    font-size: 2.5rem;
+                }
+
+                .striker-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .striker-stats {
+                    grid-template-columns: 1fr;
+                }
+
+                .ability-list {
+                    grid-template-columns: 1fr;
+                }
+
+                .class-filter {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo">
+                        <img src="static/logo.png" alt="Fate Trigger Logo">
+                    </div>
+                    <button class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li class="dropdown">
+                            <a href="/guides">Guides</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/map">Map</a></li>
+                                <li><a href="/strikers" class="active">Strikers</a></li>
+                                <li><a href="/airdrops">Airdrops</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="mobile-menu">
+                <button class="close-menu">&times;</button>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li><a href="/guides">Guides</a></li>
+                    <li><a href="/map">Map</a></li>
+                    <li><a href="/strikers" class="active">Strikers</a></li>
+                    <li><a href="/airdrops">Airdrops</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <section class="strikers-hero">
+                <div class="container">
+                    <h1>STRIKER MECHA</h1>
+                    <p>Master every Striker in Fate Trigger with our comprehensive mecha guide. Learn about different classes, abilities, weapons, and optimal loadouts for each robotic warrior.</p>
+                </div>
+            </section>
+
+            <section class="strikers-content">
+                <div class="container">
+                    <div class="class-filter">
+                        <button class="filter-btn active" data-class="all">All Classes</button>
+                        <button class="filter-btn" data-class="assault">Assault</button>
+                        <button class="filter-btn" data-class="support">Support</button>
+                        <button class="filter-btn" data-class="heavy">Heavy</button>
+                        <button class="filter-btn" data-class="stealth">Stealth</button>
+                    </div>
+
+                    <div class="striker-grid">
+                        <!-- Adjudicator Striker -->
+                        <div class="striker-card" data-class="support">
+                            <img src="page_content2/png/adjudicatorsr.dlqfxmv4.png" alt="Adjudicator Striker" class="striker-image">
+                            <div class="striker-info">
+                                <div class="striker-header">
+                                    <h3 class="striker-name">Adjudicator</h3>
+                                    <span class="striker-class">Support</span>
+                                </div>
+                                <p class="striker-description">A tactical support Striker designed for battlefield control and team coordination. The Adjudicator excels at providing strategic advantages through advanced sensor systems and defensive capabilities.</p>
+                                
+                                <div class="striker-stats">
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Firepower</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Mobility</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Defense</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Support</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 95%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-abilities">
+                                    <h4>Special Abilities</h4>
+                                    <div class="ability-list">
+                                        <div class="ability-item">
+                                            <div class="ability-name">Tactical Shield</div>
+                                            <div class="ability-desc">Deploy a protective barrier for teammates</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Sensor Array</div>
+                                            <div class="ability-desc">Reveal enemy positions to your team</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Repair Drone</div>
+                                            <div class="ability-desc">Heal damaged allies automatically</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Command Boost</div>
+                                            <div class="ability-desc">Enhance team performance temporarily</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-tips">
+                                    <h4>Pro Tips:</h4>
+                                    <p>Position yourself behind your team to maximize support effectiveness. Use sensor array before engaging enemies. Repair drone works best when teammates are grouped together.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Beast Buster Striker -->
+                        <div class="striker-card" data-class="heavy">
+                            <img src="page_content2/png/beastbustersg.cu7_o9yl.png" alt="Beast Buster Striker" class="striker-image">
+                            <div class="striker-info">
+                                <div class="striker-header">
+                                    <h3 class="striker-name">Beast Buster</h3>
+                                    <span class="striker-class">Heavy</span>
+                                </div>
+                                <p class="striker-description">A massive heavy assault Striker built for devastating close-quarters combat. The Beast Buster trades mobility for overwhelming firepower and incredible durability.</p>
+                                
+                                <div class="striker-stats">
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Firepower</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 95%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Mobility</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 30%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Defense</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Support</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 20%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-abilities">
+                                    <h4>Special Abilities</h4>
+                                    <div class="ability-list">
+                                        <div class="ability-item">
+                                            <div class="ability-name">Rage Mode</div>
+                                            <div class="ability-desc">Increase damage and attack speed</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Shockwave</div>
+                                            <div class="ability-desc">Ground slam that damages nearby enemies</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Heavy Armor</div>
+                                            <div class="ability-desc">Reduce incoming damage significantly</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Berserker Rush</div>
+                                            <div class="ability-desc">Charge forward with increased damage</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-tips">
+                                    <h4>Pro Tips:</h4>
+                                    <p>Use shockwave to control crowds. Rage mode is most effective when surrounded by enemies. Position yourself at chokepoints to maximize your defensive capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Braun Striker -->
+                        <div class="striker-card" data-class="assault">
+                            <img src="page_content2/png/braunsg.bjsuf2po.png" alt="Braun Striker" class="striker-image">
+                            <div class="striker-info">
+                                <div class="striker-header">
+                                    <h3 class="striker-name">Braun</h3>
+                                    <span class="striker-class">Assault</span>
+                                </div>
+                                <p class="striker-description">A versatile assault Striker with balanced stats and adaptive combat capabilities. The Braun excels in mid-range combat and can adapt to various battlefield situations.</p>
+                                
+                                <div class="striker-stats">
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Firepower</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 75%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Mobility</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Defense</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Support</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-abilities">
+                                    <h4>Special Abilities</h4>
+                                    <div class="ability-list">
+                                        <div class="ability-item">
+                                            <div class="ability-name">Adaptive Mode</div>
+                                            <div class="ability-desc">Switch between combat styles</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Rapid Fire</div>
+                                            <div class="ability-desc">Increase fire rate temporarily</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Tactical Roll</div>
+                                            <div class="ability-desc">Quick dodge with damage reduction</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Combat Boost</div>
+                                            <div class="ability-desc">Enhance all stats for short duration</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-tips">
+                                    <h4>Pro Tips:</h4>
+                                    <p>Use adaptive mode to counter different enemy types. Tactical roll is perfect for escaping dangerous situations. Combat boost works best when engaging multiple enemies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gladiator Striker -->
+                        <div class="striker-card" data-class="assault">
+                            <img src="page_content2/png/gladiatorar.dbiky8zo.png" alt="Gladiator Striker" class="striker-image">
+                            <div class="striker-info">
+                                <div class="striker-header">
+                                    <h3 class="striker-name">Gladiator</h3>
+                                    <span class="striker-class">Assault</span>
+                                </div>
+                                <p class="striker-description">A melee-focused Striker designed for aggressive close-quarters combat. The Gladiator excels at high-speed attacks and devastating melee combinations.</p>
+                                
+                                <div class="striker-stats">
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Firepower</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Mobility</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Defense</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Support</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 40%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-abilities">
+                                    <h4>Special Abilities</h4>
+                                    <div class="ability-list">
+                                        <div class="ability-item">
+                                            <div class="ability-name">Blade Rush</div>
+                                            <div class="ability-desc">Dash forward with spinning blade attack</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Combo Strike</div>
+                                            <div class="ability-desc">Chain multiple melee attacks</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Deflect</div>
+                                            <div class="ability-desc">Block and counter incoming attacks</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Berserker Fury</div>
+                                            <div class="ability-desc">Temporary invincibility and damage boost</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-tips">
+                                    <h4>Pro Tips:</h4>
+                                    <p>Use blade rush to close distance quickly. Combo strike works best against slower enemies. Deflect timing is crucial for survival in close combat.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Planet Cracker Striker -->
+                        <div class="striker-card" data-class="heavy">
+                            <img src="page_content2/png/planetcrackergl.cdhmetyx.png" alt="Planet Cracker Striker" class="striker-image">
+                            <div class="striker-info">
+                                <div class="striker-header">
+                                    <h3 class="striker-name">Planet Cracker</h3>
+                                    <span class="striker-class">Heavy</span>
+                                </div>
+                                <p class="striker-description">A devastating artillery Striker capable of massive area-of-effect damage. The Planet Cracker specializes in long-range bombardment and battlefield control.</p>
+                                
+                                <div class="striker-stats">
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Firepower</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Mobility</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 25%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Defense</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Support</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-abilities">
+                                    <h4>Special Abilities</h4>
+                                    <div class="ability-list">
+                                        <div class="ability-item">
+                                            <div class="ability-name">Orbital Strike</div>
+                                            <div class="ability-desc">Call down devastating area damage</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Siege Mode</div>
+                                            <div class="ability-desc">Immobilize for massive damage boost</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Barrage</div>
+                                            <div class="ability-desc">Rapid-fire multiple projectiles</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Shockwave</div>
+                                            <div class="ability-desc">Ground-based area damage</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-tips">
+                                    <h4>Pro Tips:</h4>
+                                    <p>Use siege mode when safely positioned. Orbital strike is perfect for controlling objectives. Barrage works best against grouped enemies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tempest Striker -->
+                        <div class="striker-card" data-class="stealth">
+                            <img src="page_content2/png/tempestlmg.qlx6zr9f.png" alt="Tempest Striker" class="striker-image">
+                            <div class="striker-info">
+                                <div class="striker-header">
+                                    <h3 class="striker-name">Tempest</h3>
+                                    <span class="striker-class">Stealth</span>
+                                </div>
+                                <p class="striker-description">A high-speed stealth Striker designed for hit-and-run tactics and reconnaissance. The Tempest excels at mobility and surprise attacks.</p>
+                                
+                                <div class="striker-stats">
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Firepower</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Mobility</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Defense</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 50%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <span class="stat-label">Support</span>
+                                        <div class="stat-progress">
+                                            <div class="stat-fill" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-abilities">
+                                    <h4>Special Abilities</h4>
+                                    <div class="ability-list">
+                                        <div class="ability-item">
+                                            <div class="ability-name">Stealth Mode</div>
+                                            <div class="ability-desc">Become invisible for short duration</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Lightning Strike</div>
+                                            <div class="ability-desc">Teleport behind enemy for critical hit</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Speed Boost</div>
+                                            <div class="ability-desc">Dramatically increase movement speed</div>
+                                        </div>
+                                        <div class="ability-item">
+                                            <div class="ability-name">Recon Scan</div>
+                                            <div class="ability-desc">Reveal enemy positions to team</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="striker-tips">
+                                    <h4>Pro Tips:</h4>
+                                    <p>Use stealth mode to flank enemies. Lightning strike is perfect for eliminating isolated targets. Speed boost helps escape dangerous situations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="static/logo.png" alt="Fate Trigger Logo">
+                    </div>
+                    <div class="footer-links">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/news">News</a></li>
+                            <li><a href="/media">Media</a></li>
+                            <li><a href="/guides">Guides</a></li>
+                            <li><a href="/map">Map</a></li>
+                            <li><a href="/strikers">Strikers</a></li>
+                            <li><a href="/airdrops">Airdrops</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Community</h3>
+                        <ul>
+                            <li><a href="https://discord.gg/fatetrigger" target="_blank">Discord</a></li>
+                            <li><a href="https://twitter.com/fatetrigger" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.youtube.com/fatetrigger" target="_blank">YouTube</a></li>
+                            <li><a href="https://www.twitch.tv/fatetrigger" target="_blank">Twitch</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-service">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 Fate Trigger. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Filter functionality
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterClass = button.getAttribute('data-class');
+                    const strikerCards = document.querySelectorAll('.striker-card');
+                    
+                    strikerCards.forEach(card => {
+                        if (filterClass === 'all' || card.getAttribute('data-class') === filterClass) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Mobile Menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate Trigger Map Guide - Battlefield Locations & Strategies</title>
+    <meta name="description" content="Master Fate Trigger's diverse battlefields with our comprehensive map guide. Learn about strategic locations, tactical advantages, and combat strategies for each map in Fate Trigger.">
+    <meta name="keywords" content="fate trigger map guide, fate trigger battlefield, fate trigger locations, mecha combat maps, fate trigger strategy, tactical positioning, fate trigger map tips">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fate-trigger.com/map">
+    <meta property="og:title" content="Fate Trigger Map Guide - Battlefield Locations & Strategies">
+    <meta property="og:description" content="Master Fate Trigger's diverse battlefields with our comprehensive map guide and strategic tips.">
+    <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="apple-touch-icon" href="static/logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/base.css?v=1.0.0">
+    
+    <style>
+        .map-hero {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
+                        url('page_content2/jpg/map_bgallocationcenter.dc7jaei5.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--secondary-color);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .map-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+
+        .map-hero p {
+            font-size: 1.3rem;
+            color: var(--light-accent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .map-content {
+            padding: 4rem 0;
+            background: var(--secondary-color);
+        }
+
+        .map-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .map-intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .map-intro p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .map-card {
+            background: var(--secondary-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .map-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px var(--shadow-color);
+        }
+
+        .map-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .map-info {
+            padding: 2rem;
+        }
+
+        .map-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .map-type {
+            background: var(--gradient-primary);
+            color: var(--secondary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .map-description {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .map-features h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .map-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .map-features li {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .map-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .map-strategy {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .map-strategy h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .map-strategy p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .strategy-section {
+            background: var(--bg-color);
+            padding: 4rem 0;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .strategy-card {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .strategy-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .strategy-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .strategy-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .tips-section {
+            background: var(--secondary-color);
+            padding: 4rem 0;
+        }
+
+        .tips-list {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .tip-item {
+            background: var(--secondary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-item:hover {
+            transform: translateX(10px);
+        }
+
+        .tip-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .tip-item p {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .map-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .map-hero p {
+                font-size: 1.1rem;
+            }
+
+            .map-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li class="dropdown">
+                        <a href="/guides">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/map" class="active">Map</a></li>
+                            <li><a href="/weapons">Weapons</a></li>
+                            <li><a href="/awakeners">Awakeners</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <button class="close-menu">&times;</button>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/media">Media</a></li>
+                <li><a href="/guides">Guides</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/weapons">Weapons</a></li>
+                <li><a href="/awakeners">Awakeners</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Map Hero -->
+        <section class="map-hero">
+            <div class="container">
+                <h1>MAP</h1>
+                <p>Master the diverse battlefields of Fate Trigger. Learn about strategic locations, tactical advantages, and combat strategies for each map to dominate your opponents.</p>
+            </div>
+        </section>
+
+        <!-- Map Introduction -->
+        <section class="map-content">
+            <div class="container">
+                <div class="map-intro">
+                    <h2>Battlefield Mastery in Fate Trigger</h2>
+                    <p>Fate Trigger features a diverse range of battlefields, each offering unique tactical opportunities and challenges. From urban environments to alien landscapes, mastering these maps is crucial for success in competitive mecha combat. Understanding map layouts, strategic positions, and environmental advantages will give you the edge in Fate Trigger battles.</p>
+                </div>
+
+                <!-- Map Grid -->
+                <div class="map-grid">
+                    <div class="map-card">
+                        <img src="page_content2/jpg/map_bgallocationcenter.dc7jaei5.jpg" alt="Helix Arena Map" class="map-image">
+                        <div class="map-info">
+                            <div class="map-type">Primary Battlefield</div>
+                            <h3 class="map-name">Helix Arena</h3>
+                            <p class="map-description">The iconic central battlefield of Fate Trigger, Helix Arena features a unique spiral design with multiple elevation levels. This map is perfect for testing your mecha combat skills and strategic positioning in Fate Trigger.</p>
+                            
+                            <div class="map-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Multi-level spiral architecture</li>
+                                    <li>Central control point</li>
+                                    <li>Elevated sniper positions</li>
+                                    <li>Multiple flanking routes</li>
+                                    <li>Dynamic cover systems</li>
+                                </ul>
+                            </div>
+
+                            <div class="map-strategy">
+                                <h4>Strategic Tips</h4>
+                                <p>Control the central high ground to dominate Helix Arena. Use the spiral design to your advantage by maintaining elevation and controlling sight lines. The multiple levels allow for creative flanking maneuvers in Fate Trigger combat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <img src="page_content2/png/map_bg.cotikl00.png" alt="Urban Warfare Map" class="map-image">
+                        <div class="map-info">
+                            <div class="map-type">Urban Combat</div>
+                            <h3 class="map-name">Neo-Tokyo District</h3>
+                            <p class="map-description">Experience intense urban warfare in this futuristic cityscape. Neo-Tokyo District offers close-quarters combat opportunities with plenty of vertical gameplay elements perfect for Fate Trigger's fast-paced action.</p>
+                            
+                            <div class="map-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Dense urban environment</li>
+                                    <li>Destructible buildings</li>
+                                    <li>Underground tunnels</li>
+                                    <li>Rooftop combat areas</li>
+                                    <li>Multiple spawn points</li>
+                                </ul>
+                            </div>
+
+                            <div class="map-strategy">
+                                <h4>Strategic Tips</h4>
+                                <p>Utilize the verticality of buildings for tactical advantages. The underground tunnels provide excellent flanking routes, while rooftops offer superior positioning for ranged combat in Fate Trigger.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <img src="page_content2/png/role_x.chdtsq7z.png" alt="Industrial Complex Map" class="map-image">
+                        <div class="map-info">
+                            <div class="map-type">Industrial Zone</div>
+                            <h3 class="map-name">Foundry Complex</h3>
+                            <p class="map-description">Battle through massive industrial facilities with hazardous environments and unique mechanical obstacles. Foundry Complex challenges players with environmental hazards while providing strategic advantages for those who master the terrain.</p>
+                            
+                            <div class="map-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Industrial machinery</li>
+                                    <li>Hazardous zones</li>
+                                    <li>Conveyor belt systems</li>
+                                    <li>High-temperature areas</li>
+                                    <li>Mechanical obstacles</li>
+                                </ul>
+                            </div>
+
+                            <div class="map-strategy">
+                                <h4>Strategic Tips</h4>
+                                <p>Learn to use industrial machinery as cover and leverage environmental hazards against opponents. The conveyor systems can be used for rapid repositioning during Fate Trigger battles.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <img src="page_content2/png/role_sewy.3ubeni5j.png" alt="Alien World Map" class="map-image">
+                        <div class="map-info">
+                            <div class="map-type">Alien Environment</div>
+                            <h3 class="map-name">Xenon Prime</h3>
+                            <p class="map-description">Explore an alien world with unique gravity mechanics and exotic terrain. Xenon Prime offers a completely different combat experience with low-gravity zones and alien technology that affects Fate Trigger gameplay.</p>
+                            
+                            <div class="map-features">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Low-gravity zones</li>
+                                    <li>Alien crystal formations</li>
+                                    <li>Exotic energy fields</li>
+                                    <li>Floating platforms</li>
+                                    <li>Unique physics</li>
+                                </ul>
+                            </div>
+
+                            <div class="map-strategy">
+                                <h4>Strategic Tips</h4>
+                                <p>Adapt your combat style to the low-gravity environment. Use floating platforms for aerial combat and leverage alien crystal formations for cover. The unique physics create new tactical opportunities in Fate Trigger.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Section -->
+        <section class="strategy-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Combat Strategies for Fate Trigger Maps</h2>
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <div class="strategy-icon">🎯</div>
+                        <h3>Positioning Mastery</h3>
+                        <p>Learn to control key positions on each map. High ground, choke points, and control zones are crucial for success in Fate Trigger battles. Master map awareness to predict enemy movements and secure tactical advantages.</p>
+                    </div>
+                    
+                    <div class="strategy-card">
+                        <div class="strategy-icon">🔄</div>
+                        <h3>Adaptive Tactics</h3>
+                        <p>Each Fate Trigger map requires different approaches. Adapt your Striker loadout and combat style to match the map's characteristics. Urban maps favor close combat, while open areas benefit from ranged strategies.</p>
+                    </div>
+                    
+                    <div class="strategy-card">
+                        <div class="strategy-icon">👥</div>
+                        <h3>Team Coordination</h3>
+                        <p>Coordinate with teammates to control map objectives effectively. Communication and role assignment are essential for dominating Fate Trigger's diverse battlefields. Work together to secure strategic positions.</p>
+                    </div>
+                    
+                    <div class="strategy-card">
+                        <div class="strategy-icon">⚡</div>
+                        <h3>Environmental Awareness</h3>
+                        <p>Use environmental features to your advantage. Destructible cover, hazardous zones, and unique map mechanics can turn the tide of Fate Trigger battles. Learn to leverage every element of the battlefield.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Advanced Map Tips for Fate Trigger</h2>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <h4>Map Knowledge is Power</h4>
+                        <p>Spend time exploring each map in Fate Trigger to learn spawn points, objective locations, and optimal routes. Knowledge of map layouts gives you significant advantages in combat situations.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Control the Center</h4>
+                        <p>Most Fate Trigger maps have central control points that offer strategic advantages. Controlling these areas often leads to victory, but be prepared for concentrated enemy resistance.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Use Verticality</h4>
+                        <p>Many Fate Trigger maps feature multiple elevation levels. Master vertical movement and positioning to gain superior angles and avoid enemy fire while maintaining offensive capabilities.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Flanking Routes</h4>
+                        <p>Learn alternative routes on each map to flank enemies effectively. Surprise attacks from unexpected directions can quickly turn the tide of Fate Trigger battles in your favor.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Environmental Hazards</h4>
+                        <p>Be aware of environmental dangers on each map. Some areas may have radiation, extreme temperatures, or other hazards that can affect your Striker's performance in Fate Trigger.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>Objective Prioritization</h4>
+                        <p>Understand which objectives are most important on each map. Some locations may offer better strategic value than others in different game modes of Fate Trigger.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <p>Master the battlefields of Fate Trigger with our comprehensive map guide. Learn strategic positioning and combat tactics.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/map">Map</a></li>
+                        <li><a href="/weapons">Weapons</a></li>
+                        <li><a href="/awakeners">Awakeners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/fatetrigger" target="_blank" rel="noopener">Discord</a></li>
+                        <li><a href="https://twitter.com/fatetrigger" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="https://www.youtube.com/fatetrigger" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://www.twitch.tv/fatetrigger" target="_blank" rel="noopener">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Fate Trigger. All rights reserved. | Master Fate Trigger maps and dominate the battlefield.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 90, 160, 0.98)';
+            } else {
+                header.style.background = 'rgba(44, 90, 160, 0.95)';
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.map-card, .strategy-card, .tip-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate Trigger News - Latest Updates & Announcements</title>
+    <meta name="description" content="Stay updated with the latest Fate Trigger news, announcements, events, and updates. Get the newest information about mecha battles, game updates, and community events in Fate Trigger.">
+    <meta name="keywords" content="fate trigger news, fate trigger updates, fate trigger announcements, fate trigger events, mecha game news, fate trigger latest info">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fate-trigger.com/news">
+    <meta property="og:title" content="Fate Trigger News - Latest Updates & Announcements">
+    <meta property="og:description" content="Stay updated with the latest Fate Trigger news, announcements, events, and updates.">
+    <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="apple-touch-icon" href="static/logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/base.css?v=1.0.0">
+    
+    <style>
+        .news-hero {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
+                        url('page_content2/jpg/map_bgallocationcenter.dc7jaei5.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--secondary-color);
+            padding: 150px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .news-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 800;
+        }
+
+        .news-hero p {
+            font-size: 1.3rem;
+            color: var(--light-accent);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .news-content {
+            padding: 4rem 0;
+            background: var(--secondary-color);
+        }
+
+        .news-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .news-tab {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .news-tab.active,
+        .news-tab:hover {
+            background: var(--accent-color);
+            color: var(--secondary-color);
+        }
+
+        .news-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .news-item {
+            background: var(--secondary-color);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+
+        .news-item-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .news-category {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--secondary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .news-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .news-date {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .news-item-content {
+            padding: 1rem 2rem 2rem;
+        }
+
+        .news-excerpt {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .read-more-btn {
+            background: var(--gradient-primary);
+            color: var(--secondary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .read-more-btn:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-2px);
+        }
+
+        .featured-news {
+            background: var(--bg-color);
+            padding: 4rem 0;
+        }
+
+        .featured-item {
+            background: var(--secondary-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 2rem;
+        }
+
+        .featured-category {
+            background: var(--gradient-secondary);
+            color: var(--secondary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .featured-excerpt {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            gap: 1rem;
+        }
+
+        .pagination button {
+            background: var(--secondary-color);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .pagination button:hover,
+        .pagination button.active {
+            background: var(--accent-color);
+            color: var(--secondary-color);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .news-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .news-hero p {
+                font-size: 1.1rem;
+            }
+
+            .news-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .news-tab {
+                width: 200px;
+                text-align: center;
+            }
+
+            .news-item-header,
+            .news-item-content {
+                padding: 1.5rem;
+            }
+
+            .featured-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news" class="active">News</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li class="dropdown">
+                        <a href="/guides">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/map">Map</a></li>
+                            <li><a href="/weapons">Weapons</a></li>
+                            <li><a href="/awakeners">Awakeners</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-menu">
+            <button class="close-menu">&times;</button>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/media">Media</a></li>
+                <li><a href="/guides">Guides</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/weapons">Weapons</a></li>
+                <li><a href="/awakeners">Awakeners</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- News Hero -->
+        <section class="news-hero">
+            <div class="container">
+                <h1>LATEST INFO</h1>
+                <p>Stay updated with the latest Fate Trigger news, announcements, events, and game updates. Get exclusive insights into the world of mecha combat and strategic battles.</p>
+            </div>
+        </section>
+
+        <!-- Featured News -->
+        <section class="featured-news">
+            <div class="container">
+                <h2 class="text-center mb-4">Featured News</h2>
+                <div class="featured-item">
+                    <img src="page_content2/static_grwebsite.fatetrigger.com/web/1757499007290_.png" alt="Fate Trigger CBT Fan Art Contest Winner Announcement" class="featured-image">
+                    <div class="featured-content">
+                        <span class="featured-category">Latest</span>
+                        <h3 class="featured-title">Fate Trigger CBT Fan Art Contest Winner Announcement</h3>
+                        <p class="featured-excerpt">We're excited to announce the winners of our Fate Trigger Closed Beta Test Fan Art Contest! After receiving hundreds of incredible submissions from talented artists worldwide, our judges have selected the most outstanding pieces that capture the essence of mecha combat and strategic warfare in Fate Trigger.</p>
+                        <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Content -->
+        <section class="news-content">
+            <div class="container">
+                <!-- News Tabs -->
+                <div class="news-tabs">
+                    <button class="news-tab active" data-category="latest">Latest</button>
+                    <button class="news-tab" data-category="notice">Notice</button>
+                    <button class="news-tab" data-category="news">News</button>
+                    <button class="news-tab" data-category="security">Security</button>
+                    <button class="news-tab" data-category="event">Event</button>
+                </div>
+
+                <!-- News List -->
+                <div class="news-list">
+                    <!-- Latest News Items -->
+                    <div class="news-item" data-category="latest">
+                        <div class="news-item-header">
+                            <span class="news-category">Latest</span>
+                            <h3 class="news-title">Fate Trigger CBT Fan Art Contest Winner Announcement</h3>
+                            <p class="news-date">2025-09-10</p>
+                        </div>
+                        <div class="news-item-content">
+                            <img src="page_content2/static_grwebsite.fatetrigger.com/web/1757499007290_.png" alt="Fan Art Contest Winners" class="news-image">
+                            <p class="news-excerpt">We're excited to announce the winners of our Fate Trigger Closed Beta Test Fan Art Contest! After receiving hundreds of incredible submissions from talented artists worldwide, our judges have selected the most outstanding pieces that capture the essence of mecha combat and strategic warfare in Fate Trigger.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="latest">
+                        <div class="news-item-header">
+                            <span class="news-category">Latest</span>
+                            <h3 class="news-title">Fate Trigger Closed Beta Has Ended</h3>
+                            <p class="news-date">2025-08-26</p>
+                        </div>
+                        <div class="news-item-content">
+                            <img src="page_content2/static_grwebsite.fatetrigger.com/web/1756174170893_.png" alt="Closed Beta Ended" class="news-image">
+                            <p class="news-excerpt">The Fate Trigger Closed Beta Test has officially concluded! We want to thank all participants for their valuable feedback and dedication to testing our mecha combat systems. The data collected will help us improve the game before the official release.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="latest">
+                        <div class="news-item-header">
+                            <span class="news-category">Latest</span>
+                            <h3 class="news-title">Fate Trigger CBT Violation and Penalty Review</h3>
+                            <p class="news-date">2025-09-12</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">We're conducting a comprehensive review of all violations and penalties during the Fate Trigger Closed Beta Test. Our team is working to ensure fair play and maintain the integrity of competitive mecha battles for all players.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="notice">
+                        <div class="news-item-header">
+                            <span class="news-category">Notice</span>
+                            <h3 class="news-title">Fate Trigger Violation and Penalty Announcement - 003</h3>
+                            <p class="news-date">2025-08-18</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">Important notice regarding violations and penalties in Fate Trigger. We're committed to maintaining a fair and competitive environment for all players engaging in mecha combat and strategic battles.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="latest">
+                        <div class="news-item-header">
+                            <span class="news-category">Latest</span>
+                            <h3 class="news-title">Fate Trigger CBT - The EU Server Is Now On!</h3>
+                            <p class="news-date">2025-08-15</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">Great news for European players! The EU server for Fate Trigger Closed Beta Test is now live. Experience smooth mecha combat with reduced latency and improved connection stability for European players.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="news">
+                        <div class="news-item-header">
+                            <span class="news-category">News</span>
+                            <h3 class="news-title">Patch Update for August 14 - Fate Trigger CBT</h3>
+                            <p class="news-date">2025-08-14</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">Latest patch update for Fate Trigger includes balance improvements for Striker abilities, bug fixes for mecha customization system, and enhanced visual effects for combat sequences.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="notice">
+                        <div class="news-item-header">
+                            <span class="news-category">Notice</span>
+                            <h3 class="news-title">Fate Trigger Violation and Penalty Announcement - 002</h3>
+                            <p class="news-date">2025-08-11</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">Continued enforcement of fair play policies in Fate Trigger. We're monitoring all competitive matches and taking action against any violations of our terms of service.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="event">
+                        <div class="news-item-header">
+                            <span class="news-category">Event</span>
+                            <h3 class="news-title">Fate Trigger Community Tournament Registration Open</h3>
+                            <p class="news-date">2025-08-08</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">Registration is now open for the first official Fate Trigger Community Tournament! Compete with other mecha pilots for exclusive rewards and recognition in the Fate Trigger competitive scene.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="security">
+                        <div class="news-item-header">
+                            <span class="news-category">Security</span>
+                            <h3 class="news-title">Fate Trigger Account Security Update</h3>
+                            <p class="news-date">2025-08-05</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">Important security update for all Fate Trigger accounts. We've implemented additional security measures to protect player accounts and ensure safe mecha combat experiences.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="news">
+                        <div class="news-item-header">
+                            <span class="news-category">News</span>
+                            <h3 class="news-title">New Striker Revealed: Thunderbolt Series</h3>
+                            <p class="news-date">2025-08-01</p>
+                        </div>
+                        <div class="news-item-content">
+                            <p class="news-excerpt">Meet the latest addition to the Fate Trigger mecha arsenal - the Thunderbolt Series Strikers! These high-speed combat units specialize in hit-and-run tactics and rapid battlefield positioning.</p>
+                            <a href="#" class="read-more-btn" target="_blank">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button disabled>Previous</button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <p>Stay updated with the latest Fate Trigger news and announcements. Experience the ultimate mecha combat in Fate Trigger.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/media">Media</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/map">Map</a></li>
+                        <li><a href="/weapons">Weapons</a></li>
+                        <li><a href="/awakeners">Awakeners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/fatetrigger" target="_blank" rel="noopener">Discord</a></li>
+                        <li><a href="https://twitter.com/fatetrigger" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="https://www.youtube.com/fatetrigger" target="_blank" rel="noopener">YouTube</a></li>
+                        <li><a href="https://www.twitch.tv/fatetrigger" target="_blank" rel="noopener">Twitch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Fate Trigger. All rights reserved. | Stay updated with Fate Trigger news and experience epic mecha battles.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // News Tab Filtering
+        document.querySelectorAll('.news-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.news-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                const category = tab.dataset.category;
+                const newsItems = document.querySelectorAll('.news-item');
+                
+                newsItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeInUp 0.5s ease forwards';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+
+        // Pagination
+        document.querySelectorAll('.pagination button').forEach(button => {
+            button.addEventListener('click', () => {
+                if (!button.disabled) {
+                    document.querySelectorAll('.pagination button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+                    // Here you would implement actual pagination logic
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 90, 160, 0.98)';
+            } else {
+                header.style.background = 'rgba(44, 90, 160, 0.95)';
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.news-item, .featured-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
