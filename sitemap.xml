@@ -17,11 +17,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fate-trigger.com/guides</loc>
-        <lastmod>2025-11-03</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://fate-trigger.com/map</loc>
         <lastmod>2025-11-03</lastmod>
         <priority>0.8</priority>
@@ -35,16 +30,5 @@
         <loc>https://fate-trigger.com/awakeners</loc>
         <lastmod>2025-11-03</lastmod>
         <priority>0.8</priority>
-    </url>
-    <!-- Legal Pages -->
-    <url>
-        <loc>https://fate-trigger.com/privacy-policy</loc>
-        <lastmod>2025-11-03</lastmod>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://fate-trigger.com/terms-of-service</loc>
-        <lastmod>2025-11-03</lastmod>
-        <priority>0.5</priority>
     </url>
 </urlset> 
