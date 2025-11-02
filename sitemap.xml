@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Main Navigation URLs -->
     <url>
-        <loc>https://dune-awakening.com/</loc>
-        <lastmod>2025-02-23</lastmod>
+        <loc>https://fate-trigger.com/</loc>
+        <lastmod>2025-11-03</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://dune-awakening.com/news</loc>
-        <lastmod>2025-02-23</lastmod>
+        <loc>https://fate-trigger.com/news</loc>
+        <lastmod>2025-11-03</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://dune-awakening.com/media</loc>
-        <lastmod>2025-02-23</lastmod>
+        <loc>https://fate-trigger.com/media</loc>
+        <lastmod>2025-11-03</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://dune-awakening.com/product</loc>
-        <lastmod>2025-02-23</lastmod>
+        <loc>https://fate-trigger.com/guides</loc>
+        <lastmod>2025-11-03</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://dune-awakening.com/character</loc>
-        <lastmod>2025-02-23</lastmod>
+        <loc>https://fate-trigger.com/map</loc>
+        <lastmod>2025-11-03</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fate-trigger.com/weapons</loc>
+        <lastmod>2025-11-03</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fate-trigger.com/awakeners</loc>
+        <lastmod>2025-11-03</lastmod>
         <priority>0.8</priority>
     </url>
     <!-- Legal Pages -->
     <url>
-        <loc>https://dune-awakening.com/privacy-policy</loc>
-        <lastmod>2025-02-23</lastmod>
+        <loc>https://fate-trigger.com/privacy-policy</loc>
+        <lastmod>2025-11-03</lastmod>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://dune-awakening.com/terms-of-service</loc>
-        <lastmod>2025-02-23</lastmod>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://dune-awakening.com/news/beta-weekend</loc>
-        <lastmod>2025-05-11</lastmod>
-        <priority>0.5</priority>
-    </url>
-        <url>
-        <loc>https://dune-awakening.com/news/steel</loc>
-        <lastmod>2025-05-11</lastmod>
+        <loc>https://fate-trigger.com/terms-of-service</loc>
+        <lastmod>2025-11-03</lastmod>
         <priority>0.5</priority>
     </url>
 </urlset> 

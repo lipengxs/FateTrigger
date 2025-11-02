@@ -14,6 +14,12 @@
     <meta property="og:description" content="Master Fate Trigger's weapon systems with our comprehensive weapons guide and tactical tips.">
     <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
     
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fate Trigger Weapons Guide - Striker Arsenal & Combat Systems">
+    <meta name="twitter:description" content="Master Fate Trigger's weapon systems with our comprehensive weapons guide and tactical tips.">
+    <meta name="twitter:image" content="https://fate-trigger.com/static/logo.png">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="apple-touch-icon" href="static/logo.png">
@@ -21,10 +27,28 @@
     <!-- Styles -->
     <link rel="stylesheet" href="static/base.css?v=1.0.0">
     
+    <!-- Microsoft Validation -->
+    <meta name="msvalidate.01" content="B362957FC36C5EDDD6079B6D78330424">
+    
+    <!-- IndexNow -->
+    <meta name="yandex-verification" content="ee9f27884397bc6d" />
+    <meta name="IndexNow-Key" content="B362957FC36C5EDDD6079B6D78330424">
+    <meta name="IndexNow-Url" content="https://fate-trigger.com/weapons">
+    
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDFZLSQVMZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CDFZLSQVMZ');
+    </script>
+    
     <style>
         .weapons-hero {
-            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
-                        url('page_content2/png/weapon_video_bg.cmey_mhb.png');
+            background: linear-gradient(135deg, rgba(10, 26, 46, 0.95), rgba(22, 33, 62, 0.90)), 
+                        url('static/images/maps/map-bgAllocationCenter.DC7jaEI5.jpg');
             background-size: cover;
             background-position: center;
             color: var(--secondary-color);
@@ -49,7 +73,8 @@
 
         .weapons-content {
             padding: 4rem 0;
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 60, 80, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent);
         }
 
         .weapons-intro {
@@ -61,7 +86,7 @@
         }
 
         .weapons-intro h2 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1.5rem;
         }
 
@@ -106,17 +131,18 @@
         }
 
         .weapon-card {
-            background: var(--secondary-color);
+            background: rgba(22, 33, 62, 0.9);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 40px var(--shadow-color);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .weapon-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 60px var(--shadow-color);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 212, 255, 0.3);
+            border-color: rgba(0, 212, 255, 0.6);
         }
 
         .weapon-image {
@@ -132,21 +158,38 @@
 
         .weapon-name {
             font-size: 1.8rem;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .weapon-manufacturer {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #ffffff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
         }
 
         .weapon-type {
-            background: var(--gradient-primary);
-            color: var(--secondary-color);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #ffffff;
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             display: inline-block;
             margin-bottom: 1rem;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .weapon-stats {
@@ -172,8 +215,9 @@
 
         .stat-value {
             font-size: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 600;
+            color: #00d4ff;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
         .weapon-description {
@@ -187,10 +231,11 @@
         }
 
         .weapon-features h4 {
-            color: var(--accent-color);
+            color: #00ffff;
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .weapon-features ul {
@@ -214,7 +259,8 @@
         }
 
         .loadout-section {
-            background: var(--bg-color);
+            background: linear-gradient(135deg, rgba(20, 40, 60, 0.6), rgba(40, 70, 90, 0.4)),
+                        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -248,7 +294,7 @@
         }
 
         .loadout-card h3 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -259,7 +305,8 @@
         }
 
         .tips-section {
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 50, 70, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -283,7 +330,7 @@
         }
 
         .tip-item h4 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -333,6 +380,7 @@
             <nav>
                 <div class="logo">
                     <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <span class="logo-text">FATE TRIGGER</span>
                 </div>
                 <button class="mobile-menu-btn">
                     <span></span>
@@ -343,14 +391,9 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/news">News</a></li>
                     <li><a href="/media">Media</a></li>
-                    <li class="dropdown">
-                        <a href="/guides">Guides</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/map">Map</a></li>
-                            <li><a href="/weapons" class="active">Weapons</a></li>
-                            <li><a href="/awakeners">Awakeners</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/map">Map</a></li>
+                    <li><a href="/weapons" class="active">Weapons</a></li>
+                    <li><a href="/awakeners">Awakeners</a></li>
                 </ul>
             </nav>
         </div>
@@ -360,7 +403,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/news">News</a></li>
                 <li><a href="/media">Media</a></li>
-                <li><a href="/guides">Guides</a></li>
                 <li><a href="/map">Map</a></li>
                 <li><a href="/weapons">Weapons</a></li>
                 <li><a href="/awakeners">Awakeners</a></li>
@@ -396,229 +438,345 @@
 
                 <!-- Weapons Grid -->
                 <div class="weapons-grid">
-                    <div class="weapon-card" data-category="energy">
-                        <img src="page_content2/png/pulsarsmg.gqyyktyi.png" alt="Pulsar Energy Rifle" class="weapon-image">
+                    <!-- C&L INDUSTRIES -->
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="cl">
+                        <img src="static/images/weapons/cl_4ar.cfrjp7ra.png" alt="CL-4 AR" class="weapon-image">
                         <div class="weapon-info">
-                            <div class="weapon-type">Energy Weapon</div>
-                            <h3 class="weapon-name">Pulsar Energy Rifle</h3>
-                            <div class="weapon-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Damage</div>
-                                    <div class="stat-value">85</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Range</div>
-                                    <div class="stat-value">Long</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Fire Rate</div>
-                                    <div class="stat-value">Medium</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Accuracy</div>
-                                    <div class="stat-value">High</div>
-                                </div>
-                            </div>
-                            <p class="weapon-description">The Pulsar Energy Rifle is a versatile energy weapon perfect for medium to long-range engagements in Fate Trigger. Its consistent damage output and high accuracy make it ideal for precision strikes against enemy Strikers.</p>
-                            
-                            <div class="weapon-features">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>High accuracy and stability</li>
-                                    <li>No ammunition requirements</li>
-                                    <li>Energy-efficient design</li>
-                                    <li>Effective against shields</li>
-                                    <li>Low recoil pattern</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="weapon-card" data-category="ballistic">
-                        <img src="page_content2/png/jacksonsmg.bofg7_hw.png" alt="Jackson Ballistic SMG" class="weapon-image">
-                        <div class="weapon-info">
-                            <div class="weapon-type">Ballistic Weapon</div>
-                            <h3 class="weapon-name">Jackson Ballistic SMG</h3>
-                            <div class="weapon-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Damage</div>
-                                    <div class="stat-value">65</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Range</div>
-                                    <div class="stat-value">Medium</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Fire Rate</div>
-                                    <div class="stat-value">High</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Accuracy</div>
-                                    <div class="stat-value">Medium</div>
-                                </div>
-                            </div>
-                            <p class="weapon-description">The Jackson Ballistic SMG excels in close to medium-range combat scenarios in Fate Trigger. Its high fire rate and mobility make it perfect for aggressive playstyles and flanking maneuvers.</p>
-                            
-                            <div class="weapon-features">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>High rate of fire</li>
-                                    <li>Excellent mobility</li>
-                                    <li>Quick reload times</li>
-                                    <li>Good for close combat</li>
-                                    <li>Moderate ammunition capacity</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="weapon-card" data-category="explosive">
-                        <img src="page_content2/png/planetcrackergl.cdhmetyx.png" alt="Planet Cracker Grenade Launcher" class="weapon-image">
-                        <div class="weapon-info">
-                            <div class="weapon-type">Explosive Weapon</div>
-                            <h3 class="weapon-name">Planet Cracker Grenade Launcher</h3>
-                            <div class="weapon-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Damage</div>
-                                    <div class="stat-value">150</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Range</div>
-                                    <div class="stat-value">Long</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Fire Rate</div>
-                                    <div class="stat-value">Low</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Area Damage</div>
-                                    <div class="stat-value">High</div>
-                                </div>
-                            </div>
-                            <p class="weapon-description">The Planet Cracker Grenade Launcher delivers devastating area-of-effect damage in Fate Trigger. Perfect for clearing enemy positions and dealing massive damage to multiple targets simultaneously.</p>
-                            
-                            <div class="weapon-features">
-                                <h4>Key Features</h4>
-                                <ul>
-                                    <li>Massive area damage</li>
-                                    <li>Can destroy cover</li>
-                                    <li>Effective against groups</li>
-                                    <li>Long-range capability</li>
-                                    <li>High impact force</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="weapon-card" data-category="melee">
-                        <img src="page_content2/png/gladiatorar.dbiky8zo.png" alt="Gladiator Assault Rifle" class="weapon-image">
-                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">C&L INDUSTRIES</div>
                             <div class="weapon-type">Assault Rifle</div>
-                            <h3 class="weapon-name">Gladiator Assault Rifle</h3>
-                            <div class="weapon-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Damage</div>
-                                    <div class="stat-value">75</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Range</div>
-                                    <div class="stat-value">Medium</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Fire Rate</div>
-                                    <div class="stat-value">Medium</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Versatility</div>
-                                    <div class="stat-value">High</div>
-                                </div>
-                            </div>
-                            <p class="weapon-description">The Gladiator Assault Rifle is a well-balanced weapon system in Fate Trigger, offering reliable performance across various combat situations. Its versatility makes it a popular choice for many pilots.</p>
+                            <h3 class="weapon-name">CL-4 AR</h3>
+                            <p class="weapon-description">Versatile and easy to handle, with an excellent set of attachments and outstanding mid-range performance.</p>
                             
                             <div class="weapon-features">
-                                <h4>Key Features</h4>
+                                <h4>Key Attributes</h4>
                                 <ul>
-                                    <li>Balanced performance</li>
-                                    <li>Good damage output</li>
-                                    <li>Reliable accuracy</li>
-                                    <li>Moderate recoil</li>
-                                    <li>Versatile combat role</li>
+                                    <li>Firepower: Balanced</li>
+                                    <li>Stability: High</li>
+                                    <li>Range: Medium</li>
+                                    <li>Mobility: Excellent</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="weapon-card" data-category="energy">
-                        <img src="page_content2/png/peregrinesmg.czpy_43s.png" alt="Peregrine Energy SMG" class="weapon-image">
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="cl">
+                        <img src="static/images/weapons/clrafalear.biszb2if.png" alt="CL Rafale AR" class="weapon-image">
                         <div class="weapon-info">
-                            <div class="weapon-type">Energy SMG</div>
-                            <h3 class="weapon-name">Peregrine Energy SMG</h3>
-                            <div class="weapon-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Damage</div>
-                                    <div class="stat-value">70</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Range</div>
-                                    <div class="stat-value">Short</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Fire Rate</div>
-                                    <div class="stat-value">Very High</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Mobility</div>
-                                    <div class="stat-value">High</div>
-                                </div>
-                            </div>
-                            <p class="weapon-description">The Peregrine Energy SMG combines high mobility with rapid-fire energy projectiles in Fate Trigger. Perfect for hit-and-run tactics and close-quarters combat scenarios.</p>
+                            <div class="weapon-manufacturer">C&L INDUSTRIES</div>
+                            <div class="weapon-type">Assault Rifle</div>
+                            <h3 class="weapon-name">CL Rafale AR</h3>
+                            <p class="weapon-description">3-round-burst grants versatility and tactical value at all ranges.</p>
                             
                             <div class="weapon-features">
-                                <h4>Key Features</h4>
+                                <h4>Key Attributes</h4>
                                 <ul>
-                                    <li>Extremely high fire rate</li>
-                                    <li>Excellent mobility</li>
-                                    <li>Energy-based projectiles</li>
-                                    <li>Quick target acquisition</li>
-                                    <li>Low energy consumption</li>
+                                    <li>Burst fire mode</li>
+                                    <li>Versatile range</li>
+                                    <li>High tactical value</li>
+                                    <li>Controlled recoil</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="weapon-card" data-category="explosive">
-                        <img src="page_content2/png/tempestlmg.qlx6zr9f.png" alt="Tempest Light Machine Gun" class="weapon-image">
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="cl">
+                        <img src="static/images/weapons/cl_24sr.dnfakcwr.png" alt="CL-24 SR" class="weapon-image">
                         <div class="weapon-info">
-                            <div class="weapon-type">Light Machine Gun</div>
-                            <h3 class="weapon-name">Tempest Light Machine Gun</h3>
-                            <div class="weapon-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Damage</div>
-                                    <div class="stat-value">90</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Range</div>
-                                    <div class="stat-value">Long</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Fire Rate</div>
-                                    <div class="stat-value">Medium</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Sustained Fire</div>
-                                    <div class="stat-value">High</div>
-                                </div>
-                            </div>
-                            <p class="weapon-description">The Tempest Light Machine Gun provides sustained firepower for extended engagements in Fate Trigger. Its high damage output and large ammunition capacity make it ideal for defensive positions.</p>
+                            <div class="weapon-manufacturer">C&L INDUSTRIES</div>
+                            <div class="weapon-type">Sniper Rifle</div>
+                            <h3 class="weapon-name">CL-24 SR</h3>
+                            <p class="weapon-description">High single-target damage, perfect for long-range combat. An accurate shooter with a high-powered scope can maximize this weapon's tactical value.</p>
                             
                             <div class="weapon-features">
-                                <h4>Key Features</h4>
+                                <h4>Key Attributes</h4>
                                 <ul>
                                     <li>High damage per shot</li>
-                                    <li>Large ammunition capacity</li>
-                                    <li>Excellent for suppression</li>
-                                    <li>Long-range effectiveness</li>
-                                    <li>Sustained fire capability</li>
+                                    <li>Long-range precision</li>
+                                    <li>Scope compatibility</li>
+                                    <li>Tactical advantage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="cl">
+                        <img src="static/images/weapons/clmonolithlmg.ddbseonx.png" alt="CL Monolith LMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">C&L INDUSTRIES</div>
+                            <div class="weapon-type">Light Machine Gun</div>
+                            <h3 class="weapon-name">CL Monolith LMG</h3>
+                            <p class="weapon-description">Boasting sustained and respectable firepower, this weapon automatically deploys its bipod while its user is prone, effectively mitigating recoil.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Sustained firepower</li>
+                                    <li>Auto-bipod deployment</li>
+                                    <li>Reduced recoil</li>
+                                    <li>Suppressive capability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MOTZ SYSTEMS -->
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="motz">
+                        <img src="static/images/weapons/gladiatorar.dbiky8zo.png" alt="Gladiator AR" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">MOTZ SYSTEMS</div>
+                            <div class="weapon-type">Assault Rifle</div>
+                            <h3 class="weapon-name">Gladiator AR</h3>
+                            <p class="weapon-description">Deals significant damage and excels at mid-range combat. Requires some proficiency to control its relatively high recoil.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>High damage output</li>
+                                    <li>Mid-range specialist</li>
+                                    <li>Moderate recoil</li>
+                                    <li>Skill-based weapon</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="motz">
+                        <img src="static/images/weapons/peregrinesmg.czpy_43s.png" alt="Peregrine SMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">MOTZ SYSTEMS</div>
+                            <div class="weapon-type">Submachine Gun</div>
+                            <h3 class="weapon-name">Peregrine SMG</h3>
+                            <p class="weapon-description">A combination of burst damage and flexibility, with the drawback of a smaller magazine size. A deadly weapon in the hands of skilled Awakeners.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>High burst damage</li>
+                                    <li>Flexible combat style</li>
+                                    <li>Skill-rewarding</li>
+                                    <li>Compact design</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="motz">
+                        <img src="static/images/weapons/pulsarsmg.gqyyktyi.png" alt="Pulsar SMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">MOTZ SYSTEMS</div>
+                            <div class="weapon-type">Submachine Gun</div>
+                            <h3 class="weapon-name">Pulsar SMG</h3>
+                            <p class="weapon-description">Lightweight and nimble, its custom magazine supports a single fast reload, keeping its user in the fight.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Lightweight design</li>
+                                    <li>Fast reload capability</li>
+                                    <li>High mobility</li>
+                                    <li>Sustained combat ready</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="motz">
+                        <img src="static/images/weapons/beastbustersg.cu7_o9yl.png" alt="Beast Buster SG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">MOTZ SYSTEMS</div>
+                            <div class="weapon-type">Shotgun</div>
+                            <h3 class="weapon-name">Beast Buster SG</h3>
+                            <p class="weapon-description">A semi-automatic firing mode provides ample firepower and a very generous margin of error, making it a great choice for short-range combat.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Semi-automatic fire</li>
+                                    <li>High close-range damage</li>
+                                    <li>Forgiving handling</li>
+                                    <li>Short-range specialist</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="motz">
+                        <img src="static/images/weapons/rearguardlmg.d_56uy_v.png" alt="Rearguard LMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">MOTZ SYSTEMS</div>
+                            <div class="weapon-type">Light Machine Gun</div>
+                            <h3 class="weapon-name">Rearguard LMG</h3>
+                            <p class="weapon-description">With low damage falloff at long range and a high ammo capacity, this firearm excels in mid and long-range suppressive fire.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Long-range capability</li>
+                                    <li>High ammo capacity</li>
+                                    <li>Suppressive fire specialist</li>
+                                    <li>Minimal damage falloff</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CORVO ARMAMENTS -->
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="corvo">
+                        <img src="static/images/weapons/jacksonsmg.bofg7_hw.png" alt="Jackson SMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">CORVO ARMAMENTS</div>
+                            <div class="weapon-type">Submachine Gun</div>
+                            <h3 class="weapon-name">Jackson SMG</h3>
+                            <p class="weapon-description">A forgiving firearm thanks to its high ammo capacity. A short-range combat weapon that is easy to use.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>High ammo capacity</li>
+                                    <li>User-friendly</li>
+                                    <li>Short-range optimized</li>
+                                    <li>Forgiving mechanics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="corvo">
+                        <img src="static/images/weapons/catusdmr.bvnoj_14.png" alt="Catus DMR" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">CORVO ARMAMENTS</div>
+                            <div class="weapon-type">Designated Marksman Rifle</div>
+                            <h3 class="weapon-name">Catus DMR</h3>
+                            <p class="weapon-description">This firearm excels in mid to long-range combat thanks to its relatively high bullet velocity and power, but sustained fire will test the shooter's recoil control.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>High bullet velocity</li>
+                                    <li>Long-range power</li>
+                                    <li>Recoil management required</li>
+                                    <li>Precision weapon</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="corvo">
+                        <img src="static/images/weapons/zk_mar.cgeyxohi.png" alt="ZK-M AR" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">CORVO ARMAMENTS</div>
+                            <div class="weapon-type">Assault Rifle</div>
+                            <h3 class="weapon-name">ZK-M AR</h3>
+                            <p class="weapon-description">With high single-shot power, it adapts to various combat scenarios. Skilled users can unleash impressive firepower even without many attachments.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>High single-shot damage</li>
+                                    <li>Versatile scenarios</li>
+                                    <li>Attachment flexibility</li>
+                                    <li>Skill-based potential</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="corvo">
+                        <img src="static/images/weapons/braunsg.bjsuf2po.png" alt="Braun SG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">CORVO ARMAMENTS</div>
+                            <div class="weapon-type">Shotgun</div>
+                            <h3 class="weapon-name">Braun SG</h3>
+                            <p class="weapon-description">A standout in its class for range and power. Requires reloading after each shot, demanding precise control of combat rhythm.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Exceptional range</li>
+                                    <li>High damage per shot</li>
+                                    <li>Single-shot reload</li>
+                                    <li>Rhythm-based combat</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOURCE ARMORY -->
+                    <div class="weapon-card" data-category="energy" data-manufacturer="source">
+                        <img src="static/images/weapons/adjudicatorsr.dlqfxmv4.png" alt="Adjudicator SR" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">SOURCE ARMORY</div>
+                            <div class="weapon-type">Sniper Rifle</div>
+                            <h3 class="weapon-name">Adjudicator SR</h3>
+                            <p class="weapon-description">A Source Weapon, produced by the Oculus Principi. A one-hit-kill to the head at any range, this weapon boasts devastating firepower.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>One-hit headshot kill</li>
+                                    <li>Infinite range</li>
+                                    <li>Devastating firepower</li>
+                                    <li>Source technology</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="source">
+                        <img src="static/images/weapons/perforatorsmg.sy9551hp.png" alt="Perforator SMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">SOURCE ARMORY</div>
+                            <div class="weapon-type">Submachine Gun</div>
+                            <h3 class="weapon-name">Perforator SMG</h3>
+                            <p class="weapon-description">The Perforator SMG offers a stable trajectory and minimal damage falloff, excelling in mid to close-range combat.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Stable trajectory</li>
+                                    <li>Minimal damage falloff</li>
+                                    <li>Mid to close-range</li>
+                                    <li>Consistent performance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="ballistic" data-manufacturer="source">
+                        <img src="static/images/weapons/tempestlmg.qlx6zr9f.png" alt="Tempest LMG" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">SOURCE ARMORY</div>
+                            <div class="weapon-type">Light Machine Gun</div>
+                            <h3 class="weapon-name">Tempest LMG</h3>
+                            <p class="weapon-description">Capable of adjusting the rate of fire to suit various combat scenarios. Requires precise control of firing frequency to prevent barrel overheating.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Adjustable fire rate</li>
+                                    <li>Versatile scenarios</li>
+                                    <li>Overheat management</li>
+                                    <li>Tactical flexibility</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weapon-card" data-category="explosive" data-manufacturer="source">
+                        <img src="static/images/weapons/planetcrackergl.cdhmetyx.png" alt="Planetcracker GL" class="weapon-image">
+                        <div class="weapon-info">
+                            <div class="weapon-manufacturer">SOURCE ARMORY</div>
+                            <div class="weapon-type">Grenade Launcher</div>
+                            <h3 class="weapon-name">Planetcracker GL</h3>
+                            <p class="weapon-description">Fires specially designed grenades that deal area explosion damage. The user will be repelled if caught within the blast radius.</p>
+                            
+                            <div class="weapon-features">
+                                <h4>Key Attributes</h4>
+                                <ul>
+                                    <li>Area explosion damage</li>
+                                    <li>Blast radius warning</li>
+                                    <li>High impact force</li>
+                                    <li>Area denial specialist</li>
                                 </ul>
                             </div>
                         </div>
@@ -702,7 +860,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <div class="logo">
+                        <img src="static/logo.png" alt="Fate Trigger Logo">
+                        <span class="logo-text">FATE TRIGGER</span>
+                    </div>
                     <p>Master the weapon systems of Fate Trigger with our comprehensive guide. Learn tactical loadouts and combat strategies.</p>
                 </div>
                 <div class="footer-links">
@@ -711,7 +872,6 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/media">Media</a></li>
-                        <li><a href="/guides">Guides</a></li>
                         <li><a href="/map">Map</a></li>
                         <li><a href="/weapons">Weapons</a></li>
                         <li><a href="/awakeners">Awakeners</a></li>
@@ -785,9 +945,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 90, 160, 0.98)';
+                header.style.background = 'rgba(10, 26, 46, 0.98)';
             } else {
-                header.style.background = 'rgba(44, 90, 160, 0.95)';
+                header.style.background = 'rgba(10, 26, 46, 0.95)';
             }
         });
 

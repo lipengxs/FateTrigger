@@ -14,6 +14,12 @@
     <meta property="og:description" content="Explore Fate Trigger media gallery featuring stunning screenshots, gameplay videos, and downloadable wallpapers.">
     <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
     
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fate Trigger Media - Screenshots, Videos & Wallpapers">
+    <meta name="twitter:description" content="Explore Fate Trigger media gallery featuring stunning screenshots, gameplay videos, and downloadable wallpapers.">
+    <meta name="twitter:image" content="https://fate-trigger.com/static/logo.png">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="apple-touch-icon" href="static/logo.png">
@@ -21,10 +27,28 @@
     <!-- Styles -->
     <link rel="stylesheet" href="static/base.css?v=1.0.0">
     
+    <!-- Microsoft Validation -->
+    <meta name="msvalidate.01" content="B362957FC36C5EDDD6079B6D78330424">
+    
+    <!-- IndexNow -->
+    <meta name="yandex-verification" content="ee9f27884397bc6d" />
+    <meta name="IndexNow-Key" content="B362957FC36C5EDDD6079B6D78330424">
+    <meta name="IndexNow-Url" content="https://fate-trigger.com/media">
+    
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDFZLSQVMZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CDFZLSQVMZ');
+    </script>
+    
     <style>
         .media-hero {
-            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
-                        url('page_content2/jpg/illuminati_bg.d60uke53.jpg');
+            background: linear-gradient(135deg, rgba(10, 26, 46, 0.95), rgba(22, 33, 62, 0.90)), 
+                        url('static/images/maps/map-bgAllocationCenter.DC7jaEI5.jpg');
             background-size: cover;
             background-position: center;
             color: var(--secondary-color);
@@ -49,7 +73,8 @@
 
         .media-content {
             padding: 4rem 0;
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 60, 80, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent);
         }
 
         .media-tabs {
@@ -117,7 +142,7 @@
 
         .media-title {
             font-size: 1.3rem;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
@@ -134,19 +159,21 @@
         }
 
         .download-btn {
-            background: var(--gradient-primary);
-            color: var(--secondary-color);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #ffffff;
             padding: 0.6rem 1.2rem;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
             font-size: 0.9rem;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
         }
 
         .download-btn:hover {
-            background: var(--gradient-secondary);
+            background: linear-gradient(135deg, #00ffff 0%, #00d4ff 100%);
             transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
         }
 
         .view-btn {
@@ -167,7 +194,8 @@
         }
 
         .video-section {
-            background: var(--bg-color);
+            background: linear-gradient(135deg, rgba(20, 40, 60, 0.6), rgba(40, 70, 90, 0.4)),
+                        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -206,7 +234,8 @@
         }
 
         .wallpaper-section {
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 50, 70, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -248,7 +277,7 @@
 
         .wallpaper-title {
             font-size: 1.1rem;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
@@ -343,6 +372,7 @@
             <nav>
                 <div class="logo">
                     <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <span class="logo-text">FATE TRIGGER</span>
                 </div>
                 <button class="mobile-menu-btn">
                     <span></span>
@@ -353,14 +383,9 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/news">News</a></li>
                     <li><a href="/media" class="active">Media</a></li>
-                    <li class="dropdown">
-                        <a href="/guides">Guides</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/map">Map</a></li>
-                            <li><a href="/weapons">Weapons</a></li>
-                            <li><a href="/awakeners">Awakeners</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/map">Map</a></li>
+                    <li><a href="/weapons">Weapons</a></li>
+                    <li><a href="/awakeners">Awakeners</a></li>
                 </ul>
             </nav>
         </div>
@@ -370,7 +395,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/news">News</a></li>
                 <li><a href="/media">Media</a></li>
-                <li><a href="/guides">Guides</a></li>
                 <li><a href="/map">Map</a></li>
                 <li><a href="/weapons">Weapons</a></li>
                 <li><a href="/awakeners">Awakeners</a></li>
@@ -400,97 +424,97 @@
 
                 <div class="media-grid">
                     <div class="media-item" data-category="combat">
-                        <img src="page_content2/png/role_hxl.c_kmaujq.png" alt="Fate Trigger intense mecha combat scene" class="media-image">
+                        <img src="static/images/media/fate-trigger-16zo9.png" alt="Fate Trigger intense mecha combat scene" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Epic Mecha Combat</h3>
                             <p class="media-description">Experience intense mecha battles in Fate Trigger with stunning visual effects and dynamic combat sequences.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_hxl.c_kmaujq.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_hxl.c_kmaujq.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-16zo9.png" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-16zo9.png')">View Full Size</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="media-item" data-category="strikers">
-                        <img src="page_content2/png/role_kme.kdwhab7o.png" alt="Fate Trigger Striker customization" class="media-image">
+                        <img src="static/images/media/fate-trigger-1a9uj.png" alt="Fate Trigger Striker customization" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Striker Customization</h3>
                             <p class="media-description">Customize your Striker with advanced weaponry and equipment in Fate Trigger's comprehensive mecha customization system.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_kme.kdwhab7o.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_kme.kdwhab7o.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-1a9uj.png" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-1a9uj.png')">View Full Size</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="media-item" data-category="environments">
-                        <img src="page_content2/png/role_ly.xbjzk7vu.png" alt="Fate Trigger futuristic battlefield" class="media-image">
+                        <img src="static/images/media/fate-trigger-1jre0.png" alt="Fate Trigger futuristic battlefield" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Futuristic Battlefield</h3>
                             <p class="media-description">Battle across diverse environments in Fate Trigger, from urban landscapes to alien worlds with unique tactical opportunities.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_ly.xbjzk7vu.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_ly.xbjzk7vu.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-1jre0.png" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-1jre0.png')">View Full Size</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="media-item" data-category="combat">
-                        <img src="page_content2/png/role_md.cdgbxyxk.png" alt="Fate Trigger strategic mecha combat" class="media-image">
+                        <img src="static/images/media/fate-trigger-1sj8o.png" alt="Fate Trigger strategic mecha combat" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Strategic Combat</h3>
                             <p class="media-description">Master tactical positioning and team coordination in Fate Trigger's strategic mecha combat system.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_md.cdgbxyxk.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_md.cdgbxyxk.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-1sj8o.png" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-1sj8o.png')">View Full Size</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="media-item" data-category="environments">
-                        <img src="page_content2/png/role_ml.dfbzpmis.png" alt="Fate Trigger urban combat environment" class="media-image">
+                        <img src="static/images/media/fate-trigger-1sull.jpg" alt="Fate Trigger urban combat environment" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Urban Warfare</h3>
                             <p class="media-description">Engage in intense urban combat in Fate Trigger with destructible environments and dynamic lighting effects.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_ml.dfbzpmis.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_ml.dfbzpmis.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-1sull.jpg" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-1sull.jpg')">View Full Size</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="media-item" data-category="strikers">
-                        <img src="page_content2/png/role_ql.by_aizja.png" alt="Fate Trigger advanced mecha systems" class="media-image">
+                        <img src="static/images/media/fate-trigger-1wn43.jpg" alt="Fate Trigger advanced mecha systems" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Advanced Systems</h3>
                             <p class="media-description">Discover advanced mecha systems and weapon loadouts in Fate Trigger's comprehensive customization interface.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_ql.by_aizja.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_ql.by_aizja.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-1wn43.jpg" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-1wn43.jpg')">View Full Size</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="media-item" data-category="combat">
-                        <img src="page_content2/png/role_sewy.3ubeni5j.png" alt="Fate Trigger multiplayer battle" class="media-image">
+                        <img src="static/images/media/fate-trigger-1xiqw.png" alt="Fate Trigger multiplayer battle" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Multiplayer Battles</h3>
                             <p class="media-description">Coordinate with teammates in epic multiplayer battles across various game modes in Fate Trigger.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_sewy.3ubeni5j.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_sewy.3ubeni5j.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-1xiqw.png" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-1xiqw.png')">View Full Size</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="media-item" data-category="environments">
-                        <img src="page_content2/png/role_x.chdtsq7z.png" alt="Fate Trigger epic mecha showdown" class="media-image">
+                        <img src="static/images/media/fate-trigger-9ygtr.png" alt="Fate Trigger epic mecha showdown" class="media-image">
                         <div class="media-info">
                             <h3 class="media-title">Epic Showdown</h3>
                             <p class="media-description">Witness epic mecha showdowns in Fate Trigger's futuristic battlefields with stunning visual effects and dynamic combat.</p>
                             <div class="media-actions">
-                                <a href="page_content2/png/role_x.chdtsq7z.png" class="download-btn" download>Download</a>
-                                <a href="#" class="view-btn" onclick="openModal('page_content2/png/role_x.chdtsq7z.png')">View Full Size</a>
+                                <a href="static/images/media/fate-trigger-9ygtr.png" class="download-btn" download>Download</a>
+                                <a href="#" class="view-btn" onclick="openModal('static/images/media/fate-trigger-9ygtr.png')">View Full Size</a>
                             </div>
                         </div>
                     </div>
@@ -532,56 +556,56 @@
                 <h2 class="text-center mb-4">Wallpapers</h2>
                 <div class="wallpaper-grid">
                     <div class="wallpaper-item">
-                        <img src="page_content2/png/role_hxl.c_kmaujq.png" alt="Fate Trigger wallpaper 1" class="wallpaper-image">
+                        <img src="static/images/media/fate-trigger-hh4z4.png" alt="Fate Trigger wallpaper 1" class="wallpaper-image">
                         <div class="wallpaper-info">
                             <h3 class="wallpaper-title">Mecha Combat</h3>
                             <p class="wallpaper-resolution">1920x1080</p>
-                            <a href="page_content2/png/role_hxl.c_kmaujq.png" class="download-btn" download>Download</a>
+                            <a href="static/images/media/fate-trigger-hh4z4.png" class="download-btn" download>Download</a>
                         </div>
                     </div>
 
                     <div class="wallpaper-item">
-                        <img src="page_content2/png/role_kme.kdwhab7o.png" alt="Fate Trigger wallpaper 2" class="wallpaper-image">
+                        <img src="static/images/media/fate-trigger-sz30k.png" alt="Fate Trigger wallpaper 2" class="wallpaper-image">
                         <div class="wallpaper-info">
                             <h3 class="wallpaper-title">Striker Design</h3>
                             <p class="wallpaper-resolution">1920x1080</p>
-                            <a href="page_content2/png/role_kme.kdwhab7o.png" class="download-btn" download>Download</a>
+                            <a href="static/images/media/fate-trigger-sz30k.png" class="download-btn" download>Download</a>
                         </div>
                     </div>
 
                     <div class="wallpaper-item">
-                        <img src="page_content2/png/role_ly.xbjzk7vu.png" alt="Fate Trigger wallpaper 3" class="wallpaper-image">
+                        <img src="static/images/media/fate-trigger-video-1l1dn.png" alt="Fate Trigger wallpaper 3" class="wallpaper-image">
                         <div class="wallpaper-info">
                             <h3 class="wallpaper-title">Battlefield Vista</h3>
                             <p class="wallpaper-resolution">1920x1080</p>
-                            <a href="page_content2/png/role_ly.xbjzk7vu.png" class="download-btn" download>Download</a>
+                            <a href="static/images/media/fate-trigger-video-1l1dn.png" class="download-btn" download>Download</a>
                         </div>
                     </div>
 
                     <div class="wallpaper-item">
-                        <img src="page_content2/png/role_md.cdgbxyxk.png" alt="Fate Trigger wallpaper 4" class="wallpaper-image">
+                        <img src="static/images/media/fate-trigger-zqvho.png" alt="Fate Trigger wallpaper 4" class="wallpaper-image">
                         <div class="wallpaper-info">
                             <h3 class="wallpaper-title">Strategic Warfare</h3>
                             <p class="wallpaper-resolution">1920x1080</p>
-                            <a href="page_content2/png/role_md.cdgbxyxk.png" class="download-btn" download>Download</a>
+                            <a href="static/images/media/fate-trigger-zqvho.png" class="download-btn" download>Download</a>
                         </div>
                     </div>
 
                     <div class="wallpaper-item">
-                        <img src="page_content2/png/role_ml.dfbzpmis.png" alt="Fate Trigger wallpaper 5" class="wallpaper-image">
+                        <img src="static/images/media/fate-trigger-16zo9.png" alt="Fate Trigger wallpaper 5" class="wallpaper-image">
                         <div class="wallpaper-info">
                             <h3 class="wallpaper-title">Urban Combat</h3>
                             <p class="wallpaper-resolution">1920x1080</p>
-                            <a href="page_content2/png/role_ml.dfbzpmis.png" class="download-btn" download>Download</a>
+                            <a href="static/images/media/fate-trigger-16zo9.png" class="download-btn" download>Download</a>
                         </div>
                     </div>
 
                     <div class="wallpaper-item">
-                        <img src="page_content2/png/role_ql.by_aizja.png" alt="Fate Trigger wallpaper 6" class="wallpaper-image">
+                        <img src="static/images/media/fate-trigger-1a9uj.png" alt="Fate Trigger wallpaper 6" class="wallpaper-image">
                         <div class="wallpaper-info">
                             <h3 class="wallpaper-title">Advanced Systems</h3>
                             <p class="wallpaper-resolution">1920x1080</p>
-                            <a href="page_content2/png/role_ql.by_aizja.png" class="download-btn" download>Download</a>
+                            <a href="static/images/media/fate-trigger-1a9uj.png" class="download-btn" download>Download</a>
                         </div>
                     </div>
                 </div>
@@ -601,7 +625,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <div class="logo">
+                        <img src="static/logo.png" alt="Fate Trigger Logo">
+                        <span class="logo-text">FATE TRIGGER</span>
+                    </div>
                     <p>Explore the visual world of Fate Trigger through our media gallery. Experience epic mecha battles and futuristic landscapes.</p>
                 </div>
                 <div class="footer-links">
@@ -610,7 +637,6 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/media">Media</a></li>
-                        <li><a href="/guides">Guides</a></li>
                         <li><a href="/map">Map</a></li>
                         <li><a href="/weapons">Weapons</a></li>
                         <li><a href="/awakeners">Awakeners</a></li>
@@ -705,9 +731,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 90, 160, 0.98)';
+                header.style.background = 'rgba(10, 26, 46, 0.98)';
             } else {
-                header.style.background = 'rgba(44, 90, 160, 0.95)';
+                header.style.background = 'rgba(10, 26, 46, 0.95)';
             }
         });
 

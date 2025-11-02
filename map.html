@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fate Trigger Map Guide - Battlefield Locations & Strategies</title>
-    <meta name="description" content="Master Fate Trigger's diverse battlefields with our comprehensive map guide. Learn about strategic locations, tactical advantages, and combat strategies for each map in Fate Trigger.">
-    <meta name="keywords" content="fate trigger map guide, fate trigger battlefield, fate trigger locations, mecha combat maps, fate trigger strategy, tactical positioning, fate trigger map tips">
+    <meta name="description" content="Master Fate Trigger's diverse battlefields and explore the game world with our comprehensive map guide. Learn about strategic locations, world lore, tactical advantages, and combat strategies for each map in Fate Trigger.">
+    <meta name="keywords" content="fate trigger map guide, fate trigger world, fate trigger battlefield, fate trigger locations, fate trigger world map, mecha combat maps, fate trigger strategy, tactical positioning, fate trigger map tips, fate trigger universe">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fate-trigger.com/map">
     <meta property="og:title" content="Fate Trigger Map Guide - Battlefield Locations & Strategies">
-    <meta property="og:description" content="Master Fate Trigger's diverse battlefields with our comprehensive map guide and strategic tips.">
+    <meta property="og:description" content="Master Fate Trigger's diverse battlefields and explore the game world with our comprehensive map guide, world lore, and strategic tips.">
     <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fate Trigger Map Guide - Battlefield Locations & Strategies">
+    <meta name="twitter:description" content="Master Fate Trigger's diverse battlefields and explore the game world with our comprehensive map guide, world lore, and strategic tips.">
+    <meta name="twitter:image" content="https://fate-trigger.com/static/logo.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
@@ -21,10 +27,28 @@
     <!-- Styles -->
     <link rel="stylesheet" href="static/base.css?v=1.0.0">
     
+    <!-- Microsoft Validation -->
+    <meta name="msvalidate.01" content="B362957FC36C5EDDD6079B6D78330424">
+    
+    <!-- IndexNow -->
+    <meta name="yandex-verification" content="ee9f27884397bc6d" />
+    <meta name="IndexNow-Key" content="B362957FC36C5EDDD6079B6D78330424">
+    <meta name="IndexNow-Url" content="https://fate-trigger.com/map">
+    
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDFZLSQVMZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CDFZLSQVMZ');
+    </script>
+    
     <style>
         .map-hero {
-            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
-                        url('page_content2/jpg/map_bgallocationcenter.dc7jaei5.jpg');
+            background: linear-gradient(135deg, rgba(10, 26, 46, 0.95), rgba(22, 33, 62, 0.90)), 
+                        url('static/images/maps/map-bgAllocationCenter.DC7jaEI5.jpg');
             background-size: cover;
             background-position: center;
             color: var(--secondary-color);
@@ -49,7 +73,8 @@
 
         .map-content {
             padding: 4rem 0;
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 60, 80, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent);
         }
 
         .map-intro {
@@ -61,7 +86,7 @@
         }
 
         .map-intro h2 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1.5rem;
         }
 
@@ -79,17 +104,18 @@
         }
 
         .map-card {
-            background: var(--secondary-color);
+            background: rgba(22, 33, 62, 0.9);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 40px var(--shadow-color);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .map-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 60px var(--shadow-color);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 212, 255, 0.3);
+            border-color: rgba(0, 212, 255, 0.6);
         }
 
         .map-image {
@@ -105,21 +131,24 @@
 
         .map-name {
             font-size: 1.8rem;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
         .map-type {
-            background: var(--gradient-primary);
-            color: var(--secondary-color);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #ffffff;
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             display: inline-block;
             margin-bottom: 1rem;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .map-description {
@@ -133,10 +162,11 @@
         }
 
         .map-features h4 {
-            color: var(--accent-color);
+            color: #00ffff;
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .map-features ul {
@@ -167,7 +197,7 @@
         }
 
         .map-strategy h4 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -179,7 +209,8 @@
         }
 
         .strategy-section {
-            background: var(--bg-color);
+            background: linear-gradient(135deg, rgba(20, 40, 60, 0.6), rgba(40, 70, 90, 0.4)),
+                        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -213,7 +244,7 @@
         }
 
         .strategy-card h3 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -224,7 +255,8 @@
         }
 
         .tips-section {
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 50, 70, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -248,7 +280,7 @@
         }
 
         .tip-item h4 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -257,6 +289,142 @@
             color: var(--text-color);
             line-height: 1.7;
             margin: 0;
+        }
+
+        /* World Content Sections */
+        .world-overview {
+            background: linear-gradient(135deg, var(--bg-color) 0%, #e6f3ff 100%);
+            padding: 5rem 0;
+        }
+
+        .world-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .world-content h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .world-intro {
+            background: var(--secondary-color);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .world-intro h3 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .world-intro p {
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .world-map-section {
+            background: var(--secondary-color);
+            padding: 5rem 0;
+        }
+
+        .world-map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .world-map-image {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px var(--shadow-color);
+            margin: 3rem auto;
+            border: 3px solid var(--accent-color);
+            filter: brightness(1.05) saturate(1.1);
+        }
+
+        .world-building {
+            background: var(--bg-color);
+            padding: 5rem 0;
+        }
+
+        .world-building-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .world-building-card {
+            background: var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .world-building-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .world-building-card h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .world-building-card p {
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .timeline-section {
+            background: var(--secondary-color);
+            padding: 5rem 0;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 3rem auto;
+            position: relative;
+        }
+
+        .timeline-item {
+            background: var(--secondary-color);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+        }
+
+        .timeline-item h4 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .timeline-item .year {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            color: var(--text-color);
+            line-height: 1.7;
         }
 
         @media (max-width: 768px) {
@@ -284,6 +452,7 @@
             <nav>
                 <div class="logo">
                     <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <span class="logo-text">FATE TRIGGER</span>
                 </div>
                 <button class="mobile-menu-btn">
                     <span></span>
@@ -294,14 +463,9 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/news">News</a></li>
                     <li><a href="/media">Media</a></li>
-                    <li class="dropdown">
-                        <a href="/guides">Guides</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/map" class="active">Map</a></li>
-                            <li><a href="/weapons">Weapons</a></li>
-                            <li><a href="/awakeners">Awakeners</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/map" class="active">Map</a></li>
+                    <li><a href="/weapons">Weapons</a></li>
+                    <li><a href="/awakeners">Awakeners</a></li>
                 </ul>
             </nav>
         </div>
@@ -311,7 +475,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/news">News</a></li>
                 <li><a href="/media">Media</a></li>
-                <li><a href="/guides">Guides</a></li>
                 <li><a href="/map">Map</a></li>
                 <li><a href="/weapons">Weapons</a></li>
                 <li><a href="/awakeners">Awakeners</a></li>
@@ -328,22 +491,96 @@
             </div>
         </section>
 
+        <!-- World Overview Section -->
+        <section class="world-overview">
+            <div class="container">
+                <div class="world-content">
+                    <h2>The World of Fate Trigger</h2>
+                    <div class="world-intro">
+                        <h3>The World of Fate Trigger</h3>
+                        
+                        <div class="world-concept-card" style="background: var(--bg-color); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border-left: 4px solid var(--accent-color);">
+                            <h4 style="color: #ffffff; margin-bottom: 1rem;">AWAKENER</h4>
+                            <p>"Awakener" means those who awaken before others. Within Oculus Principi, it refers to people who can sync with GenLink and acquire special powers.</p>
+                            <p>After syncing, Awakeners are reborn with new abilities fueled by Source. However, GenSphere also acts as a second heart for them, so they constantly need more Sources to keep it going. As a result, Awakeners must rely on the Oculus Principi, participating in trials or missions to keep their Source levels up.</p>
+                        </div>
+
+                        <div class="world-concept-card" style="background: var(--bg-color); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border-left: 4px solid var(--accent-color);">
+                            <h4 style="color: #ffffff; margin-bottom: 1rem;">OCULUS PRINCIPI</h4>
+                            <p>Evolution is the key to unlocking the future, and it's the Oculus Principi, with its broader perspective, that carries this important mission.</p>
+                            <p>Oculus Principi was an organization established by the first Awakener among humans. They're a secretive, massive organization, with their influence quietly affecting the entire world. They've inherited ancient human technology and have a deeper understanding of how to use Source, developing tech that's ahead of its time. They see Awakeners as the next step in human evolution. Everything they do, including Project Novita, is all about achieving that ultimate goal...</p>
+                        </div>
+
+                        <div class="world-concept-card" style="background: var(--bg-color); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border-left: 4px solid var(--accent-color);">
+                            <h4 style="color: #ffffff; margin-bottom: 1rem;">HELIX VITALIS</h4>
+                            <p>Ever since the sparks of civilization began to glow, humanity has set a relentless pace of exploring the unknowns. Bit by bit, they have uncovered the mysteries surrounding the ancient Aeternums scattered throughout the planet.</p>
+                            <p>First among them was the Aeternum in Nordhelden, long before it received its present moniker—Helix Vitalis. It was buried underground, exposing only the kaleidoscopic Helix Core that enraptured the imagination. People quickly built the Aeternum Research Complex around the Core, gathering the best scientific minds around the world to study it. But humanity was unaware that an unprecedented challenge was silently approaching...</p>
+                        </div>
+
+                        <div class="world-concept-card" style="background: var(--bg-color); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border-left: 4px solid var(--accent-color);">
+                            <h4 style="color: #ffffff; margin-bottom: 1rem;">PALE BLIGHT</h4>
+                            <p>On the crumbling, distorted land, gray-white waves sweep across, devouring everything.</p>
+                            <p>To most people, the Pale Blight is just a disaster from the Transfigured Aeternum, but there's a hidden truth behind it. The Oculus Principi secretly activated the Aeternum in Vastas to collect enough Sources for Project Novita, but they didn't expect it to cause such a huge disaster. As soon as the Aeternum activated, the Helix Vitalis erupted from the ground, with its core rising and its roots spreading out, greedily absorbing everything around it. Anything it drains turns gray and decays, eventually becoming part of the Pale Blight. As long as the Helix Vitalis' core keeps drawing energy and converting it into Source, the Pale Blight will keep spreading, like human greed that never stops.</p>
+                        </div>
+
+                        <div class="world-concept-card" style="background: var(--bg-color); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border-left: 4px solid var(--accent-color);">
+                            <h4 style="color: #ffffff; margin-bottom: 1rem;">AIRENA</h4>
+                            <p>In the disaster's core, a forbidden zone unreachable by most, a trial of evolution is unfolding.</p>
+                            <p>Unlike the land ravaged by the Pale Blight, the area around the Aeternum Research Complex has been lifted into the air by the ever-expanding Helix Vitalis, forming several Airenas that display all sorts of strange sights within the cycle of the Helix Vitalis. To uncover the secrets of the Helix Vitalis and enhance Awakeners' GenSync level, the Oculus Principi took control of the Airena and regularly sent Awakeners there for combat trials. This is where the journey of Awakeners begins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- World Map Section -->
+        <section class="world-map-section">
+            <div class="container">
+                <div class="world-map-container">
+                    <h2>The Battlefields of Fate Trigger</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-color); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">The <strong>Fate Trigger</strong> universe spans across multiple star systems, each hosting unique battlefields that reflect the diverse environments and conflicts within the game world. These locations are strategically important in the ongoing struggle for dominance.</p>
+                    <img src="static/images/maps/map-bgAllocationCenter.DC7jaEI5.jpg" alt="Fate Trigger World Map showing all battlefields and strategic locations" class="world-map-image">
+                    <div style="max-width: 900px; margin: 3rem auto; padding: 2rem; background: var(--bg-color); border-radius: 15px;">
+                        <h3 style="color: #ffffff; margin-bottom: 1.5rem;">Key Regions in Fate Trigger</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left;">
+                            <div>
+                                <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">Core Systems</h4>
+                                <p style="color: var(--text-color); font-size: 0.95rem;">The central territories where major factions maintain their headquarters and primary industrial facilities.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">Frontier Worlds</h4>
+                                <p style="color: var(--text-color); font-size: 0.95rem;">Newly discovered planets rich in resources, now hotly contested by all factions in <strong>Fate Trigger</strong>.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">Industrial Zones</h4>
+                                <p style="color: var(--text-color); font-size: 0.95rem;">Manufacturing centers where Strikers and advanced weaponry are produced for <strong>Fate Trigger</strong> conflicts.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">Research Stations</h4>
+                                <p style="color: var(--text-color); font-size: 0.95rem;">Scientific facilities developing new technologies that could change the balance of power in <strong>Fate Trigger</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Map Introduction -->
         <section class="map-content">
             <div class="container">
                 <div class="map-intro">
                     <h2>Battlefield Mastery in Fate Trigger</h2>
-                    <p>Fate Trigger features a diverse range of battlefields, each offering unique tactical opportunities and challenges. From urban environments to alien landscapes, mastering these maps is crucial for success in competitive mecha combat. Understanding map layouts, strategic positions, and environmental advantages will give you the edge in Fate Trigger battles.</p>
+                    <p>Each battlefield in <strong>Fate Trigger</strong> represents a piece of this larger universe, with its own history, strategic importance, and connection to the ongoing narrative. Understanding not just the tactical layouts but also the world context of each location will enhance your mastery of <strong>Fate Trigger</strong> combat. From urban environments to alien landscapes, mastering these maps is crucial for success in competitive mecha combat.</p>
                 </div>
 
                 <!-- Map Grid -->
                 <div class="map-grid">
                     <div class="map-card">
-                        <img src="page_content2/jpg/map_bgallocationcenter.dc7jaei5.jpg" alt="Helix Arena Map" class="map-image">
+                        <img src="static/images/maps/map-bgAllocationCenter.DC7jaEI5.jpg" alt="Helix Arena Map" class="map-image">
                         <div class="map-info">
                             <div class="map-type">Primary Battlefield</div>
                             <h3 class="map-name">Helix Arena</h3>
-                            <p class="map-description">The iconic central battlefield of Fate Trigger, Helix Arena features a unique spiral design with multiple elevation levels. This map is perfect for testing your mecha combat skills and strategic positioning in Fate Trigger.</p>
+                            <p class="map-description">The iconic central battlefield of <strong>Fate Trigger</strong>, Helix Arena represents one of the most strategically important locations in the Core Systems. This massive orbital facility serves as a neutral ground where factions conduct formalized combat trials. The unique spiral design reflects the architectural philosophy of the early space colonizers, combining form and function in a structure that has witnessed countless decisive battles in <strong>Fate Trigger</strong> history.</p>
                             
                             <div class="map-features">
                                 <h4>Key Features</h4>
@@ -364,11 +601,11 @@
                     </div>
 
                     <div class="map-card">
-                        <img src="page_content2/png/map_bg.cotikl00.png" alt="Urban Warfare Map" class="map-image">
+                        <img src="static/images/maps/map-bgAuburnBirch.CticoZtX.jpg" alt="Urban Warfare Map" class="map-image">
                         <div class="map-info">
                             <div class="map-type">Urban Combat</div>
                             <h3 class="map-name">Neo-Tokyo District</h3>
-                            <p class="map-description">Experience intense urban warfare in this futuristic cityscape. Neo-Tokyo District offers close-quarters combat opportunities with plenty of vertical gameplay elements perfect for Fate Trigger's fast-paced action.</p>
+                            <p class="map-description">Neo-Tokyo District stands as a testament to humanity's resilience and adaptability. Once a thriving metropolitan center, this city became a battleground when Corporate Alliance forces attempted to seize control of its advanced manufacturing facilities. The dense urban environment now hosts some of the most intense close-quarters combat in <strong>Fate Trigger</strong>, with every building and alleyway telling a story of the conflict that continues to shape this world.</p>
                             
                             <div class="map-features">
                                 <h4>Key Features</h4>
@@ -389,11 +626,11 @@
                     </div>
 
                     <div class="map-card">
-                        <img src="page_content2/png/role_x.chdtsq7z.png" alt="Industrial Complex Map" class="map-image">
+                        <img src="static/images/maps/map-bgFactory.WsbRrCk3.jpg" alt="Industrial Complex Map" class="map-image">
                         <div class="map-info">
                             <div class="map-type">Industrial Zone</div>
                             <h3 class="map-name">Foundry Complex</h3>
-                            <p class="map-description">Battle through massive industrial facilities with hazardous environments and unique mechanical obstacles. Foundry Complex challenges players with environmental hazards while providing strategic advantages for those who master the terrain.</p>
+                            <p class="map-description">The Foundry Complex represents the industrial heart of the <strong>Fate Trigger</strong> universe, where millions of tons of raw materials are processed daily to fuel the ongoing war effort. Control of this facility determines which faction can produce Strikers and weaponry at scale. The hazardous environments reflect both the dangerous nature of heavy industry and the deliberate sabotage attempts by competing factions seeking to disrupt enemy supply chains.</p>
                             
                             <div class="map-features">
                                 <h4>Key Features</h4>
@@ -414,11 +651,11 @@
                     </div>
 
                     <div class="map-card">
-                        <img src="page_content2/png/role_sewy.3ubeni5j.png" alt="Alien World Map" class="map-image">
+                        <img src="static/images/maps/map-bgFeitasAstronomicalObservatory.BET5QYl1.jpg" alt="Alien World Map" class="map-image">
                         <div class="map-info">
                             <div class="map-type">Alien Environment</div>
                             <h3 class="map-name">Xenon Prime</h3>
-                            <p class="map-description">Explore an alien world with unique gravity mechanics and exotic terrain. Xenon Prime offers a completely different combat experience with low-gravity zones and alien technology that affects Fate Trigger gameplay.</p>
+                            <p class="map-description">Xenon Prime represents humanity's expansion into truly alien territories. This mysterious world, discovered during the Frontier Expansion period, challenges everything pilots know about combat in <strong>Fate Trigger</strong>. The low-gravity zones and exotic alien crystal formations suggest advanced technology from a previous civilization. Factions fight not just for territory here, but for the technological secrets buried within this world, making Xenon Prime one of the most strategically valuable locations in the <strong>Fate Trigger</strong> universe.</p>
                             
                             <div class="map-features">
                                 <h4>Key Features</h4>
@@ -510,13 +747,75 @@
                 </div>
             </div>
         </section>
+
+        <!-- World Building Content -->
+        <section class="world-building">
+            <div class="container">
+                <h2 class="text-center" style="color: #ffffff; margin-bottom: 3rem;">The Universe of Fate Trigger</h2>
+                <div class="world-building-grid">
+                    <div class="world-building-card">
+                        <h3>Culture & Society</h3>
+                        <p>In the <strong>Fate Trigger</strong> universe, society has adapted to a reality where mecha combat determines political outcomes. Pilots are revered as heroes and strategic assets, while corporations and governments compete to recruit the best talent. The fusion of military tradition and technological innovation has created a unique culture where honor, skill, and tactical brilliance are highly valued across all factions.</p>
+                    </div>
+                    <div class="world-building-card">
+                        <h3>Technology & Advancements</h3>
+                        <p>The <strong>Fate Trigger</strong> world features technology beyond current imagination. Strikers represent the pinnacle of mecha engineering, combining powerful weapons systems, advanced AI assistance, and energy shields. Research stations continuously develop new technologies, and breakthroughs can shift the balance of power dramatically. The constant innovation drives the competitive nature of <strong>Fate Trigger</strong> battles.</p>
+                    </div>
+                    <div class="world-building-card">
+                        <h3>Conflict History</h3>
+                        <p>The current state of conflict in <strong>Fate Trigger</strong> stems from decades of territorial disputes, resource competition, and ideological differences. What began as exploration and colonization efforts evolved into a complex web of alliances and rivalries. Major historical events, including the Great Schism and the Resource Wars, continue to influence faction relationships and battlefield strategies today.</p>
+                    </div>
+                    <div class="world-building-card">
+                        <h3>Future Evolution</h3>
+                        <p>As <strong>Fate Trigger</strong> continues to evolve, new worlds are discovered, new technologies emerge, and new conflicts arise. The universe is designed to expand, with future updates planned to introduce additional battlefields, factions, and story elements. Players' actions in <strong>Fate Trigger</strong> battles contribute to the ongoing narrative, making every match part of a larger story.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <div class="container">
+                <h2 class="text-center" style="color: #ffffff; margin-bottom: 3rem;">Fate Trigger World Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2095-2120</div>
+                        <h4>The Great Expansion</h4>
+                        <p>Humanity begins colonizing nearby star systems, establishing the foundation for the <strong>Fate Trigger</strong> universe. Early space settlements and resource extraction operations create the first interplanetary conflicts.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2125-2140</div>
+                        <h4>Mecha Technology Revolution</h4>
+                        <p>The first Striker prototypes are developed, revolutionizing warfare and exploration. These early mecha units become the backbone of military operations across the <strong>Fate Trigger</strong> universe.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2145-2150</div>
+                        <h4>The Great Schism</h4>
+                        <p>Major factions split from the United Terran Federation, leading to the establishment of the Corporate Alliance, Free Colonies, and Order of Technologists. This event shapes the political landscape of <strong>Fate Trigger</strong>.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2152-2156</div>
+                        <h4>The Resource Wars</h4>
+                        <p>Intense conflicts erupt over control of newly discovered resource-rich worlds. These wars establish the strategic importance of various locations featured in <strong>Fate Trigger</strong> battles.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2157 (Present)</div>
+                        <h4>The Current Era</h4>
+                        <p>The present-day setting of <strong>Fate Trigger</strong>, where organized combat trials and strategic battles determine faction dominance. Players participate in this ongoing conflict, shaping the future of the <strong>Fate Trigger</strong> universe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <div class="logo">
+                        <img src="static/logo.png" alt="Fate Trigger Logo">
+                        <span class="logo-text">FATE TRIGGER</span>
+                    </div>
                     <p>Master the battlefields of Fate Trigger with our comprehensive map guide. Learn strategic positioning and combat tactics.</p>
                 </div>
                 <div class="footer-links">
@@ -525,7 +824,6 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/media">Media</a></li>
-                        <li><a href="/guides">Guides</a></li>
                         <li><a href="/map">Map</a></li>
                         <li><a href="/weapons">Weapons</a></li>
                         <li><a href="/awakeners">Awakeners</a></li>
@@ -579,9 +877,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 90, 160, 0.98)';
+                header.style.background = 'rgba(10, 26, 46, 0.98)';
             } else {
-                header.style.background = 'rgba(44, 90, 160, 0.95)';
+                header.style.background = 'rgba(10, 26, 46, 0.95)';
             }
         });
 

@@ -1,12 +1,12 @@
-# robots.txt for Dune Awakening
+# robots.txt for Fate Trigger
 User-agent: *
 Allow: /
 Allow: /news/
 Allow: /media/
-Allow: /product/
-Allow: /character/
-Allow: /news/beta-weekend/
-Allow: /news/steel/
+Allow: /guides/
+Allow: /map/
+Allow: /weapons/
+Allow: /awakeners/
 Allow: /privacy-policy
 Allow: /terms-of-service
 
@@ -19,7 +19,7 @@ Disallow: /cgi-bin/
 Disallow: /*?*
 
 # Sitemap location
-Sitemap: https://dune-awakening.com/sitemap.xml
+Sitemap: https://fate-trigger.com/sitemap.xml
 
 # Crawl delay to prevent server overload
 Crawl-delay: 10 

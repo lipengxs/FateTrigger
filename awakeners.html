@@ -14,6 +14,12 @@
     <meta property="og:description" content="Discover Fate Trigger's elite Awakeners and their unique abilities for strategic mecha combat.">
     <meta property="og:image" content="https://fate-trigger.com/static/logo.png">
     
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fate Trigger Awakeners Guide - Elite Pilot Profiles & Abilities">
+    <meta name="twitter:description" content="Discover Fate Trigger's elite Awakeners and their unique abilities for strategic mecha combat.">
+    <meta name="twitter:image" content="https://fate-trigger.com/static/logo.png">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="apple-touch-icon" href="static/logo.png">
@@ -21,10 +27,28 @@
     <!-- Styles -->
     <link rel="stylesheet" href="static/base.css?v=1.0.0">
     
+    <!-- Microsoft Validation -->
+    <meta name="msvalidate.01" content="B362957FC36C5EDDD6079B6D78330424">
+    
+    <!-- IndexNow -->
+    <meta name="yandex-verification" content="ee9f27884397bc6d" />
+    <meta name="IndexNow-Key" content="B362957FC36C5EDDD6079B6D78330424">
+    <meta name="IndexNow-Url" content="https://fate-trigger.com/awakeners">
+    
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDFZLSQVMZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CDFZLSQVMZ');
+    </script>
+    
     <style>
         .awakeners-hero {
-            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9), rgba(30, 58, 138, 0.8)), 
-                        url('page_content2/jpg/illuminati_bg.d60uke53.jpg');
+            background: linear-gradient(135deg, rgba(10, 26, 46, 0.95), rgba(22, 33, 62, 0.90)), 
+                        url('static/images/maps/map-bgAllocationCenter.DC7jaEI5.jpg');
             background-size: cover;
             background-position: center;
             color: var(--secondary-color);
@@ -49,7 +73,8 @@
 
         .awakeners-content {
             padding: 4rem 0;
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 60, 80, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent);
         }
 
         .awakeners-intro {
@@ -61,7 +86,7 @@
         }
 
         .awakeners-intro h2 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1.5rem;
         }
 
@@ -79,17 +104,18 @@
         }
 
         .awakener-card {
-            background: var(--secondary-color);
+            background: rgba(22, 33, 62, 0.9);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 40px var(--shadow-color);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .awakener-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 60px var(--shadow-color);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 212, 255, 0.3);
+            border-color: rgba(0, 212, 255, 0.6);
         }
 
         .awakener-image {
@@ -105,21 +131,32 @@
 
         .awakener-name {
             font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
             font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .awakener-nickname {
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-style: italic;
         }
 
         .awakener-title {
-            background: var(--gradient-primary);
-            color: var(--secondary-color);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #ffffff;
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             display: inline-block;
             margin-bottom: 1rem;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .awakener-stats {
@@ -145,8 +182,9 @@
 
         .stat-value {
             font-size: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 600;
+            color: #00d4ff;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
         .awakener-description {
@@ -160,10 +198,11 @@
         }
 
         .awakener-abilities h4 {
-            color: var(--accent-color);
+            color: #00ffff;
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
         .ability-item {
@@ -176,7 +215,7 @@
 
         .ability-name {
             font-weight: 600;
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
 
@@ -194,7 +233,7 @@
         }
 
         .awakener-background h4 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -206,7 +245,8 @@
         }
 
         .skills-section {
-            background: var(--bg-color);
+            background: linear-gradient(135deg, rgba(20, 40, 60, 0.6), rgba(40, 70, 90, 0.4)),
+                        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -240,7 +280,7 @@
         }
 
         .skill-card h3 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -251,7 +291,8 @@
         }
 
         .tips-section {
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, rgba(30, 50, 70, 0.5), rgba(50, 80, 100, 0.3)),
+                        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1), transparent);
             padding: 4rem 0;
         }
 
@@ -275,7 +316,7 @@
         }
 
         .tip-item h4 {
-            color: var(--primary-color);
+            color: #ffffff;
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -315,6 +356,7 @@
             <nav>
                 <div class="logo">
                     <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <span class="logo-text">FATE TRIGGER</span>
                 </div>
                 <button class="mobile-menu-btn">
                     <span></span>
@@ -325,14 +367,9 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/news">News</a></li>
                     <li><a href="/media">Media</a></li>
-                    <li class="dropdown">
-                        <a href="/guides">Guides</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/map">Map</a></li>
-                            <li><a href="/weapons">Weapons</a></li>
-                            <li><a href="/awakeners" class="active">Awakeners</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/map">Map</a></li>
+                    <li><a href="/weapons">Weapons</a></li>
+                    <li><a href="/awakeners" class="active">Awakeners</a></li>
                 </ul>
             </nav>
         </div>
@@ -342,7 +379,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/news">News</a></li>
                 <li><a href="/media">Media</a></li>
-                <li><a href="/guides">Guides</a></li>
                 <li><a href="/map">Map</a></li>
                 <li><a href="/weapons">Weapons</a></li>
                 <li><a href="/awakeners">Awakeners</a></li>
@@ -370,230 +406,11 @@
                 <!-- Awakeners Grid -->
                 <div class="awakeners-grid">
                     <div class="awakener-card">
-                        <img src="page_content2/png/role_hxl.c_kmaujq.png" alt="HXL Awakener Profile" class="awakener-image">
+                        <img src="static/images/awakeners/role_kme.kdwhab7o.png" alt="HUXLEY - VEILSHADE Awakener Profile" class="awakener-image">
                         <div class="awakener-info">
-                            <div class="awakener-title">Assault Specialist</div>
-                            <h3 class="awakener-name">HXL</h3>
-                            <div class="awakener-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Combat</div>
-                                    <div class="stat-value">95</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Mobility</div>
-                                    <div class="stat-value">85</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Tactics</div>
-                                    <div class="stat-value">80</div>
-                                </div>
-                            </div>
-                            <p class="awakener-description">HXL is a fearless assault specialist who excels in aggressive combat situations in Fate Trigger. Known for exceptional close-range combat skills and tactical positioning, HXL dominates the front lines with precision and determination.</p>
-                            
-                            <div class="awakener-abilities">
-                                <h4>Special Abilities</h4>
-                                <div class="ability-item">
-                                    <div class="ability-name">Berserker Rush</div>
-                                    <div class="ability-description">Increases movement speed and damage output for a short duration, perfect for aggressive pushes in Fate Trigger battles.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Combat Reflexes</div>
-                                    <div class="ability-description">Enhanced reaction time and weapon switching speed, allowing for rapid tactical adjustments during combat.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Shield Breaker</div>
-                                    <div class="ability-description">Attacks deal increased damage to enemy shields and defensive systems, making HXL effective against fortified positions.</div>
-                                </div>
-                            </div>
-
-                            <div class="awakener-background">
-                                <h4>Background</h4>
-                                <p>HXL rose through the ranks of the military through sheer determination and combat prowess. Having survived countless battles in Fate Trigger's most dangerous warzones, HXL brings unmatched aggression and tactical insight to every engagement.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="awakener-card">
-                        <img src="page_content2/png/role_kme.kdwhab7o.png" alt="KME Awakener Profile" class="awakener-image">
-                        <div class="awakener-info">
-                            <div class="awakener-title">Tactical Commander</div>
-                            <h3 class="awakener-name">KME</h3>
-                            <div class="awakener-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Combat</div>
-                                    <div class="stat-value">80</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Mobility</div>
-                                    <div class="stat-value">75</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Tactics</div>
-                                    <div class="stat-value">95</div>
-                                </div>
-                            </div>
-                            <p class="awakener-description">KME is a strategic mastermind who excels at battlefield coordination and tactical planning in Fate Trigger. With exceptional leadership skills and analytical thinking, KME guides teams to victory through superior strategy and team coordination.</p>
-                            
-                            <div class="awakener-abilities">
-                                <h4>Special Abilities</h4>
-                                <div class="ability-item">
-                                    <div class="ability-name">Battlefield Analysis</div>
-                                    <div class="ability-description">Provides enhanced map awareness and enemy position tracking, giving tactical advantages to the entire team in Fate Trigger.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Command Presence</div>
-                                    <div class="ability-description">Boosts nearby allies' combat effectiveness and coordination, making KME invaluable for team-based strategies.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Strategic Planning</div>
-                                    <div class="ability-description">Reduces ability cooldowns for teammates and provides enhanced resource management during extended engagements.</div>
-                                </div>
-                            </div>
-
-                            <div class="awakener-background">
-                                <h4>Background</h4>
-                                <p>KME's military career began in the strategic planning division, where their analytical mind and natural leadership abilities quickly distinguished them. In Fate Trigger, KME has become known for turning the tide of battle through superior tactical thinking and team coordination.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="awakener-card">
-                        <img src="page_content2/png/role_ly.xbjzk7vu.png" alt="LY Awakener Profile" class="awakener-image">
-                        <div class="awakener-info">
-                            <div class="awakener-title">Reconnaissance Expert</div>
-                            <h3 class="awakener-name">LY</h3>
-                            <div class="awakener-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Combat</div>
-                                    <div class="stat-value">70</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Mobility</div>
-                                    <div class="stat-value">95</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Tactics</div>
-                                    <div class="stat-value">90</div>
-                                </div>
-                            </div>
-                            <p class="awakener-description">LY is a reconnaissance specialist who excels at gathering intelligence and providing battlefield support in Fate Trigger. With exceptional mobility and stealth capabilities, LY operates behind enemy lines to gather crucial information and disrupt enemy operations.</p>
-                            
-                            <div class="awakener-abilities">
-                                <h4>Special Abilities</h4>
-                                <div class="ability-item">
-                                    <div class="ability-name">Stealth Mode</div>
-                                    <div class="ability-description">Temporarily becomes invisible to enemy detection systems, allowing for covert movement and surprise attacks in Fate Trigger.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Intel Gathering</div>
-                                    <div class="ability-description">Reveals enemy positions and movements to teammates, providing crucial tactical information for strategic planning.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Rapid Deployment</div>
-                                    <div class="ability-description">Enhanced movement speed and jump capabilities, allowing LY to traverse difficult terrain and reach strategic positions quickly.</div>
-                                </div>
-                            </div>
-
-                            <div class="awakener-background">
-                                <h4>Background</h4>
-                                <p>LY's background in intelligence operations and reconnaissance missions has made them an invaluable asset in Fate Trigger's complex battlefield scenarios. Their ability to gather information and operate independently has saved countless missions and provided crucial advantages in competitive matches.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="awakener-card">
-                        <img src="page_content2/png/role_md.cdgbxyxk.png" alt="MD Awakener Profile" class="awakener-image">
-                        <div class="awakener-info">
-                            <div class="awakener-title">Defensive Specialist</div>
-                            <h3 class="awakener-name">MD</h3>
-                            <div class="awakener-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Combat</div>
-                                    <div class="stat-value">85</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Mobility</div>
-                                    <div class="stat-value">70</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Tactics</div>
-                                    <div class="stat-value">85</div>
-                                </div>
-                            </div>
-                            <p class="awakener-description">MD is a defensive specialist who excels at holding strategic positions and protecting teammates in Fate Trigger. With enhanced defensive capabilities and area control skills, MD creates safe zones for team operations and controls key battlefield objectives.</p>
-                            
-                            <div class="awakener-abilities">
-                                <h4>Special Abilities</h4>
-                                <div class="ability-item">
-                                    <div class="ability-name">Fortress Mode</div>
-                                    <div class="ability-description">Increases defensive capabilities and creates a protective barrier that reduces incoming damage for nearby allies in Fate Trigger.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Area Denial</div>
-                                    <div class="ability-description">Deploys defensive systems that prevent enemy movement through key areas, controlling battlefield flow and protecting objectives.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Shield Projection</div>
-                                    <div class="ability-description">Creates temporary shields for teammates, providing additional protection during critical moments in Fate Trigger battles.</div>
-                                </div>
-                            </div>
-
-                            <div class="awakener-background">
-                                <h4>Background</h4>
-                                <p>MD's military training focused on defensive tactics and area control, making them a natural fit for Fate Trigger's strategic combat scenarios. Their ability to hold positions and protect teammates has made them a cornerstone of successful team compositions.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="awakener-card">
-                        <img src="page_content2/png/role_ml.dfbzpmis.png" alt="ML Awakener Profile" class="awakener-image">
-                        <div class="awakener-info">
-                            <div class="awakener-title">Support Specialist</div>
-                            <h3 class="awakener-name">ML</h3>
-                            <div class="awakener-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Combat</div>
-                                    <div class="stat-value">75</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Mobility</div>
-                                    <div class="stat-value">80</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Tactics</div>
-                                    <div class="stat-value">85</div>
-                                </div>
-                            </div>
-                            <p class="awakener-description">ML is a support specialist who excels at enhancing team performance and providing battlefield assistance in Fate Trigger. With unique support abilities and resource management skills, ML ensures team sustainability and optimal performance throughout extended engagements.</p>
-                            
-                            <div class="awakener-abilities">
-                                <h4>Special Abilities</h4>
-                                <div class="ability-item">
-                                    <div class="ability-name">Resource Optimization</div>
-                                    <div class="ability-description">Reduces ammunition consumption and ability cooldowns for teammates, improving overall team efficiency in Fate Trigger battles.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Combat Enhancement</div>
-                                    <div class="ability-description">Provides temporary boosts to teammate damage output and accuracy, turning the tide of difficult engagements.</div>
-                                </div>
-                                <div class="ability-item">
-                                    <div class="ability-name">Field Repair</div>
-                                    <div class="ability-description">Can restore damaged systems and provide healing to teammates, maintaining team effectiveness during extended battles.</div>
-                                </div>
-                            </div>
-
-                            <div class="awakener-background">
-                                <h4>Background</h4>
-                                <p>ML's background in logistics and support operations has made them an essential component of successful Fate Trigger teams. Their ability to enhance team performance and maintain operational effectiveness has proven invaluable in competitive scenarios.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="awakener-card">
-                        <img src="page_content2/png/role_ql.by_aizja.png" alt="QL Awakener Profile" class="awakener-image">
-                        <div class="awakener-info">
-                            <div class="awakener-title">Sniper Specialist</div>
-                            <h3 class="awakener-name">QL</h3>
+                            <div class="awakener-title">Infiltrator</div>
+                            <h3 class="awakener-name">HUXLEY</h3>
+                            <div class="awakener-nickname">VEILSHADE</div>
                             <div class="awakener-stats">
                                 <div class="stat-item">
                                     <div class="stat-label">Combat</div>
@@ -601,34 +418,439 @@
                                 </div>
                                 <div class="stat-item">
                                     <div class="stat-label">Mobility</div>
-                                    <div class="stat-value">75</div>
+                                    <div class="stat-value">95</div>
                                 </div>
                                 <div class="stat-item">
                                     <div class="stat-label">Tactics</div>
                                     <div class="stat-value">85</div>
                                 </div>
                             </div>
-                            <p class="awakener-description">QL is a precision sniper who excels at long-range combat and elimination of high-value targets in Fate Trigger. With exceptional accuracy and patience, QL controls battlefield sight lines and eliminates threats from a distance.</p>
+                            <p class="awakener-description">As enigmatic as the night and as tricky as a puzzle. Huxley was born to be a spy, and anyone who tries to manipulate her will end up as the dumbest piece on the board.</p>
                             
                             <div class="awakener-abilities">
                                 <h4>Special Abilities</h4>
                                 <div class="ability-item">
-                                    <div class="ability-name">Precision Shot</div>
-                                    <div class="ability-description">Delivers devastating long-range attacks with enhanced accuracy and damage, capable of eliminating targets in a single shot.</div>
+                                    <div class="ability-name">Realm of Mist</div>
+                                    <div class="ability-description">Awakeners who find themselves in the Realm of Mist will have their vision obscured, leaving Huxley with clear vision. The mist hides the steps of its shadowy mistress.</div>
                                 </div>
                                 <div class="ability-item">
-                                    <div class="ability-name">Target Acquisition</div>
-                                    <div class="ability-description">Enhanced scope systems that reveal enemy weak points and provide tactical information about target vulnerabilities.</div>
+                                    <div class="ability-name">Mark of Rouge</div>
+                                    <div class="ability-description">Among the Orbis Cognitio's many gadgets, the rouge marker is Huxley's favorite. Combining versatility and ease of use, the rouge reveals Huxley's enemies and ensures that she is the picture of lethal beauty.</div>
                                 </div>
                                 <div class="ability-item">
-                                    <div class="ability-name">Steady Aim</div>
-                                    <div class="ability-description">Reduces weapon sway and increases accuracy over time, allowing for consistent long-range performance in Fate Trigger.</div>
+                                    <div class="ability-name">Coup de Grace</div>
+                                    <div class="ability-description">The Shadow's abilities as an interrogator are well-known and widely feared. When Huxley finishes off a downed enemy, their squadmates' locations are revealed to her.</div>
                                 </div>
                             </div>
 
                             <div class="awakener-background">
-                                <h4>Background</h4>
-                                <p>QL's military career began as a marksman in elite sniper units, where their precision and patience earned them recognition. In Fate Trigger, QL has become known for their ability to control battlefield engagement distances and eliminate priority targets with surgical precision.</p>
+                                <h4>Voice Actor</h4>
+                                <p>Xanthe Huynh</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_kme.kdwhab7o.png" alt="CAMILLE - CREATION02 Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Support</div>
+                            <h3 class="awakener-name">CAMILLE</h3>
+                            <div class="awakener-nickname">CREATION02</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">70</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">Upon receiving the "heart" she longed for, she discovered it was just the start. Created 02 should have been a cold machine, but she chose a human name—Camille.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Source Sanctuary</div>
+                                    <div class="ability-description">Camille activates a miniature teleportation device, creating a zone charged with Source Energy. Allies inside the zone continuously recover Source Energy and Armor. Allies outside the zone can teleport in, but have reduced movement speed while teleporting.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Source Transfusion</div>
+                                    <div class="ability-description">Camille selects a squadmate and restores their Source Energy and Armor. If no squadmate is selected, Camille targets herself.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Remote Connection</div>
+                                    <div class="ability-description">Camille establishes a remote connection with her squadmates' GenLinks, sending Source Energy to distant squadmates and restoring their Resonance.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Kelly Ohanian</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_ly.xbjzk7vu.png" alt="RYOIN - BLOODPROWLER Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Assault</div>
+                            <h3 class="awakener-name">RYOIN</h3>
+                            <div class="awakener-nickname">BLOODPROWLER</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">95</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">No one can truly shackle a child of the wilderness. Even with chains digging into his flesh, Ryoin will never surrender; he'll fight until his last breath.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Red Nightfall</div>
+                                    <div class="ability-description">Ryoin transforms into his wolf form. While transformed, Bestial Dash is automatically active, and his Tactical becomes a long-range Leap that consumes his transformation time. Every knockdown and elimination Ryoin scores while transformed extends his transformation time.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Bestial Dash</div>
+                                    <div class="ability-description">Ryoin enters Bestial Dash, consuming energy over time. His running speed slightly increases, and his sprinting speed significantly increases.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">On Their Scent</div>
+                                    <div class="ability-description">Ryoin's heightened senses can track prey damaged by his squadmates, revealing their positions to him until they heal up.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>David Cui Cui</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_md.cdgbxyxk.png" alt="MINDY - LOOTRACER Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Support</div>
+                            <h3 class="awakener-name">MINDY</h3>
+                            <div class="awakener-nickname">LOOTRACER</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">70</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">Mindy never misses a chance to hunt for treasure. Dangers? Those minor obstacles are no match for the great Mindy!</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Mindy's Gift</div>
+                                    <div class="ability-description">Mindy can use the Dimensional Doorway to intercept an airdrop about to be dispatched from the Logistics Center and teleport it to a selected location. The airdrop will contain equipment and supplies of higher quality than the squad's current resources.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Secret Passage</div>
+                                    <div class="ability-description">Mindy can use the Dimensional Doorway to instantly teleport to a selected location. During the teleportation, all nearby players will see her movement path.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Mindy's Choice</div>
+                                    <div class="ability-description">Mindy's line of sight can penetrate obstacles to reveal items of blue quality or higher within a certain range. When Mindy doesn't have two weapons, weapons will also appear in her line of sight.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Anne Yatco</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_ml.dfbzpmis.png" alt="NASE - OCEANSOUL Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Support</div>
+                            <h3 class="awakener-name">NASE</h3>
+                            <div class="awakener-nickname">OCEANSOUL</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">80</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">A new rising star from the ocean, a guide favored by the sea. Nase carries on her captain father's legacy, ready to bring the miracle of the Green Delphina miracles back to the world.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Tide Whisper</div>
+                                    <div class="ability-description">Nase becomes one with the ocean, becoming Blessed for a duration. If Nase takes lethal damage while Blessed, she transforms into a body of water that can move freely and continuously recovers HP. While transformed, Nase cannot attack or use abilities, and reverts to her original form after a period of time.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Sharkie Bomb</div>
+                                    <div class="ability-description">Nase summons Sharkie, who moves forward and leaves a trail of water. When Sharkie encounters an enemy or reaches his max range, he jumps up and detonates, knocking up enemies struck.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Ocean's Providence</div>
+                                    <div class="ability-description">Nase is blessed by the ocean and gains a movement speed bonus on water. The water trails created by her abilities grant a movement speed bonus to her squadmates.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Dr. Jessie Yang</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_ql.by_aizja.png" alt="KIRA - STARHOPPER Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Defense</div>
+                            <h3 class="awakener-name">KIRA</h3>
+                            <div class="awakener-nickname">STARHOPPER</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">70</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">95</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">The will to defend carries over from the virtual world into the reality in crisis. This time, Kira is not just a player but also an Awakener and a hero.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Digital Fortress</div>
+                                    <div class="ability-description">Kira creates a holographic two-storey Fortress. The Fortress comes with four surrounding jump pads that lead to the top floor. Each wall of the Fortress can be destroyed separately. When Kira leaves the Fortress for a time, it collapses automatically.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Holo-Shield</div>
+                                    <div class="ability-description">Kira creates a holographic composite shield. The shield is made up of four parts, and each part can be destroyed separately. Allied fire can pass through the top shield. Up to four shields can exist at once.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Energy Matrix</div>
+                                    <div class="ability-description">When Kira is in her own Digital Fortress, she is protected by it. Digital Fortress continuously restores its creator's Source Energy and Armor.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Brianna Knickerbocker</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_x.chdtsq7z.png" alt="XIVA - FIRESTORM Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Assault</div>
+                            <h3 class="awakener-name">XIVA</h3>
+                            <div class="awakener-nickname">FIRESTORM</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">95</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">80</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">The Petrichor Flame shall set the world ablaze. From that point on, Xiva abandoned all useless emotions, transforming into the most loyal warrior.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Corvite Storm</div>
+                                    <div class="ability-description">Xiva gathers Petrichor Flames and calls down a firestorm at the target area, bombarding the area with fiery meteors for a duration.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Azure Divide</div>
+                                    <div class="ability-description">Xiva infuses the ground with the Petrichor Flame, raising a fire wall in front of her that blocks line of sight. Enemies who touch the wall will be burned and take damage over time.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Searing Munitions</div>
+                                    <div class="ability-description">Xiva infuses her Incendiary Rounds and Incendiary Chip with the Petrichor Flame, changing their color. Incendiary Grenades deal more damage and slow targets hit.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Skylar Davenport</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_sewy.3ubeni5j.png" alt="SOARWYNNE - WINDRANGER Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Mobility</div>
+                            <h3 class="awakener-name">SOARWYNNE</h3>
+                            <div class="awakener-nickname">WINDRANGER</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">95</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">80</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">Gliding over valleys and jungles, loyal and brave like a Duskfalcon. Soarwynne is a Forest Guard, forever safeguarding the bond between humanity and nature.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">To the Skies</div>
+                                    <div class="ability-description">Soarwynne creates an updraft with Source Energy, lifting everyone within its range to a high altitude.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Skyward Leap</div>
+                                    <div class="ability-description">Soarwynne harnesses the wind for an enhanced jump. Charging this ability enhances the ascent further, propelling her higher.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Updraft</div>
+                                    <div class="ability-description">Soarwynne gathers the wind to buffer her descent, making her landing more agile while granting a temporary movement speed boost.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Judy Alice Lee</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_yos.cqlxejzn.png" alt="EOS - LUMINARY Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Assault</div>
+                            <h3 class="awakener-name">EOS</h3>
+                            <div class="awakener-nickname">LUMINARY</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">85</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">80</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">With the light of science and truth in hand, she banishes the shadows before her. Eos, a genius in optical physics, is on a new mission to find her best friend.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Diffraction</div>
+                                    <div class="ability-description">Eos coalesces Source Energy through her prosthetics and focuses it into a high-energy beam. Holding FIRE shoots the beam in a straight line, dealing high damage to enemies hit. The beam also tracks enemies near it automatically, dealing lower damage. While Diffraction is active, Eos can switch between her weapons and her beam attack.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Lightshift</div>
+                                    <div class="ability-description">Eos becomes one with the light, transforming into a photon that sprints forward at light speed.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Chronoflash</div>
+                                    <div class="ability-description">When Eos eliminates down an enemy, she regains spent energy and resets the cooldown on her Tactical.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Kira Buckland</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="awakener-card">
+                        <img src="static/images/awakeners/role_xrk.djj_xeux.png" alt="CYNRIC - CRYSTALSCAR Awakener Profile" class="awakener-image">
+                        <div class="awakener-info">
+                            <div class="awakener-title">Defense</div>
+                            <h3 class="awakener-name">CYNRIC</h3>
+                            <div class="awakener-nickname">CRYSTALSCAR</div>
+                            <div class="awakener-stats">
+                                <div class="stat-item">
+                                    <div class="stat-label">Combat</div>
+                                    <div class="stat-value">75</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Mobility</div>
+                                    <div class="stat-value">70</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Tactics</div>
+                                    <div class="stat-value">90</div>
+                                </div>
+                            </div>
+                            <p class="awakener-description">Cynric once yearned to break free from the curse that encased him. However, he eventually discovered that it wasn't the crystals on his body that bound him but the prison within his own heart.</p>
+                            
+                            <div class="awakener-abilities">
+                                <h4>Special Abilities</h4>
+                                <div class="ability-item">
+                                    <div class="ability-name">Grand Entrance</div>
+                                    <div class="ability-description">Cynric leaps to an ally and uses the blue Kydrite to create a transparent pillar that blocks all damage and throwables. When Cynric lands, he knocks all enemies in range away and slows them down.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Impenetrable</div>
+                                    <div class="ability-description">Cynric uses the Kydrite to create a blue, transparent barrier that blocks all damage and throwables and cannot be broken.</div>
+                                </div>
+                                <div class="ability-item">
+                                    <div class="ability-name">Crisis Shelter</div>
+                                    <div class="ability-description">Cynric uses the Kydrite to create a shield around nearby downed allies, including himself.</div>
+                                </div>
+                            </div>
+
+                            <div class="awakener-background">
+                                <h4>Voice Actor</h4>
+                                <p>Beau Stephenson</p>
                             </div>
                         </div>
                     </div>
@@ -711,7 +933,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="static/logo.png" alt="Fate Trigger Logo">
+                    <div class="logo">
+                        <img src="static/logo.png" alt="Fate Trigger Logo">
+                        <span class="logo-text">FATE TRIGGER</span>
+                    </div>
                     <p>Master the elite Awakeners of Fate Trigger. Learn their abilities and tactical advantages for strategic mecha combat.</p>
                 </div>
                 <div class="footer-links">
@@ -720,7 +945,6 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/media">Media</a></li>
-                        <li><a href="/guides">Guides</a></li>
                         <li><a href="/map">Map</a></li>
                         <li><a href="/weapons">Weapons</a></li>
                         <li><a href="/awakeners">Awakeners</a></li>
@@ -774,9 +998,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 90, 160, 0.98)';
+                header.style.background = 'rgba(10, 26, 46, 0.98)';
             } else {
-                header.style.background = 'rgba(44, 90, 160, 0.95)';
+                header.style.background = 'rgba(10, 26, 46, 0.95)';
             }
         });
 
