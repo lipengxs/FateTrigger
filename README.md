@@ -1,14 +1,14 @@
-# Dune: Awakening
+# Fate Trigger
 
-Welcome to the official website repository for Dune: Awakening, an epic survival MMO set in the harsh world of Arrakis.
+Welcome to the fan website repository for Fate Trigger, an epic mecha battle game set to launch in Q1 2026.
 
 ## Overview
 
-This repository contains the website code for Dune: Awakening, featuring:
+This repository contains the fan website code for Fate Trigger, featuring:
 - Latest news and updates
 - Media gallery
-- Character information
-- Product details
+- Game information
+- Weapons and Awakeners details
 - Legal documentation
 
 ## Structure
@@ -17,10 +17,15 @@ The website includes the following main sections:
 - `/` - Home page
 - `/news` - Latest updates and announcements
 - `/media` - Screenshots, videos, and artwork
-- `/character` - Character creation and customization details
-- `/product` - Game editions and purchase information
+- `/weapons` - Weapons information
+- `/awakeners` - Awakeners character details
+- `/map` - Map information
 - `/privacy-policy` - Privacy policy documentation
 - `/terms-of-service` - Terms of service documentation
+
+## Disclaimer
+
+**This is a fan-created website and is not affiliated with, endorsed by, or connected to the official Fate Trigger game developers or publishers.** All game-related content, trademarks, and copyrights belong to their respective owners. For official information, please visit the official Fate Trigger website or contact the game developers directly.
 
 ## Development
 
@@ -35,11 +40,13 @@ The website includes the following main sections:
 
 ## Contact
 
-- Website: [dune-awakening.com](https://dune-awakening.com)
-- Discord: [discord.gg/duneawakening](https://discord.gg/duneawakening)
-- Twitter: [@duneawakening](https://twitter.com/duneawakening)
-- YouTube: [youtube.com/duneawakening](https://youtube.com/duneawakening)
+- Website: [fate-trigger.com](https://fate-trigger.com)
+- Discord: [discord.gg/fatetrigger](https://discord.gg/fatetrigger)
+- Twitter: [@fatetrigger](https://twitter.com/fatetrigger)
+- YouTube: [youtube.com/fatetrigger](https://www.youtube.com/fatetrigger)
 
 ## License
 
-© 2025 Dune: Awakening. All rights reserved.
+© 2025 Fate Trigger. All rights reserved.
+
+**Note:** This is a fan website. All game trademarks and copyrights belong to their respective owners.

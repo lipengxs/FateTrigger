@@ -2,6 +2,8 @@
 
 *Master Your Striker and Dominate the Battlefield*
 
+> **Disclaimer:** This is a fan-created content and is not affiliated with, endorsed by, or connected to the official Fate Trigger game developers or publishers. All game-related content, trademarks, and copyrights belong to their respective owners. For official information, please visit the official Fate Trigger website or contact the game developers directly.
+
 ---
 
 ## Introduction
