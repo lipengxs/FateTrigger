@@ -8,6 +8,7 @@ export function JsonLd({ data }: { data: unknown }) {
 }
 
 export function Header() {
+  const headerGroups = navGroups.filter((group) => group.label !== "Site").slice(0, Math.max(0, 6 - navItems.length));
   return (
     <header className="site-header">
       <Link href="/" className="brand" aria-label={siteContent.siteName}>
@@ -15,18 +16,18 @@ export function Header() {
         <span>{siteContent.siteName}</span>
       </Link>
       <nav className="top-nav" aria-label="Primary navigation">
-        {navItems.slice(0, 4).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
-        <details className="nav-more">
-          <summary>More</summary>
-          <div className="nav-menu">
-            {navGroups.map((group) => (
-              <div className="nav-group" key={group.label}>
+        {navItems.slice(0, 6).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+        {headerGroups.map((group) => (
+          <div className="nav-dropdown" key={group.label}>
+            <button className="nav-trigger" type="button">{group.label}</button>
+            <div className="nav-menu">
+              <div className="nav-group">
                 <strong>{group.label}</strong>
                 {group.links.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
               </div>
-            ))}
+            </div>
           </div>
-        </details>
+        ))}
       </nav>
     </header>
   );
@@ -57,10 +58,12 @@ export function Breadcrumbs({ items }: { items: Array<{ label: string; href: str
 }
 
 export function HomeHero() {
+  const target = siteContent.facts.countdownTarget;
   return (
     <section className="home-hero home-hero-sky">
       <Image src="/images/hero-independent.png" alt={siteContent.gameName + " original independent guide hero artwork"} fill priority className="hero-image" />
       <div className="hero-shade" />
+      <div className="hero-hud" aria-hidden="true"><span>Route scan</span><span>Awakener sync</span><span>Skyline vector</span></div>
       <div className="hero-content">
         <span className="eyebrow">{siteContent.hero.eyebrow}</span>
         <h1>{siteContent.hero.title}</h1>
@@ -75,6 +78,7 @@ export function HomeHero() {
         <span>Current public status</span>
         <strong>{siteContent.facts.releaseDateLabel}</strong>
         <small>{siteContent.facts.platforms.join(" / ")}</small>
+        {target ? <div className="hero-countdown"><ReleaseCountdown target={target} label={siteContent.facts.releaseDateLabel} /></div> : null}
       </aside>
     </section>
   );
@@ -157,6 +161,12 @@ export function VideoFeature() {
 
 export function columnImageFor(type: string, slug = "") {
   const thumbSlugs = new Set([
+    "fate-trigger-beginner-guide",
+    "fate-trigger-release-date-tracker",
+    "awakeners-role-guide",
+    "floating-arena-route-guide",
+    "gun-chip-loadout-guide",
+    "system-requirements-settings",
     "boss-fight-third-party-guide",
     "first-day-route-plan",
     "controller-keyboard-settings",
@@ -176,7 +186,17 @@ export function columnImageFor(type: string, slug = "") {
     "gun-chip-system",
     "endgame-zone",
     "omnisight",
-    "platform-watch"
+    "platform-watch",
+    "mobility-awakener",
+    "control-awakener",
+    "burst-awakener",
+    "mid-range-rifle",
+    "close-pressure-weapon",
+    "long-sightline-weapon",
+    "steam-2026-release-window",
+    "early-access-roadmap-adjusted",
+    "playstation-platform-watch",
+    "closed-beta-footage-signals"
   ]);
   if (slug && thumbSlugs.has(slug)) return `/images/thumbs/${slug}.png`;
   const text = `${type} ${slug}`.toLowerCase();

@@ -196,6 +196,32 @@ export const siteContent = {
         "UI clues"
       ],
       "excerpt": "Gamescom Trailer is embedded for analysis, not rehosted. The notes focus on visible gameplay, UI, release-date cards, and unanswered player questions."
+    },
+    {
+      "slug": "early-access-trailer-breakdown",
+      "title": "Early Access Trailer",
+      "youtubeId": "NOIEXW5pYH4",
+      "source": "Fate Trigger gamescom 2025 trailer upload",
+      "notes": [
+        "Early Access messaging",
+        "hero shooter pacing",
+        "arena traversal",
+        "combat readability"
+      ],
+      "excerpt": "Early Access Trailer is embedded from YouTube for editorial analysis of release-window messaging, movement, combat pacing, and unanswered launch questions."
+    },
+    {
+      "slug": "cinematic-early-access-trailer-breakdown",
+      "title": "Cinematic Early Access Trailer",
+      "youtubeId": "Q_aFSJS7E6U",
+      "source": "Public Fate Trigger cinematic trailer upload",
+      "notes": [
+        "cinematic tone",
+        "character appeal",
+        "sky arena fantasy",
+        "marketing promise"
+      ],
+      "excerpt": "Cinematic Early Access Trailer is embedded from YouTube to separate visual fantasy, character marketing, and confirmed gameplay details."
     }
   ],
   "news": [
