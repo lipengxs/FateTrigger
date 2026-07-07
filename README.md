@@ -1,52 +1,46 @@
-# Fate Trigger
+# Fate Trigger Guide
 
-Welcome to the fan website repository for Fate Trigger, an epic mecha battle game set to launch in Q1 2026.
+Independent fan-made guide and news site for Fate Trigger.
 
-## Overview
+This repository powers `fatetriggerguide.com`, an editorial guide hub for release tracking, beginner guides, characters, weapons, maps, media notes, and source-aware news. It is not the official Fate Trigger website and is not affiliated with, endorsed by, or operated by Saroasis Studios.
 
-This repository contains the fan website code for Fate Trigger, featuring:
-- Latest news and updates
-- Media gallery
-- Game information
-- Weapons and Awakeners details
-- Legal documentation
+## Editorial Position
 
-## Structure
+- Current release wording: Steam lists a 2026 planned release window, with no exact public launch day confirmed.
+- Earlier Early Access timing is treated as historical context because later official messaging adjusted the schedule.
+- News, rankings, character notes, weapon notes, and map notes are editorial analysis unless a primary source confirms the detail.
+- The site does not provide downloads, beta keys, account support, or official publisher statements.
 
-The website includes the following main sections:
-- `/` - Home page
-- `/news` - Latest updates and announcements
-- `/media` - Screenshots, videos, and artwork
-- `/weapons` - Weapons information
-- `/awakeners` - Awakeners character details
-- `/map` - Map information
-- `/privacy-policy` - Privacy policy documentation
-- `/terms-of-service` - Terms of service documentation
+## Main Routes
 
-## Disclaimer
-
-**This is a fan-created website and is not affiliated with, endorsed by, or connected to the official Fate Trigger game developers or publishers.** All game-related content, trademarks, and copyrights belong to their respective owners. For official information, please visit the official Fate Trigger website or contact the game developers directly.
+- `/` - Homepage
+- `/news` - Source-aware news and release signals
+- `/guides` - Beginner, systems, settings, route, and loadout guides
+- `/release-date` - Current release tracker and source timeline
+- `/characters` - Character and Awakener topic hub
+- `/weapons` - Weapons and loadout topic hub
+- `/maps` - Floating map and route topic hub
+- `/media` - Trailer lab and public video notes
+- `/database` - Characters, weapons, maps, lore, and system entries
+- `/rankings` - Editorial rankings, not official tier lists
+- `/resources` - Official and public source links
+- `/about` - Independent site disclaimer and correction policy
+- `/privacy-policy` - Privacy policy
+- `/feedback` - Correction and source-tip contact page
 
 ## Development
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
+```bash
+npm install
+npm run dev
+npm run build
+npm run typecheck
+```
 
-### Setup
-1. Clone the repository
-2. Install dependencies: `npm install` or `yarn install`
-3. Start development server: `npm run dev` or `yarn dev`
+## Source Discipline
 
-## Contact
+Use primary sources first: Steam, official Fate Trigger/Saroasis channels, platform store pages, official YouTube uploads, and clearly attributed media reports. Avoid fake launch precision, countdowns, key claims, leaked files, copied official copy, or unsupported final stat claims before launch.
 
-- Website: [fate-trigger.com](https://fate-trigger.com)
-- Discord: [discord.gg/fatetrigger](https://discord.gg/fatetrigger)
-- Twitter: [@fatetrigger](https://twitter.com/fatetrigger)
-- YouTube: [youtube.com/fatetrigger](https://www.youtube.com/fatetrigger)
+## Disclaimer
 
-## License
-
-© 2025 Fate Trigger. All rights reserved.
-
-**Note:** This is a fan website. All game trademarks and copyrights belong to their respective owners.
+Fate Trigger names, trademarks, logos, game assets, and related intellectual property belong to their respective owners. This project is an independent fan-made guide site.

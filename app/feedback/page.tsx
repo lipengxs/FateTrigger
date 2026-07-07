@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/site";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Feedback", "Send corrections, source tips, and guide requests for Fate Trigger Field Guide.", "/feedback");
+export const metadata = pageMeta("Feedback", "Send corrections, source tips, and guide requests for Fate Trigger Guide.", "/feedback");
 
 export default function Page() {
   return (

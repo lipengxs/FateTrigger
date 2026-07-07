@@ -42,6 +42,10 @@ export default function Page() {
           {["Movement cooldowns and bridge exits", "Awakener ability readability", "Weapon range bands and recoil comfort", "Floating island rotation risks", "Release-date or platform cards", "UI clues that may change before launch"].map((item) => <article className="feature-panel" key={item}><span className="eyebrow">Watch for</span><h3>{item}</h3><p>Use this as an editorial observation point, then verify details through official source links and future patch notes.</p></article>)}
         </div>
       </section>
+      <section className="section article-main">
+        <h2>Evidence rule</h2>
+        <p>Trailer footage can support visible observations about movement, map pressure, readability, and player questions. It should not be used as final proof of launch balance, exact character kits, weapon stats, anti-cheat performance, or platform rules.</p>
+      </section>
     </>
   );
 }

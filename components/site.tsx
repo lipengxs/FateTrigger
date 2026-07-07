@@ -33,6 +33,16 @@ export function Header() {
   );
 }
 
+export function IndependenceBanner() {
+  return (
+    <aside className="independence-banner" aria-label="Independent fan site notice">
+      <strong>Independent fan-made guide.</strong>
+      <span>This is not the official Fate Trigger website. Release, platform, character, weapon, and map notes are editorial analysis with source links.</span>
+      <Link href="/about">About this site</Link>
+    </aside>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="site-footer">
@@ -115,9 +125,9 @@ export function FactPanel() {
 export function QuickStartRail() {
   const cards = [
     { title: "Release tracker", href: "/release-date", eyebrow: "Launch", image: cardImageFor("release"), text: siteContent.facts.releaseDateLabel },
-    { title: "Beginner route", href: "/guides/fate-trigger-beginner-guide", eyebrow: "Start here", image: cardImageFor("guide", "fate-trigger-beginner-guide"), text: "Movement, roles, and first-session priorities." },
+    { title: "Beginner route", href: "/beginner", eyebrow: "Start here", image: cardImageFor("guide", "fate-trigger-beginner-guide"), text: "Movement, roles, and first-session priorities." },
     { title: "Awakeners", href: "/characters", eyebrow: "Roster", image: cardImageFor("characters"), text: "Read character roles before the meta settles." },
-    { title: "Weapons", href: "/weapons", eyebrow: "Loadouts", image: cardImageFor("weapons"), text: "Gun-chip planning and combat range notes." },
+    { title: "Gun-Chip", href: "/gun-chip", eyebrow: "Loadouts", image: cardImageFor("weapons"), text: "Weapon planning and combat range notes." },
     { title: "Maps", href: "/maps", eyebrow: "Routes", image: cardImageFor("maps"), text: "Floating arena routes, landing reads, and rotations." },
     { title: "Trailer Lab", href: "/media", eyebrow: "Media", image: cardImageFor("media"), text: "Official footage, thumbnails, and watch notes." }
   ];
@@ -149,6 +159,7 @@ export function ReleaseBlock() {
           <h3>{siteContent.facts.releaseDateLabel}</h3>
           <p>{siteContent.facts.release}</p>
           <p>{siteContent.facts.countdownNote}</p>
+          <p>Source checked: {siteContent.sourceChecked}. This is independent guide analysis, not an official launch announcement.</p>
         </article>
         {target ? <ReleaseCountdown target={target} label={siteContent.facts.releaseDateLabel} /> : <article className="feature-panel muted-panel"><span className="eyebrow">Countdown</span><h3>No exact timer yet</h3><p>Countdown will be added only after an exact official date or unlock time is public.</p></article>}
       </div>
@@ -318,9 +329,32 @@ export function FaqBlock() {
 export function SourceList() {
   return (
     <section className="section">
-      <SectionHeading eyebrow="Sources" title="Source links and credit discipline" />
+      <SectionHeading eyebrow="Sources" title="Independent source links and credit discipline" />
       <div className="source-list">
         {siteContent.sources.map(([name, url, note]) => <a key={url} href={url} target="_blank" rel="noreferrer"><strong>{name}</strong><span>{note}</span></a>)}
+      </div>
+    </section>
+  );
+}
+
+export function SourceTimeline() {
+  return (
+    <section className="section">
+      <SectionHeading eyebrow="Source Timeline" title="Release-date claims and current confidence" />
+      <div className="source-timeline">
+        {siteContent.releaseTimeline.map((item) => (
+          <article key={item.date + item.label} className="timeline-card">
+            <time>{item.date}</time>
+            <div>
+              <h3>{item.label}</h3>
+              <p>{item.detail}</p>
+              <dl>
+                <div><dt>Source</dt><dd>{item.source}</dd></div>
+                <div><dt>Confidence</dt><dd>{item.confidence}</dd></div>
+              </dl>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

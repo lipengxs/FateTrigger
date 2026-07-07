@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Breadcrumbs, DetailHeaderImage, JsonLd, SourceList, Tags, WatchTable } from "@/components/site";
 import { siteContent } from "@/lib/content";
-import { articleJsonLd, breadcrumbJsonLd, pageMeta, videoJsonLd } from "@/lib/seo";
+import { articleJsonLd, breadcrumbJsonLd, pageMeta, singleVideoJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return siteContent.videos.map((item) => ({ slug: item.slug }));
@@ -9,6 +9,15 @@ export function generateStaticParams() {
 
 function getItem(slug: string) {
   return siteContent.videos.find((item) => item.slug === slug);
+}
+
+function evidenceRows(item: NonNullable<ReturnType<typeof getItem>>) {
+  return [
+    ["Can support", `Visible notes such as ${item.notes.slice(0, 3).join(", ")} can support route, readability, UI, and player-question analysis.`],
+    ["Cannot prove", "Final launch balance, exact ability values, weapon stats, matchmaking rules, platform parity, or anti-cheat performance."],
+    ["Use safely by", "Embedding the public YouTube video, linking sources, describing visible observations, and updating the page after new official footage or patch notes."],
+    ["Do not use as", "A substitute for official kit pages, official map data, launch-day stat tables, or publisher announcements."]
+  ];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -26,13 +35,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", href: "/" }, { name: base, href: "/" + base }, { name: item.title, href: "/" + base + "/" + item.slug }])} />
-      <JsonLd data={videoJsonLd() } />
+      <JsonLd data={singleVideoJsonLd(item) } />
       <Breadcrumbs items={[{ label: base, href: "/" + base }, { label: item.title, href: "/" + base + "/" + item.slug }]} />
       <header className="page-header"><span className="eyebrow">{item.source}</span><h1>{item.title}</h1><p>{item.excerpt}</p></header>
       <DetailHeaderImage type="media" slug={item.slug} title={item.title} />
       <section className="section article-body">
         <article className="article-main">
-          <iframe style={{ width: "100%", aspectRatio: "16 / 9", border: 0, background: "#000" }} src={`https://www.youtube.com/embed/${item.youtubeId}`} title={item.title} loading="lazy" allowFullScreen /><p>{item.excerpt}</p><WatchTable video={item} /><ul className="check-list">{item.notes.map((point) => <li key={point}>{point}</li>)}</ul>
+          <iframe style={{ width: "100%", aspectRatio: "16 / 9", border: 0, background: "#000" }} src={`https://www.youtube.com/embed/${item.youtubeId}`} title={item.title} loading="lazy" allowFullScreen />
+          <p>{item.excerpt}</p>
+          <WatchTable video={item} />
+          <div className="content-block"><h2>Evidence boundaries</h2><table className="info-table"><tbody>{evidenceRows(item).map(([label, value]) => <tr key={label}><th>{label}</th><td>{value}</td></tr>)}</tbody></table></div>
+          <div className="content-block"><h2>Visible notes</h2><ul className="check-list">{item.notes.map((point) => <li key={point}>{point}</li>)}</ul></div>
         </article>
         <aside className="article-aside"><h2>Read next</h2><p>Use the release tracker, media hub, and database pages to verify this topic from more than one source.</p><p><a className="button" href="/release-date">Release tracker</a></p><p><a className="button" href="/database">Database</a></p></aside>
       </section>

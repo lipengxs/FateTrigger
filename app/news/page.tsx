@@ -1,8 +1,8 @@
-import { Breadcrumbs, Card, JsonLd, SectionHeading, Tags, cardImageFor } from "@/components/site";
+import { Breadcrumbs, Card, JsonLd, SectionHeading, SourceTimeline, Tags, cardImageFor } from "@/components/site";
 import { siteContent } from "@/lib/content";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Fate Trigger News Intel", "Release-window updates, beta signals, platform reporting, and source-aware Fate Trigger news notes.", "/news");
+export const metadata = pageMeta("Fate Trigger News Intel", "Independent Fate Trigger news notes, release-window checks, beta signals, platform reporting, and source timelines.", "/news");
 
 export default function Page() {
   const [lead, ...rest] = siteContent.news;
@@ -13,8 +13,9 @@ export default function Page() {
       <header className="page-header news-command-header">
         <span className="eyebrow">Awakener Intel Feed</span>
         <h1>Fate Trigger news, release signals, and public source checks</h1>
-        <p>Every update is written as independent guide analysis: what changed, why it matters for players, and which official or public source should be checked next.</p>
+        <p>Every update is independent guide analysis, not an official announcement: what changed, why it matters for players, and which public source should be checked next.</p>
       </header>
+      <SourceTimeline />
       <section className="section fate-news-board">
         <a className="news-lead-panel" href={`/news/${lead.slug}`}>
           <img src={cardImageFor("news", lead.slug)} alt={`${lead.title} news artwork`} />

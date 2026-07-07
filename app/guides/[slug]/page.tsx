@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Breadcrumbs, DetailHeaderImage, JsonLd, SourceList, Tags, cardImageFor } from "@/components/site";
-import { siteContent } from "@/lib/content";
+import { guideFreshnessFor, siteContent } from "@/lib/content";
 import { articleJsonLd, breadcrumbJsonLd, pageMeta, videoJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -95,6 +95,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const image = cardImageFor("guide", item.slug);
   const video = siteContent.videos[0];
   const rows = rowsFor(item);
+  const freshness = guideFreshnessFor(item.slug);
   const guideLinks = relatedGuides(item);
   const databaseLinks = relatedEntries(item);
   return (
@@ -107,6 +108,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <section className="section article-body">
         <article className="article-main">
           <figure className="article-figure"><img src={image} alt={`${item.title} Fate Trigger guide media`} /><figcaption>Guide media uses localized public source imagery where available, with official video footage embedded separately for review.</figcaption></figure>
+          <div className="content-block"><h2>Content status</h2><table className="info-table"><tbody><tr><th>Last checked</th><td>{freshness.lastChecked}</td></tr><tr><th>Confidence</th><td>{freshness.confidence}</td></tr><tr><th>Source type</th><td>{freshness.sourceType}</td></tr><tr><th>After launch</th><td>{freshness.needsUpdateAfterLaunch}</td></tr></tbody></table></div>
           {item.body.map((para) => <p key={para}>{para}</p>)}
           <table className="info-table"><thead><tr><th>Guide angle</th><th>Practical recommendation</th><th>Why it matters</th></tr></thead><tbody>{rows.map(([angle, recommendation, reason]) => <tr key={angle}><th>{angle}</th><td>{recommendation}</td><td>{reason}</td></tr>)}</tbody></table>
           <div className="content-block"><h2>Action checklist</h2><ul className="check-list">{item.bullets.map((point) => <li key={point}>{point}</li>)}</ul></div>

@@ -99,6 +99,62 @@ function decisionProfile(category: string, entry: Entry) {
   ];
 }
 
+function confidenceRows(category: string, entry: Entry) {
+  if (category === "characters") {
+    return [
+      ["Confirmed", `${entry.title} is tracked here as a public Fate Trigger character or role topic, with the current page focused on role interpretation rather than final stats.`],
+      ["Inferred", "Role fit, beginner value, squad pairing, and route safety are editorial reads from public footage, store language, and related source-linked coverage."],
+      ["Unknown", "Final ability names, cooldowns, damage values, ultimate behavior, squad limits, counters, and ranked viability need official pages or launch data."],
+      ["Do not claim", "Do not present this page as an official kit page, official tier placement, or confirmed best character recommendation."]
+    ];
+  }
+  if (category === "weapons") {
+    return [
+      ["Confirmed", `${entry.title} is treated as a weapon, equipment, or loadout-planning topic for pre-launch player preparation.`],
+      ["Inferred", "Range band, route fit, and squad job are editorial planning notes until public stat tables or repeatable launch tests exist."],
+      ["Unknown", "Damage, fire rate, recoil values, attachments, Gun-Chip effects, unlock path, and live meta position are not final here."],
+      ["Do not claim", "Do not call any weapon or Gun-Chip build best-in-slot until official data or repeatable match evidence supports it."]
+    ];
+  }
+  if (category === "maps") {
+    return [
+      ["Confirmed", `${entry.title} is used as a route-planning topic for floating arena decisions and visible map-pressure patterns.`],
+      ["Inferred", "Landing safety, bridge risk, flank value, third-party timing, and endgame pressure are independent tactical reads."],
+      ["Unknown", "Official location names, loot values, spawn rules, objective timing, screenshots, and final route callouts require launch or official map assets."],
+      ["Do not claim", "Do not publish fake official map names or fixed loot rankings before reliable source material exists."]
+    ];
+  }
+  return [
+    ["Confirmed", `${entry.title} is tracked as a lore, system, platform, or trust topic from public materials.`],
+    ["Inferred", "Player impact and competitive meaning are editorial analysis, not official policy."],
+    ["Unknown", "Final lore text, platform rules, account systems, anti-cheat behavior, and live-service details may change."],
+    ["Do not claim", "Do not present fan interpretation as official story, security proof, or platform commitment."]
+  ];
+}
+
+function launchUpdateRows(category: string) {
+  if (category === "characters") return [
+    ["Kit data", "Ability names, cooldowns, damage or utility values, ultimate behavior, counters, and mobility rules."],
+    ["Team context", "Best squad pairings, solo queue value, revive safety, entry order, and role overlap."],
+    ["Evidence", "Official character page, patch note, training range test, or repeatable match footage."]
+  ];
+  if (category === "weapons") return [
+    ["Stat data", "Damage, range falloff, recoil pattern, fire rate, reload timing, magazine size, and handling."],
+    ["Build data", "Gun-Chip names, effects, unlock path, build costs, upgrade tradeoffs, and role pairings."],
+    ["Evidence", "Official weapon page, patch note, controlled test, or documented live match sample."]
+  ];
+  if (category === "maps") return [
+    ["Map data", "Official location names, route labels, elevation points, objectives, loot density, and hazard rules."],
+    ["Route data", "Safe starts, bridge timings, third-party lanes, revive paths, and endgame zone exits."],
+    ["Evidence", "Official map media, credited screenshots, public match review, or developer route terminology."]
+  ];
+  return [
+    ["Source data", "Official lore posts, platform pages, security FAQ, support articles, or patch notes."],
+    ["Player impact", "What the system changes for matchmaking, fair play, account planning, platform choice, or story reading."],
+    ["Evidence", "Primary-source update first; media reporting second; social reposts only after verification."]
+  ];
+}
+
 function tacticalRead(category: string, entry: Entry) {
   if (category === "characters") {
     return `${entry.title} should be judged by decision quality before damage output. In a floating-arena shooter, a ${entry.role.toLowerCase()} identity matters only if it helps the squad enter, trade, revive, or leave with fewer exposed seconds. The useful question is not "is this the strongest Awakener?" but "what mistake does this role forgive, and what mistake does it punish?"`;
@@ -133,6 +189,8 @@ export default async function Page({ params }: { params: Promise<{ category: str
   const [angle, recommendation, updateRule] = categoryGuidance(category);
   const image = cardImageFor(category, entry.slug);
   const profile = decisionProfile(category, entry);
+  const confidence = confidenceRows(category, entry);
+  const updateRows = launchUpdateRows(category);
   const guides = relatedGuides(entry);
   const deepDive = deepDiveFor(entry.slug);
   return (
@@ -148,7 +206,9 @@ export default async function Page({ params }: { params: Promise<{ category: str
           <p>{tacticalRead(category, entry)}</p>
           <p>Best use case: {entry.excerpt}</p>
           <table className="info-table"><tbody><tr><th>{angle}</th><td>{recommendation}</td></tr><tr><th>Current confidence</th><td>Moderate. The recommendation is based on public footage, Steam language, source-linked reporting, and cautious pre-launch analysis rather than final launch stats.</td></tr><tr><th>Update rule</th><td>{updateRule}</td></tr></tbody></table>
+          <div className="content-block"><h2>Confirmed, inferred, and unknown</h2><table className="info-table"><tbody>{confidence.map(([label, value]) => <tr key={label}><th>{label}</th><td>{value}</td></tr>)}</tbody></table></div>
           <div className="content-block"><h2>Decision profile</h2><table className="info-table"><tbody>{profile.map(([label, value]) => <tr key={label}><th>{label}</th><td>{value}</td></tr>)}</tbody></table></div>
+          <div className="content-block"><h2>Launch update fields</h2><table className="info-table"><tbody>{updateRows.map(([label, value]) => <tr key={label}><th>{label}</th><td>{value}</td></tr>)}</tbody></table></div>
           <div className="content-block"><h2>Strengths and watch-outs</h2><ul className="check-list">{entry.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul></div>
           <div className="content-block"><h2>How to use this entry</h2><p>{searchAnswer(category, entry)}</p><p>Use it with the release tracker and trailer notes before making assumptions about tier lists, best weapons, or day-one builds. The page is intentionally written as an independent fan guide so players can separate observed signals from official confirmation.</p></div>
           {guides.length ? <div className="content-block"><h2>Related Fate Trigger guides</h2><div className="link-list">{guides.map((guide: Guide) => <a key={guide.slug} href={`/guides/${guide.slug}`}><strong>{guide.title}</strong><span>{guide.excerpt}</span></a>)}</div></div> : null}

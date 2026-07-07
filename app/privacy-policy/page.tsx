@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/site";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Privacy Policy", "Privacy policy for Fate Trigger Field Guide.", "/privacy-policy");
+export const metadata = pageMeta("Privacy Policy", "Privacy policy for Fate Trigger Guide.", "/privacy-policy");
 
 export default function Page() {
   return (

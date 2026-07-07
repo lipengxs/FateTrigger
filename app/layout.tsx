@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Footer, Header, JsonLd } from "@/components/site";
+import { Footer, Header, IndependenceBanner, JsonLd } from "@/components/site";
 import { absoluteUrl, siteContent } from "@/lib/content";
 import { videoGameJsonLd } from "@/lib/seo";
 import "./globals.css";
@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={"site-" + siteContent.theme.body}>
         <JsonLd data={videoGameJsonLd()} />
         <Header />
+        <IndependenceBanner />
         <main>{children}</main>
         <Footer />
       </body>
