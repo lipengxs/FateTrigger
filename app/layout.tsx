@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteContent.siteName}`
   },
   description: siteContent.hero.dek,
+  verification: {
+    other: {
+      "msvalidate.01": "B362957FC36C5EDDD6079B6D78330424"
+    }
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
