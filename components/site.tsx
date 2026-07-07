@@ -8,18 +8,18 @@ export function JsonLd({ data }: { data: unknown }) {
 }
 
 export function Header() {
-  const headerGroups = navGroups.filter((group) => group.label !== "Site").slice(0, Math.max(0, 6 - navItems.length));
+  const headerGroups = navGroups.filter((group) => group.label !== "Site");
   return (
     <header className="site-header">
       <Link href="/" className="brand" aria-label={siteContent.siteName}>
-        <Image src="/logo.png" alt={siteContent.siteName + " independent guide logo"} width={42} height={42} className="brand-logo" />
-        <span>{siteContent.siteName}</span>
+        <span className="brand-mark" aria-hidden="true">FT</span>
+        <span className="brand-copy"><strong>Fate Trigger</strong><small>Guide</small></span>
       </Link>
       <nav className="top-nav" aria-label="Primary navigation">
-        {navItems.slice(0, 6).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+        {navItems.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         {headerGroups.map((group) => (
           <div className="nav-dropdown" key={group.label}>
-            <button className="nav-trigger" type="button">{group.label}</button>
+            <button className="nav-trigger" type="button" aria-haspopup="true">{group.label}</button>
             <div className="nav-menu">
               <div className="nav-group">
                 <strong>{group.label}</strong>
@@ -61,9 +61,9 @@ export function HomeHero() {
   const target = siteContent.facts.countdownTarget;
   return (
     <section className="home-hero home-hero-sky">
-      <Image src="/images/hero-independent.png" alt={siteContent.gameName + " original independent guide hero artwork"} fill priority className="hero-image" />
+      <Image src="/images/hero/fate-trigger-hero.jpg" alt={siteContent.gameName + " official trailer gameplay scene"} fill priority className="hero-image" />
       <div className="hero-shade" />
-      <div className="hero-hud" aria-hidden="true"><span>Route scan</span><span>Awakener sync</span><span>Skyline vector</span></div>
+      <div className="hero-hud" aria-hidden="true"><span>Release Watch</span><span>Awakener Intel</span><span>Floating Arena</span></div>
       <div className="hero-content">
         <span className="eyebrow">{siteContent.hero.eyebrow}</span>
         <h1>{siteContent.hero.title}</h1>
@@ -75,7 +75,7 @@ export function HomeHero() {
         <p className="independent-note">This site is an independent fan-made guide and is not affiliated with the official game publisher or developer.</p>
       </div>
       <aside className="hero-dossier">
-        <span>Current public status</span>
+        <span>Public launch status</span>
         <strong>{siteContent.facts.releaseDateLabel}</strong>
         <small>{siteContent.facts.platforms.join(" / ")}</small>
         {target ? <div className="hero-countdown"><ReleaseCountdown target={target} label={siteContent.facts.releaseDateLabel} /></div> : null}
@@ -109,6 +109,32 @@ export function FactPanel() {
     <div className="fact-panel">
       {rows.map(([label, value]) => <div key={label}><span>{label}</span><strong>{value}</strong></div>)}
     </div>
+  );
+}
+
+export function QuickStartRail() {
+  const cards = [
+    { title: "Release tracker", href: "/release-date", eyebrow: "Launch", image: cardImageFor("release"), text: siteContent.facts.releaseDateLabel },
+    { title: "Beginner route", href: "/guides/fate-trigger-beginner-guide", eyebrow: "Start here", image: cardImageFor("guide", "fate-trigger-beginner-guide"), text: "Movement, roles, and first-session priorities." },
+    { title: "Awakeners", href: "/characters", eyebrow: "Roster", image: cardImageFor("characters"), text: "Read character roles before the meta settles." },
+    { title: "Weapons", href: "/weapons", eyebrow: "Loadouts", image: cardImageFor("weapons"), text: "Gun-chip planning and combat range notes." },
+    { title: "Maps", href: "/maps", eyebrow: "Routes", image: cardImageFor("maps"), text: "Floating arena routes, landing reads, and rotations." },
+    { title: "Trailer Lab", href: "/media", eyebrow: "Media", image: cardImageFor("media"), text: "Official footage, thumbnails, and watch notes." }
+  ];
+  return (
+    <section className="section quick-start-section">
+      <SectionHeading eyebrow="Quick Start" title="Pick the fastest path into Fate Trigger" />
+      <div className="quick-start-grid">
+        {cards.map((card) => (
+          <Link className="quick-start-card" href={card.href} key={card.href}>
+            <img src={card.image} alt={`${card.title} Fate Trigger footage`} loading="lazy" />
+            <span>{card.eyebrow}</span>
+            <strong>{card.title}</strong>
+            <p>{card.text}</p>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -149,7 +175,7 @@ export function VideoFeature() {
         <div className="video-stack">
           {rest.map((video) => (
             <Link href={`/media/${video.slug}`} className="video-thumb" key={video.slug}>
-              <img src={`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`} alt={video.title + " YouTube thumbnail"} />
+              <img src={columnImageFor("media", video.slug)} alt={video.title + " public trailer thumbnail"} />
               <div><strong>{video.title}</strong><span>{video.notes.slice(0, 2).join(" / ")}</span></div>
             </Link>
           ))}
@@ -160,6 +186,14 @@ export function VideoFeature() {
 }
 
 export function columnImageFor(type: string, slug = "") {
+  const localMediaBySlug: Record<string, string> = {
+    "official-trailer-breakdown": "/images/media/official-trailer.jpg",
+    "closed-beta-trailer-breakdown": "/images/media/closed-beta-trailer.jpg",
+    "gamescom-trailer-breakdown": "/images/media/gamescom-trailer.jpg",
+    "early-access-trailer-breakdown": "/images/media/early-access-trailer.jpg",
+    "cinematic-early-access-trailer-breakdown": "/images/media/cinematic-early-access-trailer.jpg"
+  };
+  if (slug && localMediaBySlug[slug]) return localMediaBySlug[slug];
   const thumbSlugs = new Set([
     "fate-trigger-beginner-guide",
     "fate-trigger-release-date-tracker",
@@ -200,12 +234,12 @@ export function columnImageFor(type: string, slug = "") {
   ]);
   if (slug && thumbSlugs.has(slug)) return `/images/thumbs/${slug}.png`;
   const text = `${type} ${slug}`.toLowerCase();
-  if (text.includes("release") || text.includes("date") || text.includes("launch") || text.includes("countdown")) return "/images/columns/release.png";
-  if (text.includes("character") || text.includes("awakener") || text.includes("class") || text.includes("fally") || text.includes("bibi")) return "/images/columns/characters.png";
-  if (text.includes("weapon") || text.includes("loadout") || text.includes("gun") || text.includes("chip")) return "/images/columns/weapons.png";
-  if (text.includes("map") || text.includes("route") || text.includes("arena") || text.includes("environment") || text.includes("bridge") || text.includes("vertical")) return "/images/columns/maps.png";
-  if (text.includes("media") || text.includes("trailer") || text.includes("video") || text.includes("news") || text.includes("comparison") || text.includes("vs-")) return "/images/columns/media.png";
-  return "/images/columns/guides.png";
+  if (text.includes("release") || text.includes("date") || text.includes("launch") || text.includes("countdown")) return "/images/tiles/release.jpg";
+  if (text.includes("character") || text.includes("awakener") || text.includes("class") || text.includes("fally") || text.includes("bibi")) return "/images/tiles/characters.jpg";
+  if (text.includes("weapon") || text.includes("loadout") || text.includes("gun") || text.includes("chip")) return "/images/tiles/weapons.jpg";
+  if (text.includes("map") || text.includes("route") || text.includes("arena") || text.includes("environment") || text.includes("bridge") || text.includes("vertical")) return "/images/tiles/maps.jpg";
+  if (text.includes("media") || text.includes("trailer") || text.includes("video") || text.includes("news") || text.includes("comparison") || text.includes("vs-")) return "/images/tiles/media.jpg";
+  return "/images/tiles/guides.jpg";
 }
 
 export const cardImageFor = columnImageFor;
@@ -213,7 +247,7 @@ export const cardImageFor = columnImageFor;
 export function DetailHeaderImage({ type, slug, title }: { type: string; slug?: string; title: string }) {
   return (
     <section className="detail-header-image section">
-      <img src={columnImageFor(type, slug)} alt={`${title} independent guide header artwork`} />
+      <img src={columnImageFor(type, slug)} alt={`${title} Fate Trigger media header`} />
     </section>
   );
 }
@@ -243,7 +277,7 @@ export function FeaturedMediaWall() {
   const tiles = [
     { title: "Release tracker", href: "/release-date", image: columnImageFor("release"), eyebrow: "Launch" },
     { title: "Beginner guide", href: siteContent.hero.secondaryCta[1], image: columnImageFor("guides"), eyebrow: "Guide" },
-    { title: siteContent.videos[0].title, href: `/media/${siteContent.videos[0].slug}`, image: `https://i.ytimg.com/vi/${siteContent.videos[0].youtubeId}/hqdefault.jpg`, eyebrow: "YouTube" },
+    { title: siteContent.videos[0].title, href: `/media/${siteContent.videos[0].slug}`, image: columnImageFor("media", siteContent.videos[0].slug), eyebrow: "YouTube" },
     { title: "Characters and roles", href: "/characters", image: columnImageFor("characters"), eyebrow: "Database" },
     { title: "Weapons and loadouts", href: "/weapons", image: columnImageFor("weapons"), eyebrow: "Loadouts" },
     { title: "Maps and routes", href: "/maps", image: columnImageFor("maps"), eyebrow: "Routes" }

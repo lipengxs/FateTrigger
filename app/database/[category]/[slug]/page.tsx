@@ -144,7 +144,7 @@ export default async function Page({ params }: { params: Promise<{ category: str
       <DetailHeaderImage type={category} slug={entry.slug} title={entry.title} />
       <section className="section article-body">
         <article className="article-main">
-          <figure className="article-figure"><img src={image} alt={`${entry.title} independent Fate Trigger database artwork`} /><figcaption>Original editorial art for this guide entry. It is not an official screenshot, logo, or publisher asset.</figcaption></figure>
+          <figure className="article-figure"><img src={image} alt={`${entry.title} Fate Trigger database media`} /><figcaption>Database media favors localized public footage and official-source thumbnails where available, with cautious independent analysis in the text.</figcaption></figure>
           <p>{tacticalRead(category, entry)}</p>
           <p>Best use case: {entry.excerpt}</p>
           <table className="info-table"><tbody><tr><th>{angle}</th><td>{recommendation}</td></tr><tr><th>Current confidence</th><td>Moderate. The recommendation is based on public footage, Steam language, source-linked reporting, and cautious pre-launch analysis rather than final launch stats.</td></tr><tr><th>Update rule</th><td>{updateRule}</td></tr></tbody></table>

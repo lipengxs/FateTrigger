@@ -2,7 +2,7 @@ export const siteContent = {
   "key": "fate",
   "root": "/Users/ugreen/gamesworkspace/FateTrigger",
   "domain": "fatetriggerguide.com",
-  "siteName": "Fate Trigger Field Guide",
+  "siteName": "Fate Trigger Guide",
   "gameName": "Fate Trigger",
   "heroAsset": "/Users/ugreen/.codex/generated_images/019f1c49-96df-72e1-8656-55f2d1a3e865/ig_03e4a56f43e77375016a49b4db786c8191bdfde68a7b273afa.png",
   "theme": {
@@ -17,9 +17,9 @@ export const siteContent = {
     "line": "#23445d"
   },
   "hero": {
-    "eyebrow": "Awakener Intelligence Desk",
-    "title": "Fate Trigger release watch, Awakeners, weapons, and floating arena routes",
-    "dek": "An independent English guide for players tracking Saroasis Studios' anime-style hero tactical shooter, with source-linked release notes, trailer observations, and practical pre-launch route planning.",
+    "eyebrow": "Fate Trigger Intel Hub",
+    "title": "Fate Trigger release news, guides, Awakeners, weapons, and floating arena routes",
+    "dek": "A clean independent guide hub for Fate Trigger players, built around source-linked release tracking, official footage notes, beginner routes, and practical pre-launch planning.",
     "primaryCta": [
       "Track Release",
       "/release-date"
@@ -84,12 +84,8 @@ export const siteContent = {
   ],
   "nav": [
     [
-      "Intel",
+      "News",
       "/news"
-    ],
-    [
-      "Awakeners",
-      "/characters"
     ],
     [
       "Guides",
@@ -104,6 +100,10 @@ export const siteContent = {
     [
       "Database",
       [
+        [
+          "Characters",
+          "/characters"
+        ],
         [
           "Weapons",
           "/weapons"

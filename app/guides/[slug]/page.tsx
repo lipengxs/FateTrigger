@@ -106,7 +106,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <DetailHeaderImage type="guide" slug={item.slug} title={item.title} />
       <section className="section article-body">
         <article className="article-main">
-          <figure className="article-figure"><img src={image} alt={`${item.title} original guide artwork`} /><figcaption>Original editorial artwork used for this independent guide. Public videos are embedded separately and are not downloaded or rehosted.</figcaption></figure>
+          <figure className="article-figure"><img src={image} alt={`${item.title} Fate Trigger guide media`} /><figcaption>Guide media uses localized public source imagery where available, with official video footage embedded separately for review.</figcaption></figure>
           {item.body.map((para) => <p key={para}>{para}</p>)}
           <table className="info-table"><thead><tr><th>Guide angle</th><th>Practical recommendation</th><th>Why it matters</th></tr></thead><tbody>{rows.map(([angle, recommendation, reason]) => <tr key={angle}><th>{angle}</th><td>{recommendation}</td><td>{reason}</td></tr>)}</tbody></table>
           <div className="content-block"><h2>Action checklist</h2><ul className="check-list">{item.bullets.map((point) => <li key={point}>{point}</li>)}</ul></div>

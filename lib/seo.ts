@@ -13,13 +13,13 @@ export function pageMeta(title: string, description: string, path = "/"): Metada
       url,
       siteName: siteContent.siteName,
       type: "website",
-      images: [{ url: absoluteUrl("/images/hero-independent.png"), width: 1792, height: 1024, alt: `${siteContent.siteName} original guide artwork` }]
+      images: [{ url: absoluteUrl("/images/hero/fate-trigger-hero.jpg"), width: 1280, height: 720, alt: `${siteContent.siteName} gameplay media hero` }]
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [absoluteUrl("/images/hero-independent.png")]
+      images: [absoluteUrl("/images/hero/fate-trigger-hero.jpg")]
     }
   };
 }

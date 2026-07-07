@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     url: absoluteUrl("/"),
     siteName: siteContent.siteName,
     type: "website",
-    images: [{ url: absoluteUrl("/images/hero-independent.png"), width: 1792, height: 1024, alt: `${siteContent.siteName} original guide artwork` }]
+    images: [{ url: absoluteUrl("/images/hero/fate-trigger-hero.jpg"), width: 1280, height: 720, alt: `${siteContent.siteName} gameplay media hero` }]
   },
-  twitter: { card: "summary_large_image", title: siteContent.siteName, description: siteContent.hero.dek, images: [absoluteUrl("/images/hero-independent.png")] }
+  twitter: { card: "summary_large_image", title: siteContent.siteName, description: siteContent.hero.dek, images: [absoluteUrl("/images/hero/fate-trigger-hero.jpg")] }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
