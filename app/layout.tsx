@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Footer, Header, IndependenceBanner, JsonLd } from "@/components/site";
+import { Header } from "@/components/header-nav";
+import { Footer, IndependenceBanner, JsonLd } from "@/components/site";
 import { absoluteUrl, siteContent } from "@/lib/content";
 import { videoGameJsonLd } from "@/lib/seo";
 import "./globals.css";

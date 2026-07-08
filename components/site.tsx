@@ -1,36 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ReleaseCountdown } from "@/components/release-countdown";
-import { faqs, footerLinks, navGroups, navItems, siteContent } from "@/lib/content";
+import { faqs, footerLinks, siteContent } from "@/lib/content";
 
 export function JsonLd({ data }: { data: unknown }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
-}
-
-export function Header() {
-  const headerGroups = navGroups.filter((group) => group.label !== "Site");
-  return (
-    <header className="site-header">
-      <Link href="/" className="brand" aria-label={siteContent.siteName}>
-        <span className="brand-mark" aria-hidden="true">FT</span>
-        <span className="brand-copy"><strong>Fate Trigger</strong><small>Guide</small></span>
-      </Link>
-      <nav className="top-nav" aria-label="Primary navigation">
-        {navItems.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
-        {headerGroups.map((group) => (
-          <div className="nav-dropdown" key={group.label}>
-            <button className="nav-trigger" type="button" aria-haspopup="true">{group.label}</button>
-            <div className="nav-menu">
-              <div className="nav-group">
-                <strong>{group.label}</strong>
-                {group.links.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
-              </div>
-            </div>
-          </div>
-        ))}
-      </nav>
-    </header>
-  );
 }
 
 export function IndependenceBanner() {
