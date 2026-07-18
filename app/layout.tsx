@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   description: siteContent.hero.dek,
   verification: {
     other: {
-      "msvalidate.01": "B362957FC36C5EDDD6079B6D78330424"
+      "msvalidate.01": "B362957FC36C5EDDD6079B6D78330424",
+      "yandex-verification": "78812f18147f0c75"
     }
   },
   icons: {
