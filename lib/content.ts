@@ -504,8 +504,8 @@ export const siteContent = {
     },
     {
       "slug": "best-weapons-to-learn-first",
-      "title": "Best Weapons to Learn First in Fate Trigger",
-      "excerpt": "A weapon learning order for floating arenas: start mid-range, add close pressure, then study long sightlines after your squad controls exits.",
+      "title": "Weapon Watchlist for New Fate Trigger Players",
+      "excerpt": "A source-safe framework for comparing public weapon range signals; final recoil, damage, and loadout recommendations await verified data.",
       "bullets": [
         "Learn a mid-range rifle before specialized weapons.",
         "Use close-pressure weapons only when the route is controlled.",
@@ -532,8 +532,8 @@ export const siteContent = {
     },
     {
       "slug": "vertical-map-mistakes",
-      "title": "Fate Trigger Vertical Map Mistakes: bridges, roofs, and cloudline exits",
-      "excerpt": "A route-focused guide to the mistakes players make on floating islands before they understand third-party pressure.",
+      "title": "Fate Trigger Vertical Map Watchlist: public route signals",
+      "excerpt": "A source-aware checklist for observing bridges, roofs, and exits in public footage before final map layouts are verified.",
       "bullets": [
         "Do not cross exposed bridges after spending movement cooldowns.",
         "Never loot central platforms without naming an exit.",

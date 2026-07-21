@@ -41,6 +41,7 @@ export function Header() {
         {navItems.map((item) => (
           <Link key={item.href} href={item.href} onClick={() => setOpenGroup(null)}>{item.label}</Link>
         ))}
+        <Link href="/search" onClick={() => setOpenGroup(null)}>Search</Link>
         {headerGroups.map((group) => {
           const isOpen = openGroup === group.label;
           return (
