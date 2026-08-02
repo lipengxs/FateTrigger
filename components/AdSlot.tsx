@@ -56,13 +56,17 @@ export function AdSlot({ placement }: { placement: Placement }) {
     window.__adsterraQueue = (window.__adsterraQueue ?? Promise.resolve()).then(load);
   }, [enabled, unit]);
 
-  if (!enabled) return null;
-
   return (
-    <aside
-      aria-label="Advertisement"
-      ref={hostRef}
-      style={{ display: "flex", justifyContent: "center", width: "100%", minHeight: unit.height, margin: placement === "rectangle" ? "32px auto" : "20px auto", overflow: "hidden" }}
-    />
+    <>
+      <aside aria-label="Advertisement" ref={hostRef} className={`ad-slot ad-slot--${placement}`} />
+      <style jsx>{`
+        .ad-slot { display: flex; justify-content: center; width: 100%; overflow: hidden; }
+        .ad-slot--leaderboard { min-height: 90px; margin: 20px auto; }
+        .ad-slot--rectangle { min-height: 250px; margin: 32px auto; }
+        .ad-slot--mobile { display: none; }
+        @media (max-width: 1023px) { .ad-slot--leaderboard, .ad-slot--rectangle { display: none; } }
+        @media (max-width: 767px) { .ad-slot--mobile { display: flex; min-height: 50px; margin: 20px auto; } }
+      `}</style>
+    </>
   );
 }
