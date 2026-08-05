@@ -8,6 +8,23 @@ const nextConfig = {
       { protocol: "https", hostname: "img.youtube.com" }
     ]
   },
+  async redirects() {
+    return [
+      { source: "/guides/fate-trigger-release-date-tracker", destination: "/release-date", permanent: true },
+      { source: "/guides/floating-arena-route-guide", destination: "/maps", permanent: true },
+      { source: "/guides/floating-map-landing-zones", destination: "/maps", permanent: true },
+      { source: "/guides/vertical-map-mistakes", destination: "/maps", permanent: true },
+      { source: "/guides/first-day-route-plan", destination: "/maps", permanent: true },
+      { source: "/guides/best-weapons-to-learn-first", destination: "/weapons", permanent: true },
+      { source: "/guides/best-awakeners-for-beginners", destination: "/characters", permanent: true },
+      { source: "/guides/solo-queue-awakener-picks", destination: "/characters", permanent: true },
+      { source: "/guides/squad-composition-guide", destination: "/characters", permanent: true },
+      { source: "/guides/boss-fight-third-party-guide", destination: "/beginner", permanent: true },
+      { source: "/guides/gun-chip-build-scenarios", destination: "/gun-chip", permanent: true },
+      { source: "/guides/gun-chip-progression-planning", destination: "/gun-chip", permanent: true },
+      { source: "/rankings", destination: "/characters", permanent: true }
+    ];
+  },
   async headers() {
     return [
       {

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Breadcrumbs, DetailHeaderImage, JsonLd, SourceList, Tags, cardImageFor } from "@/components/site";
-import { guideFreshnessFor, siteContent } from "@/lib/content";
+import { guideFreshnessFor, indexableGuideSlugs, redirectedGuideSlugs, siteContent } from "@/lib/content";
 import { articleJsonLd, breadcrumbJsonLd, pageMeta, videoJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -51,7 +51,7 @@ function tokensFor(...parts: string[]) {
 function relatedGuides(item: NonNullable<ReturnType<typeof getItem>>) {
   const tokens = tokensFor(item.title, item.excerpt, ...item.keywords, ...item.bullets);
   return siteContent.guides
-    .filter((guide) => guide.slug !== item.slug)
+    .filter((guide) => guide.slug !== item.slug && !redirectedGuideSlugs.has(guide.slug) && indexableGuideSlugs.has(guide.slug))
     .map((guide) => {
       const haystack = [guide.title, guide.excerpt, ...guide.keywords].join(" ").toLowerCase();
       return { guide, score: tokens.reduce((score, token) => score + (haystack.includes(token) ? 1 : 0), 0) };
@@ -75,16 +75,24 @@ function relatedEntries(item: NonNullable<ReturnType<typeof getItem>>) {
     .map((entry) => entry.entry);
 }
 
-function intentAnswer(item: NonNullable<ReturnType<typeof getItem>>) {
-  const keyword = item.keywords[0] || item.title;
-  return `${keyword} searchers usually need a direct answer first, then a practical decision framework. For ${siteContent.gameName}, this page treats public footage, store data, and official-channel signals as planning material rather than final balance proof. Use the checklist and table below to decide what to test first, then revisit the page after launch updates or new patch notes.`;
+function playerDecision(item: NonNullable<ReturnType<typeof getItem>>) {
+  const decisions: Record<string, string> = {
+    "fate-trigger-beginner-guide": "For a first session, learn one vertical escape route and one safe reset before chasing eliminations. Public footage supports the value of movement and exposed floating lanes; it does not establish a launch meta.",
+    "fate-trigger-release-date-tracker": "Treat the current Steam window as the only practical planning baseline until Saroasis publishes an exact date and unlock time. A countdown, key offer, or download claim without that source is not a release confirmation.",
+    "awakeners-role-guide": "Choose an Awakener role by the squad problem it solves: crossing exposed space, holding a reset, gathering information, or creating a safe entry. Named kits and balance values stay unranked until official data is live.",
+    "floating-arena-route-guide": "Plan every crossing with an entry, a fallback, and a teammate who can cover the reset. Public footage can explain vertical pressure, but it cannot validate a final landing-zone tier list.",
+    "gun-chip-loadout-guide": "Use Gun Chip coverage as a system watch, not a finished build calculator. The useful pre-launch decision is identifying the weapon range or role you want to support, then waiting for official slot and effect details.",
+    "system-requirements-settings": "Build a stable PC baseline before a test: use the Steam requirements, reserve storage, and remove unknown overlays. Competitive settings advice needs a dated public build before it becomes a recommended preset.",
+  };
+  return decisions[item.slug] ?? `This page answers the player decision behind ${item.keywords[0] || item.title}: what can be planned from official material now, and what must wait for a public beta, kit page, or patch note.`;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getItem(slug);
   if (!item) return {};
-  return pageMeta(item.title, item.excerpt, "/guides/" + item.slug);
+  const metadata = pageMeta(item.title, item.excerpt, "/guides/" + item.slug);
+  return indexableGuideSlugs.has(item.slug) ? metadata : { ...metadata, robots: { index: false, follow: true } };
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -101,19 +109,19 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", href: "/" }, { name: base, href: "/" + base }, { name: item.title, href: "/" + base + "/" + item.slug }])} />
-      <JsonLd data={articleJsonLd(item.title, item.excerpt, '/' + base + '/' + item.slug, undefined) } />
+      {indexableGuideSlugs.has(item.slug) ? <JsonLd data={articleJsonLd(item.title, item.excerpt, '/' + base + '/' + item.slug, undefined) } /> : null}
       <Breadcrumbs items={[{ label: base, href: "/" + base }, { label: item.title, href: "/" + base + "/" + item.slug }]} />
       <header className="page-header"><span className="eyebrow">{"Guide"}</span><h1>{item.title}</h1><p>{item.excerpt}</p></header>
       <DetailHeaderImage type="guide" slug={item.slug} title={item.title} />
       <section className="section article-body">
         <article className="article-main">
-          <figure className="article-figure"><img src={image} alt={`${item.title} Fate Trigger guide media`} /><figcaption>Guide media uses localized public source imagery where available, with official video footage embedded separately for review.</figcaption></figure>
+          <figure className="article-figure"><img src={image} alt={`${item.title} Fate Trigger guide media`} /><figcaption>This locally hosted trailer still is credited in the media library. It illustrates the topic but does not prove unconfirmed systems or performance claims.</figcaption></figure>
           <div className="content-block"><h2>Content status</h2><table className="info-table"><tbody><tr><th>Last checked</th><td>{freshness.lastChecked}</td></tr><tr><th>Confidence</th><td>{freshness.confidence}</td></tr><tr><th>Source type</th><td>{freshness.sourceType}</td></tr><tr><th>After launch</th><td>{freshness.needsUpdateAfterLaunch}</td></tr></tbody></table></div>
           <div className="content-block"><h2>Arena briefing</h2><p>{item.excerpt} Use this briefing to decide whether the next match question is movement, squad composition, weapon range, or a safe reset. The current read is {freshness.confidence.toLowerCase()} and should be re-briefed after an official beta, Awakener reveal, or live balance update.</p><p><a href={siteContent.sources[0][1]} target="_blank" rel="nofollow noopener noreferrer">Open the {siteContent.sources[0][0]} reference</a> before treating a community clip as final kit data.</p></div>
           {item.body.map((para) => <p key={para}>{para}</p>)}
           <table className="info-table"><thead><tr><th>Guide angle</th><th>Practical recommendation</th><th>Why it matters</th></tr></thead><tbody>{rows.map(([angle, recommendation, reason]) => <tr key={angle}><th>{angle}</th><td>{recommendation}</td><td>{reason}</td></tr>)}</tbody></table>
           <div className="content-block"><h2>Action checklist</h2><ul className="check-list">{item.bullets.map((point) => <li key={point}>{point}</li>)}</ul></div>
-          <div className="content-block"><h2>Search intent answer</h2><p>{intentAnswer(item)}</p></div>
+          <div className="content-block"><h2>Player decision</h2><p>{playerDecision(item)}</p></div>
           {databaseLinks.length ? <div className="content-block"><h2>Related database entries</h2><div className="link-list">{databaseLinks.map((entry) => <a key={entry.slug} href={`/database/${entry.category}/${entry.slug}`}><strong>{entry.title}</strong><span>{entry.role}: {entry.excerpt}</span></a>)}</div></div> : null}
           <div className="content-block"><h2>Video evidence to review</h2><p>Start with {video.title} in the media hub and compare the visible UI, movement, combat pacing, and release-date cards against this guide. The embed is credited and loaded from YouTube.</p><p><a className="button" href={`/media/${video.slug}`}>Open trailer notes</a></p></div>
           <div className="content-block"><h2>Update checklist</h2><ul className="check-list"><li>Replace cautious pre-launch language when an official patch note, class page, weapon page, or map page confirms the detail.</li><li>Add timestamped video references only from embeddable public footage or credited source material.</li><li>Keep rankings editorial and date-stamped so players can tell analysis from official balance information.</li></ul></div>

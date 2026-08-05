@@ -9,7 +9,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params;
-  return pageMeta(siteContent.gameName + " " + category + " database", "Source-aware " + category + " database for " + siteContent.gameName + ".", "/database/" + category);
+  return { ...pageMeta(siteContent.gameName + " " + category + " database", "Source-aware " + category + " database for " + siteContent.gameName + ".", "/database/" + category), robots: { index: false, follow: true } };
 }
 
 function categoryIntro(category: string) {

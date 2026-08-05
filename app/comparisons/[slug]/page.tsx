@@ -6,13 +6,15 @@ import { articleJsonLd, breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 const comparisonDetails: Record<string, { rows: Array<[string, string, string]>; bestFor: string[]; next: Array<[string, string]> }> = {
   "fate-trigger-vs-apex-legends": {
     rows: [
-      ["Core loop", "Fate Trigger appears to emphasize anime hero tactical shooting, floating arenas, and pre-launch Gun-Chip questions.", "Apex Legends is the proven hero battle royale benchmark with established legends, ranked habits, and a mature movement meta."],
-      ["Role choice", "Awakener choice should be judged by route safety, entry value, control, and revive windows until final stats are public.", "Apex legends have years of balance context, so players can compare stable meta history against a new launch environment."],
-      ["Map pressure", "Floating-island routes make bridges, altitude, and reset paths unusually important.", "Apex maps are broader BR spaces with ring pressure, POI knowledge, and third-party timing."],
-      ["Best search intent", "Fate Trigger release date, best Awakeners, Gun-Chip loadouts, floating map guide.", "Apex comparison searches usually ask whether Fate Trigger is a new anime alternative or a direct replacement."]
+      ["Current access", "Not released. Steam lists a 2026 window, with exact launch timing and beta access still unconfirmed.", "Live and playable, with established updates, queues, and public gameplay information."],
+      ["Core identity", "A free-to-play anime-style hero tactical shooter with Awakeners and a publicly discussed Gun-Chip system.", "A live battle royale hero shooter with established Legends, maps, and a mature competitive ecosystem."],
+      ["Characters and systems", "Named-character and system pages should be read as confirmed-status watches until official kits and data are published.", "Legend abilities, balance context, and most system rules are documented through the live game and official updates."],
+      ["Platforms", "Steam is the confirmed public PC storefront. Console, cross-play, progression, and input rules need official confirmation.", "Available across established PC and console platforms; players should still check current regional/platform support."],
+      ["Monetization and purchase boundary", "Public material positions Fate Trigger as free-to-play, but launch monetization details should be verified from official store pages.", "Free-to-play with live-service monetization already documented by its publisher."],
+      ["Who should follow it", "Players who want to track a new anime hero shooter and are comfortable waiting for verified beta, platform, and system details.", "Players who want a playable, established hero battle royale today."]
     ],
-    bestFor: ["Players who want a new anime-styled hero shooter to track before launch.", "Apex players curious about vertical routes and ability-first tactical pressure.", "Guide readers searching for beginner Awakeners and weapon learning order."],
-    next: [["Best Awakeners", "/guides/best-awakeners-for-beginners"], ["Weapon order", "/guides/best-weapons-to-learn-first"]]
+    bestFor: ["Players deciding whether to follow Fate Trigger before launch or keep playing Apex Legends now.", "Apex players comparing a new hero-shooter watchlist without assuming a direct replacement.", "Readers who need platform, release, and system-confirmation boundaries before making a choice."],
+    next: [["Release status", "/release-date"], ["Platform status", "/guides/ps5-steam-platform-choice-guide"], ["Awakeners", "/characters"]]
   },
   "fate-trigger-vs-marvel-rivals": {
     rows: [
@@ -22,7 +24,7 @@ const comparisonDetails: Record<string, { rows: Array<[string, string, string]>;
       ["Trust boundary", "Do not treat Fate Trigger character kits, weapon numbers, or launch timing as final until primary sources confirm them.", "Marvel Rivals has live-service public data and official hero pages, so it is a comparison benchmark rather than proof of Fate Trigger systems."]
     ],
     bestFor: ["Marvel Rivals players curious about an anime-styled shooter with more map-route and weapon-range pressure.", "Fate Trigger readers who want to separate hero-shooter appeal from confirmed launch data.", "SEO readers comparing role clarity, team composition, and ability readability."],
-    next: [["Character roles", "/characters"], ["Squad comps", "/guides/squad-composition-guide"], ["Release tracker", "/release-date"]]
+    next: [["Character status", "/characters"], ["Platform status", "/guides/ps5-steam-platform-choice-guide"], ["Release tracker", "/release-date"]]
   },
   "fate-trigger-vs-fortnite": {
     rows: [
@@ -32,7 +34,7 @@ const comparisonDetails: Record<string, { rows: Array<[string, string, string]>;
       ["Best search intent", "Fate Trigger map guide, Awakeners role guide, Gun-Chip system explained.", "Fortnite comparison readers mostly need to know whether Fate Trigger is a focused shooter rather than a platform ecosystem."]
     ],
     bestFor: ["Players who want hero-shooter clarity instead of UGC platform complexity.", "Fortnite no-build players looking for ability-based squad fights.", "SEO readers comparing anime shooter identity with mainstream BR scale."],
-    next: [["Vertical mistakes", "/guides/vertical-map-mistakes"], ["Gun-Chip guide", "/guides/gun-chip-loadout-guide"]]
+    next: [["Map status", "/maps"], ["Gun-Chip status", "/gun-chip"]]
   }
 };
 
@@ -44,7 +46,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const item = siteContent.comparisons.find((comparison) => comparison.slug === slug);
   if (!item) return {};
-  return pageMeta(item.title, item.excerpt, "/comparisons/" + item.slug);
+  const metadata = pageMeta(item.title, item.excerpt, "/comparisons/" + item.slug);
+  return item.slug === "fate-trigger-vs-apex-legends" ? metadata : { ...metadata, robots: { index: false, follow: true } };
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -59,7 +62,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", href: "/" }, { name: "Comparisons", href: "/resources" }, { name: item.title, href: "/comparisons/" + item.slug }])} />
-      <JsonLd data={articleJsonLd(item.title, item.excerpt, "/comparisons/" + item.slug)} />
+      {item.slug === "fate-trigger-vs-apex-legends" ? <JsonLd data={articleJsonLd(item.title, item.excerpt, "/comparisons/" + item.slug)} /> : null}
       <Breadcrumbs items={[{ label: "Comparisons", href: "/resources" }, { label: item.title, href: "/comparisons/" + item.slug }]} />
       <header className="page-header"><span className="eyebrow">Independent Comparison</span><h1>{item.title}</h1><p>{item.excerpt}</p></header>
       <DetailHeaderImage type="comparison" slug={item.slug} title={item.title} />

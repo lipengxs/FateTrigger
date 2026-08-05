@@ -99,10 +99,10 @@ export function FactPanel() {
 export function QuickStartRail() {
   const cards = [
     { title: "Release tracker", href: "/release-date", eyebrow: "Launch", image: cardImageFor("release"), text: siteContent.facts.releaseDateLabel },
-    { title: "Beginner route", href: "/beginner", eyebrow: "Start here", image: cardImageFor("guide", "fate-trigger-beginner-guide"), text: "Movement, roles, and first-session priorities." },
-    { title: "Awakeners", href: "/characters", eyebrow: "Roster", image: cardImageFor("characters"), text: "Read character roles before the meta settles." },
-    { title: "Gun-Chip", href: "/gun-chip", eyebrow: "Loadouts", image: cardImageFor("weapons"), text: "Weapon planning and combat range notes." },
-    { title: "Maps", href: "/maps", eyebrow: "Routes", image: cardImageFor("maps"), text: "Floating arena routes, landing reads, and rotations." },
+    { title: "Start here", href: "/beginner", eyebrow: "Player safety", image: cardImageFor("guide", "fate-trigger-beginner-guide"), text: "Release, platform, PC, and character information first." },
+    { title: "Awakeners", href: "/characters", eyebrow: "Roster", image: cardImageFor("characters"), text: "Read confirmed named characters and the open questions." },
+    { title: "Gun-Chip", href: "/gun-chip", eyebrow: "System", image: cardImageFor("weapons"), text: "Confirmed system context without fake build advice." },
+    { title: "Maps", href: "/maps", eyebrow: "Status", image: cardImageFor("maps"), text: "Official arena and interactive-map availability status." },
     { title: "Trailer Lab", href: "/media", eyebrow: "Media", image: cardImageFor("media"), text: "Official footage, thumbnails, and watch notes." }
   ];
   return (
@@ -179,45 +179,6 @@ export function columnImageFor(type: string, slug = "") {
     "cinematic-early-access-trailer-breakdown": "/images/media/cinematic-early-access-trailer.jpg"
   };
   if (slug && localMediaBySlug[slug]) return localMediaBySlug[slug];
-  const thumbSlugs = new Set([
-    "fate-trigger-beginner-guide",
-    "fate-trigger-release-date-tracker",
-    "awakeners-role-guide",
-    "floating-arena-route-guide",
-    "gun-chip-loadout-guide",
-    "system-requirements-settings",
-    "boss-fight-third-party-guide",
-    "first-day-route-plan",
-    "controller-keyboard-settings",
-    "solo-queue-awakener-picks",
-    "squad-composition-guide",
-    "gun-chip-build-scenarios",
-    "floating-map-landing-zones",
-    "fate-trigger-vs-marvel-rivals",
-    "omnisight-anti-cheat-fair-play-guide",
-    "paleblight-lore-explained",
-    "fally-tata-bibi-role-comparison",
-    "ps5-steam-platform-choice-guide",
-    "gun-chip-progression-planning",
-    "endgame-zone-rotation-guide",
-    "fally",
-    "tata-and-bibi",
-    "gun-chip-system",
-    "endgame-zone",
-    "omnisight",
-    "platform-watch",
-    "mobility-awakener",
-    "control-awakener",
-    "burst-awakener",
-    "mid-range-rifle",
-    "close-pressure-weapon",
-    "long-sightline-weapon",
-    "steam-2026-release-window",
-    "early-access-roadmap-adjusted",
-    "playstation-platform-watch",
-    "closed-beta-footage-signals"
-  ]);
-  if (slug && thumbSlugs.has(slug)) return `/images/thumbs/${slug}.png`;
   const text = `${type} ${slug}`.toLowerCase();
   if (text.includes("release") || text.includes("date") || text.includes("launch") || text.includes("countdown")) return "/images/tiles/release.jpg";
   if (text.includes("character") || text.includes("awakener") || text.includes("class") || text.includes("fally") || text.includes("bibi")) return "/images/tiles/characters.jpg";
@@ -265,7 +226,7 @@ export function FeaturedMediaWall() {
     { title: siteContent.videos[0].title, href: `/media/${siteContent.videos[0].slug}`, image: columnImageFor("media", siteContent.videos[0].slug), eyebrow: "YouTube" },
     { title: "Characters and roles", href: "/characters", image: columnImageFor("characters"), eyebrow: "Database" },
     { title: "Weapons and loadouts", href: "/weapons", image: columnImageFor("weapons"), eyebrow: "Loadouts" },
-    { title: "Maps and routes", href: "/maps", image: columnImageFor("maps"), eyebrow: "Routes" }
+    { title: "Maps and arena status", href: "/maps", image: columnImageFor("maps"), eyebrow: "Status" }
   ];
   return (
     <section className="section media-wall-section">

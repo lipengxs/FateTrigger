@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Breadcrumbs, DetailHeaderImage, JsonLd, SourceList, Tags, cardImageFor } from "@/components/site";
-import { siteContent } from "@/lib/content";
+import { indexableEntrySlugs, indexableGuideSlugs, redirectedGuideSlugs, siteContent } from "@/lib/content";
 import { articleJsonLd, breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -29,6 +29,7 @@ function tokensFor(value: string) {
 function relatedGuides(entry: Entry) {
   const entryTokens = new Set(tokensFor([entry.title, entry.role, entry.excerpt, ...entry.tags].join(" ")));
   return siteContent.guides
+    .filter((guide) => !redirectedGuideSlugs.has(guide.slug) && indexableGuideSlugs.has(guide.slug))
     .map((guide) => {
       const text = [guide.title, guide.excerpt, ...guide.keywords, ...guide.bullets].join(" ");
       const score = tokensFor(text).filter((token) => entryTokens.has(token)).length;
@@ -52,15 +53,15 @@ function deepDiveFor(slug: string) {
   const links: Record<string, string> = {
     "fally": "/guides/fally-tata-bibi-role-comparison",
     "tata-and-bibi": "/guides/fally-tata-bibi-role-comparison",
-    "gun-chip-system": "/guides/gun-chip-progression-planning",
+    "gun-chip-system": "/gun-chip",
     "endgame-zone": "/guides/endgame-zone-rotation-guide",
     "omnisight": "/guides/omnisight-anti-cheat-fair-play-guide",
     "platform-watch": "/guides/ps5-steam-platform-choice-guide",
-    "mobility-awakener": "/guides/best-awakeners-for-beginners",
+    "mobility-awakener": "/characters",
     "control-awakener": "/guides/awakeners-role-guide",
     "burst-awakener": "/guides/awakeners-role-guide",
-    "central-platform": "/guides/floating-arena-route-guide",
-    "bridge-chains": "/guides/vertical-map-mistakes",
+    "central-platform": "/maps",
+    "bridge-chains": "/maps",
     "cloudline-flanks": "/guides/endgame-zone-rotation-guide"
   };
   return links[slug] || null;
@@ -179,7 +180,8 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const { category, slug } = await params;
   const entry = getEntry(category, slug);
   if (!entry) return {};
-  return pageMeta(entry.title + " - " + siteContent.gameName, entry.excerpt, `/database/${category}/${slug}`);
+  const metadata = pageMeta(entry.title + " - " + siteContent.gameName, entry.excerpt, `/database/${category}/${slug}`);
+  return indexableEntrySlugs.has(entry.slug) ? metadata : { ...metadata, robots: { index: false, follow: true } };
 }
 
 export default async function Page({ params }: { params: Promise<{ category: string; slug: string }> }) {
@@ -202,7 +204,7 @@ export default async function Page({ params }: { params: Promise<{ category: str
       <DetailHeaderImage type={category} slug={entry.slug} title={entry.title} />
       <section className="section article-body">
         <article className="article-main">
-          <figure className="article-figure"><img src={image} alt={`${entry.title} Fate Trigger database media`} /><figcaption>Database media favors localized public footage and official-source thumbnails where available, with cautious independent analysis in the text.</figcaption></figure>
+          <figure className="article-figure"><img src={image} alt={`${entry.title} Fate Trigger database media`} /><figcaption>This locally hosted trailer still is credited in the media library. The surrounding text separates public evidence from editorial interpretation.</figcaption></figure>
           <p>{tacticalRead(category, entry)}</p>
           <p>Best use case: {entry.excerpt}</p>
           <table className="info-table"><tbody><tr><th>{angle}</th><td>{recommendation}</td></tr><tr><th>Current confidence</th><td>Moderate. The recommendation is based on public footage, Steam language, source-linked reporting, and cautious pre-launch analysis rather than final launch stats.</td></tr><tr><th>Update rule</th><td>{updateRule}</td></tr></tbody></table>
@@ -214,7 +216,7 @@ export default async function Page({ params }: { params: Promise<{ category: str
           {guides.length ? <div className="content-block"><h2>Related Fate Trigger guides</h2><div className="link-list">{guides.map((guide: Guide) => <a key={guide.slug} href={`/guides/${guide.slug}`}><strong>{guide.title}</strong><span>{guide.excerpt}</span></a>)}</div></div> : null}
           <Tags tags={entry.tags} />
         </article>
-        <aside className="article-aside"><h2>Read next</h2><p>Use these links to compare this entry with footage, rankings, and broader database context.</p>{deepDive ? <p><a className="button primary" href={deepDive}>Full deep-dive guide</a></p> : null}<p><a className="button" href={categoryHub(category)}>Open category hub</a></p><p><a className="button" href="/rankings">View rankings</a></p><p><a className="button" href="/media">Check footage</a></p><p><a className="button" href="/guides">Guide index</a></p></aside>
+        <aside className="article-aside"><h2>Read next</h2><p>Use these links to compare this entry with official footage and the relevant source-aware hub.</p>{deepDive ? <p><a className="button primary" href={deepDive}>Open related hub</a></p> : null}<p><a className="button" href={categoryHub(category)}>Open category hub</a></p><p><a className="button" href="/media">Check footage</a></p><p><a className="button" href="/release-date">Release status</a></p></aside>
       </section>
       <SourceList />
     </>

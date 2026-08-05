@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { Card, FactPanel, FaqBlock, FeaturedMediaWall, HomeHero, JsonLd, QuickStartRail, ReleaseBlock, SectionHeading, SourceList, Tags, VideoFeature, cardImageFor } from "@/components/site";
-import { siteContent } from "@/lib/content";
+import { indexableEntrySlugs, siteContent } from "@/lib/content";
 import { faqJsonLd, videoJsonLd } from "@/lib/seo";
 
 export default function Home() {
+  const guideSlugs = ["fate-trigger-beginner-guide", "awakeners-role-guide", "system-requirements-settings", "ps5-steam-platform-choice-guide", "omnisight-anti-cheat-fair-play-guide"];
+  const guides = guideSlugs
+    .map((slug) => siteContent.guides.find((guide) => guide.slug === slug))
+    .filter((guide): guide is typeof siteContent.guides[number] => Boolean(guide));
   return (
     <>
       <JsonLd data={faqJsonLd()} />
@@ -24,21 +28,15 @@ export default function Home() {
       </section>
       <VideoFeature />
       <section className="section">
-        <SectionHeading eyebrow="Guide Path" title="Start with movement, roles, loadouts, and first routes" href="/guides" cta="Guide index" />
+        <SectionHeading eyebrow="Verified Starting Points" title="Start with release, platform, PC, and Awakener status" href="/guides" cta="Guide library" />
         <div className="grid-3">
-          {siteContent.guides.slice(0, 6).map((guide) => <Card key={guide.slug} title={guide.title} eyebrow="Guide" href={`/guides/${guide.slug}`} image={cardImageFor("guide", guide.slug)} imageAlt={`${guide.title} guide artwork`}><p>{guide.excerpt}</p><Tags tags={guide.keywords} /></Card>)}
+          {guides.map((guide) => <Card key={guide.slug} title={guide.title} eyebrow="Guide" href={`/guides/${guide.slug}`} image={cardImageFor("guide", guide.slug)} imageAlt={`${guide.title} guide artwork`}><p>{guide.excerpt}</p><Tags tags={guide.keywords} /></Card>)}
         </div>
       </section>
       <section className="section">
         <SectionHeading eyebrow="Database Preview" title="Characters, equipment, maps, systems, and lore" href="/database" cta="Open database" />
         <div className="grid-3">
-          {siteContent.entries.slice(0, 6).map((entry) => <Card key={entry.slug} title={entry.title} eyebrow={entry.role} href={`/database/${entry.category}/${entry.slug}`} image={cardImageFor(entry.category, entry.slug)} imageAlt={`${entry.title} database artwork`}><p>{entry.excerpt}</p><Tags tags={entry.tags} /></Card>)}
-        </div>
-      </section>
-      <section className="section">
-        <SectionHeading eyebrow="Internal Rankings" title="Editorial rankings, not official tier lists" href="/rankings" cta="Rankings" />
-        <div className="grid-3">
-          {siteContent.rankings.map((ranking) => <Card key={ranking.slug} title={ranking.title} eyebrow="Editorial"><ol className="rank-list">{ranking.items.map((item) => <li key={item}>{item}</li>)}</ol></Card>)}
+          {siteContent.entries.filter((entry) => indexableEntrySlugs.has(entry.slug)).slice(0, 6).map((entry) => <Card key={entry.slug} title={entry.title} eyebrow={entry.role} href={`/database/${entry.category}/${entry.slug}`} image={cardImageFor(entry.category, entry.slug)} imageAlt={`${entry.title} database artwork`}><p>{entry.excerpt}</p><Tags tags={entry.tags} /></Card>)}
         </div>
       </section>
       <FaqBlock />

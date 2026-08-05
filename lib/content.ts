@@ -4,7 +4,6 @@ export const siteContent = {
   "domain": "fatetriggerguide.com",
   "siteName": "Fate Trigger Guide",
   "gameName": "Fate Trigger",
-  "contentUpdated": "2026-07-07",
   "sourceChecked": "2026-07-07",
   "heroAsset": "/Users/ugreen/.codex/generated_images/019f1c49-96df-72e1-8656-55f2d1a3e865/ig_03e4a56f43e77375016a49b4db786c8191bdfde68a7b273afa.png",
   "theme": {
@@ -20,15 +19,15 @@ export const siteContent = {
   },
   "hero": {
     "eyebrow": "Fate Trigger Intel Hub",
-    "title": "Fate Trigger release news, guides, Awakeners, weapons, and floating arena routes",
-    "dek": "A clean independent guide hub for Fate Trigger players, built around source-linked release tracking, official footage notes, beginner routes, and practical pre-launch planning.",
+    "title": "Fate Trigger release status, official news, Awakeners, and platform watch",
+    "dek": "An independent Fate Trigger information hub for source-linked release status, official footage, confirmed character watch pages, Gun-Chip context, and platform updates.",
     "primaryCta": [
       "Track Release",
       "/release-date"
     ],
     "secondaryCta": [
-      "Start Beginner Guide",
-      "/beginner"
+      "Read Official Updates",
+      "/news"
     ]
   },
   "facts": {
@@ -38,8 +37,8 @@ export const siteContent = {
     "countdownNote": "No countdown is shown until an exact official date is available.",
     "platforms": [
       "PC via Steam",
-      "cross-platform multiplayer listed on Steam",
-      "PlayStation plans reported by media"
+      "Steam lists cross-platform multiplayer; launch rules are unconfirmed",
+      "PlayStation plans reported by media, not a confirmed store listing"
     ],
     "genre": "Free-to-play 3D anime-style hero-based tactical shooter",
     "developer": "Saroasis Studios",
@@ -149,8 +148,8 @@ export const siteContent = {
           "/lore"
         ],
         [
-          "Rankings",
-          "/rankings"
+          "Gun-Chip",
+          "/gun-chip"
         ]
       ]
     ],
@@ -428,27 +427,24 @@ export const siteContent = {
     },
     {
       "slug": "system-requirements-settings",
-      "title": "System Requirements and Settings Prep",
-      "excerpt": "Steam lists PC requirements, so players can prepare storage, GPU drivers, and conservative settings before launch.",
+      "title": "Fate Trigger System Requirements and PC Setup Status",
+      "excerpt": "Use the official Steam listing for Fate Trigger PC requirements; tested FPS settings and performance presets are not confirmed before a public build.",
       "bullets": [
-        "Plan around 40 GB storage.",
-        "Prioritize frame stability over visual presets.",
-        "Use official requirements before buying parts."
+        "Check the current Steam PC requirement table before buying hardware.",
+        "Keep enough free storage for the listed install, patches, and shader caches.",
+        "Do not trust untested FPS, FOV, or competitive-settings presets before a public build."
       ],
       "keywords": [
         "Fate Trigger system requirements",
         "Fate Trigger PC settings"
       ],
       "body": [
-        "System Requirements and Settings Prep is written for players searching before launch and for day-one readers who need practical decisions instead of copied marketing text. The safe baseline is the public Steam page, because it is the store source that can change when the developer updates PC requirements, release wording, or supported features.",
-        "Before launch, players should treat requirements as readiness signals rather than final performance promises. A listed storage number tells you how much space to reserve, but it does not prove how the game will behave during crowded platform fights, ability effects, streaming assets, or long sessions after patches.",
-        "The first preparation step is storage headroom. If Steam lists a 40 GB class install, do not clear exactly that amount and stop. Leave extra room for shader caches, patches, screenshots, capture software, and operating system updates. Low free space can create stutter and update failures that look like game optimization problems.",
-        "The second step is driver and operating system hygiene. Update GPU drivers from official vendor tools, restart cleanly, and avoid stacking experimental overlays before the first session. If frame pacing is unstable, test the game with the smallest set of background apps first, then add recording, chat, and performance overlays one at a time.",
-        "For competitive players, the first settings target should be stable frame pacing rather than maximum visual quality. A vertical hero shooter can become hard to read when effects, movement abilities, and long sightlines collide. Lowering heavy shadows, motion blur, bloom, and excess post-processing before judging aim problems is usually smarter than chasing a high preset.",
-        "Resolution scaling should be handled carefully. A small reduction can improve worst-case fights, but an aggressive reduction can make distant bridge silhouettes, rooftop peeks, and cloudline movement harder to read. The best test is not the menu or a quiet landing. It is a busy fight where multiple squads use abilities while your team rotates.",
-        "Input settings should be kept boring at first. Use one mouse sensitivity or controller response curve long enough to compare several fights. If you change sensitivity, field of view, graphics, and weapon range at the same time, every death becomes impossible to diagnose.",
-        "Players should avoid unofficial configuration packs, modified files, unknown launchers, or third-party key sites. Fate Trigger is positioned as a competitive free-to-play shooter, and account security plus anti-cheat compatibility are part of launch readiness. Use official store and developer channels, then document your own settings after the public build is available.",
-        "After launch, this guide should become a tested settings matrix with low-end, balanced, and competitive profiles. Each profile should include GPU class, resolution, target frame rate, visual clarity notes, driver version, and the exact patch date so readers know whether the advice still matches the current build."
+        "The official Steam listing is the only requirement baseline this page uses. It is the source that can change when Saroasis updates minimum or recommended hardware, storage, operating-system support, or storefront features. Check it directly before upgrading a PC or clearing disk space.",
+        "A store requirement table is a readiness signal, not a measured performance promise. It cannot prove frame time, input latency, FOV options, Steam Deck behavior, controller tuning, or performance in a crowded match. Those answers need a dated public build and repeatable testing.",
+        "Prepare conservatively: keep free storage above Steam's listed install size for patches and shader caches, update GPU drivers from the vendor's official tool, and start the first session without unknown launchers or configuration packs. Add overlays or recording software only after the base game behaves normally.",
+        "This guide intentionally does not publish a best-settings preset. Before an accessible public build exists, screenshots, copied config files, claimed FPS figures, and FOV claims are not evidence. A tested post-launch version should state its patch, hardware, resolution, driver, frame-time result, and source method.",
+        "Use official storefront and developer links only. Avoid modified files, unofficial download mirrors, key sellers, or launch options advertised as performance fixes. Competitive free-to-play games can have anti-cheat and account-security requirements that third-party guides cannot safely predict.",
+        "This page updates when Steam revises the requirement table or when an official public test makes reproducible PC performance data possible. Until then, its job is to identify the source of truth and the limits of what is known."
       ]
     },
     {
@@ -1361,9 +1357,38 @@ export const footerLinks = [
 export const faqs = [
   ["Is Fate Trigger out yet?", siteContent.facts.status],
   ["What is the Fate Trigger release date?", siteContent.facts.releaseDateLabel],
-  ["Is this the official Fate Trigger website?", "No. This is an independent fan-made guide with source links and editorial analysis."],
-  ["How are rankings created?", "Rankings are editorial, based on public gameplay footage, community discussion, and available information. They are not official tier lists."]
+  ["When is the next Fate Trigger beta?", "A next public beta date is not confirmed here. Check Steam and official Saroasis channels before trusting a signup, countdown, or access offer."],
+  ["What Fate Trigger platforms are confirmed?", "Steam is the confirmed public PC storefront. Console timing, cross-play, cross-progression, and input-matchmaking rules need an official platform or developer announcement."]
 ] as const;
+
+export const redirectedGuideSlugs = new Set([
+  "fate-trigger-release-date-tracker",
+  "floating-arena-route-guide",
+  "floating-map-landing-zones",
+  "vertical-map-mistakes",
+  "first-day-route-plan",
+  "best-weapons-to-learn-first",
+  "best-awakeners-for-beginners",
+  "solo-queue-awakener-picks",
+  "squad-composition-guide",
+  "boss-fight-third-party-guide",
+  "gun-chip-build-scenarios",
+  "gun-chip-progression-planning"
+]);
+
+export const indexableGuideSlugs = new Set([
+  "fate-trigger-beginner-guide",
+  "awakeners-role-guide",
+  "system-requirements-settings",
+  "controller-keyboard-settings",
+  "ps5-steam-platform-choice-guide",
+  "omnisight-anti-cheat-fair-play-guide",
+  "fally-tata-bibi-character-watch",
+  "fally-tata-bibi-role-comparison",
+  "paleblight-lore-explained"
+]);
+
+export const indexableEntrySlugs = new Set(["fally", "tata-and-bibi", "gun-chip-system", "platform-watch", "omnisight", "paleblight"]);
 
 export const guideFreshness = {
   "fate-trigger-release-date-tracker": { lastChecked: siteContent.sourceChecked, confidence: "High for release-window wording; low for exact launch timing", sourceType: "Steam and official-channel baseline", needsUpdateAfterLaunch: "Yes: replace watch wording after an exact launch date or Early Access plan is official." },

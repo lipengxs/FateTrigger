@@ -86,18 +86,18 @@ export function videoGameJsonLd() {
   };
 }
 
-export function articleJsonLd(title: string, description: string, path: string, date?: string) {
+export function articleJsonLd(title: string, description: string, path: string, publishedDate?: string, modifiedDate?: string) {
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
     description,
-    dateModified: siteContent.contentUpdated,
     author: { "@type": "Organization", name: siteContent.siteName },
     publisher: { "@type": "Organization", name: siteContent.siteName, url: absoluteUrl("/") },
     mainEntityOfPage: absoluteUrl(path)
   };
-  if (date) data.datePublished = date;
+  if (publishedDate) data.datePublished = publishedDate;
+  if (modifiedDate) data.dateModified = modifiedDate;
   return data;
 }
 

@@ -2,7 +2,7 @@ import { Breadcrumbs, Card, JsonLd, SectionHeading, SourceTimeline, Tags, cardIm
 import { siteContent } from "@/lib/content";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Fate Trigger News Intel", "Independent Fate Trigger news notes, release-window checks, beta signals, platform reporting, and source timelines.", "/news");
+export const metadata = pageMeta("Fate Trigger News and Official Updates", "Fate Trigger news, official release updates, beta signals, platform reporting, trailer announcements, and source-linked timelines.", "/news");
 
 export default function Page() {
   const [lead, ...rest] = siteContent.news;
@@ -11,9 +11,9 @@ export default function Page() {
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", href: "/" }, { name: "News", href: "/news" }])} />
       <Breadcrumbs items={[{ label: "News", href: "/news" }]} />
       <header className="page-header news-command-header">
-        <span className="eyebrow">Awakener Intel Feed</span>
-        <h1>Fate Trigger news, release signals, and public source checks</h1>
-        <p>Every update is independent guide analysis, not an official announcement: what changed, why it matters for players, and which public source should be checked next.</p>
+        <span className="eyebrow">Official Update Desk</span>
+        <h1>Fate Trigger News and Official Updates</h1>
+        <p>Track release, beta, platform, trailer, and official character announcements in one place. Every entry links back to the primary source and distinguishes a confirmed update from editorial context.</p>
       </header>
       <SourceTimeline />
       <section className="section fate-news-board">
@@ -45,7 +45,7 @@ export default function Page() {
         <div className="grid-3">
           <Card title="Release Date Proof" eyebrow="Search intent" href="/release-date" image={cardImageFor("release")} imageAlt="Fate Trigger release tracker artwork"><p>Use Steam and official channels as the baseline before trusting reposted countdowns or access claims.</p></Card>
           <Card title="Platform Watch" eyebrow="PC / Console" href="/guides/ps5-steam-platform-choice-guide" image={cardImageFor("guide", "ps5-steam-platform-choice-guide")} imageAlt="Fate Trigger platform choice artwork"><p>Compare Steam visibility, reported PlayStation plans, cross-play questions, and input matchmaking unknowns.</p></Card>
-          <Card title="Beta Footage Signals" eyebrow="Gameplay" href="/media" image={cardImageFor("media")} imageAlt="Fate Trigger trailer analysis artwork"><p>Use embeddable YouTube footage to check movement, ability timing, and floating route pressure.</p></Card>
+          <Card title="Confirmed Characters" eyebrow="Awakeners" href="/characters" image={cardImageFor("characters")} imageAlt="Fate Trigger official character media"><p>Review named Awakener pages with confirmed information, open questions, and official footage links.</p></Card>
         </div>
       </section>
     </>

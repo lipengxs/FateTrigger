@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={videoGameJsonLd()} />
         <JsonLd data={{ "@context": "https://schema.org", "@type": "WebSite", name: siteContent.siteName, url: `https://${siteContent.domain}`, potentialAction: { "@type": "SearchAction", target: `https://${siteContent.domain}/search?q={search_term_string}`, "query-input": "required name=search_term_string" } }} />
         <Header />
-        <aside className="site-status" aria-label="Guide source status"><a href="/release-date">Source check: {siteContent.sourceChecked} · release status is source-linked</a></aside>
+        <aside className="site-status" aria-label="Guide source status"><a href="/release-date">Source baseline: {siteContent.sourceChecked} · release status is source-linked</a></aside>
         <IndependenceBanner />
         <AdSlot placement="leaderboard" />
         <AdSlot placement="mobile" />

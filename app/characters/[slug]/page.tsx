@@ -11,8 +11,8 @@ function getCharacter(slug: string) {
 
 function relatedGuides(slug: string) {
   const priority = slug === "fally"
-    ? ["fally-tata-bibi-character-watch", "fally-tata-bibi-role-comparison", "best-awakeners-for-beginners", "solo-queue-awakener-picks"]
-    : ["fally-tata-bibi-character-watch", "fally-tata-bibi-role-comparison", "squad-composition-guide", "awakeners-role-guide"];
+    ? ["fally-tata-bibi-character-watch", "fally-tata-bibi-role-comparison", "awakeners-role-guide"]
+    : ["fally-tata-bibi-character-watch", "fally-tata-bibi-role-comparison", "awakeners-role-guide"];
   return priority
     .map((guideSlug) => siteContent.guides.find((guide) => guide.slug === guideSlug))
     .filter((guide): guide is typeof siteContent.guides[number] => Boolean(guide));

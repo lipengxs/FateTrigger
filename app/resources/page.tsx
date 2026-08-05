@@ -6,7 +6,7 @@ export const metadata = pageMeta("Fate Trigger Resources", "Official links, vide
 
 export default function Page() {
   const resourceItems = [
-    ...siteContent.comparisons.map((item) => ({ name: item.title, href: `/comparisons/${item.slug}`, description: item.excerpt })),
+    ...siteContent.comparisons.filter((item) => item.slug === "fate-trigger-vs-apex-legends").map((item) => ({ name: item.title, href: `/comparisons/${item.slug}`, description: item.excerpt })),
     ...siteContent.videos.map((item) => ({ name: item.title, href: `/media/${item.slug}`, description: item.excerpt })),
     ...siteContent.sources.map(([name, href, description]) => ({ name, href, description }))
   ];
@@ -16,7 +16,7 @@ export default function Page() {
       <JsonLd data={itemListJsonLd("Fate Trigger resources", "Official links, embedded videos, comparison pages, and source notes used by this independent Fate Trigger guide.", "/resources", resourceItems)} />
       <Breadcrumbs items={[{ label: "Resources", href: "/resources" }]} />
       <header className="page-header"><span className="eyebrow">Resources</span><h1>{siteContent.gameName} resources</h1><p>Official links, trailers, store pages, and community resources used by this independent guide.</p></header>
-      <section className="section"><SectionHeading eyebrow="Comparisons" title="Independent competitor context" /><div className="grid-3">{siteContent.comparisons.map((comparison) => <Card key={comparison.slug} title={comparison.title} eyebrow="Comparison" href={`/comparisons/${comparison.slug}`}><p>{comparison.excerpt}</p></Card>)}</div></section>
+      <section className="section"><SectionHeading eyebrow="Comparison" title="Evidence-backed player context" /><div className="grid-3">{siteContent.comparisons.filter((comparison) => comparison.slug === "fate-trigger-vs-apex-legends").map((comparison) => <Card key={comparison.slug} title={comparison.title} eyebrow="Comparison" href={`/comparisons/${comparison.slug}`}><p>{comparison.excerpt}</p></Card>)}</div></section>
       <section className="section"><SectionHeading eyebrow="Video Sources" title="Embedded public videos" /><div className="grid-3">{siteContent.videos.map((video) => <Card key={video.slug} title={video.title} eyebrow={video.source} href={`/media/${video.slug}`} image={`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`} imageAlt={`${video.title} YouTube thumbnail`}><p>{video.excerpt}</p></Card>)}</div></section>
       <SourceList />
     </>
