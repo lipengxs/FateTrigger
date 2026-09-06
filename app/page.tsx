@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Card, FactPanel, FaqBlock, FeaturedMediaWall, HomeHero, JsonLd, QuickStartRail, ReleaseBlock, SectionHeading, SourceList, Tags, VideoFeature, cardImageFor } from "@/components/site";
-import { indexableEntrySlugs, siteContent } from "@/lib/content";
+import { siteContent } from "@/lib/content";
 import { faqJsonLd, videoJsonLd } from "@/lib/seo";
 
 export default function Home() {
-  const guideSlugs = ["fate-trigger-beginner-guide", "awakeners-role-guide", "system-requirements-settings", "ps5-steam-platform-choice-guide", "omnisight-anti-cheat-fair-play-guide"];
+  const guideSlugs = ["system-requirements-settings", "ps5-steam-platform-choice-guide"];
   const guides = guideSlugs
     .map((slug) => siteContent.guides.find((guide) => guide.slug === slug))
     .filter((guide): guide is typeof siteContent.guides[number] => Boolean(guide));
@@ -28,15 +28,17 @@ export default function Home() {
       </section>
       <VideoFeature />
       <section className="section">
-        <SectionHeading eyebrow="Verified Starting Points" title="Start with release, platform, PC, and Awakener status" href="/guides" cta="Guide library" />
+        <SectionHeading eyebrow="Verified Starting Points" title="Start with release, platform, and PC status" href="/guides" cta="Guide library" />
         <div className="grid-3">
           {guides.map((guide) => <Card key={guide.slug} title={guide.title} eyebrow="Guide" href={`/guides/${guide.slug}`} image={cardImageFor("guide", guide.slug)} imageAlt={`${guide.title} guide artwork`}><p>{guide.excerpt}</p><Tags tags={guide.keywords} /></Card>)}
         </div>
       </section>
       <section className="section">
-        <SectionHeading eyebrow="Database Preview" title="Characters, equipment, maps, systems, and lore" href="/database" cta="Open database" />
+        <SectionHeading eyebrow="Confirmed Topics" title="Characters, systems, and arena status" href="/characters" cta="Character status" />
         <div className="grid-3">
-          {siteContent.entries.filter((entry) => indexableEntrySlugs.has(entry.slug)).slice(0, 6).map((entry) => <Card key={entry.slug} title={entry.title} eyebrow={entry.role} href={`/database/${entry.category}/${entry.slug}`} image={cardImageFor(entry.category, entry.slug)} imageAlt={`${entry.title} database artwork`}><p>{entry.excerpt}</p><Tags tags={entry.tags} /></Card>)}
+          <Card title="Fate Trigger Characters and Awakeners" eyebrow="Roster status" href="/characters" image={cardImageFor("characters")} imageAlt="Fate Trigger character trailer media"><p>Read named character watch pages without treating trailers as final kit data.</p></Card>
+          <Card title="Fate Trigger Weapons and Gun-Chip" eyebrow="System status" href="/weapons" image={cardImageFor("weapons")} imageAlt="Fate Trigger weapon trailer media"><p>Separate the public Gun-Chip discussion from unconfirmed weapon stats and builds.</p></Card>
+          <Card title="Fate Trigger Map Status" eyebrow="Arena status" href="/maps" image={cardImageFor("maps")} imageAlt="Fate Trigger arena trailer media"><p>Check what official footage confirms before trusting interactive maps or route claims.</p></Card>
         </div>
       </section>
       <FaqBlock />

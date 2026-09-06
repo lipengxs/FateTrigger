@@ -7,14 +7,12 @@ export const metadata = pageMeta("Fate Trigger Guides: Release, Platforms, PC, a
 export default function Page() {
   const items = siteContent.guides.filter((item) => indexableGuideSlugs.has(item.slug));
   const clusters = [
-    ["Release and platform", "Current release status, PC storefront, console watch, and access safety.", ["system-requirements-settings", "ps5-steam-platform-choice-guide", "omnisight-anti-cheat-fair-play-guide"]],
-    ["Awakeners", "Confirmed named-character watch pages and role context without a pre-launch tier list.", ["awakeners-role-guide", "fally-tata-bibi-character-watch", "fally-tata-bibi-role-comparison"]],
-    ["Systems and world", "Gun-Chip context and official-world signals with unknown details clearly marked.", ["paleblight-lore-explained"]]
+    ["Release and platform", "Current release status, PC storefront, console watch, and access safety.", ["system-requirements-settings", "ps5-steam-platform-choice-guide"]]
   ] as const;
   const topicHubs = [
-    ["Beginner Hub", "/beginner", "A source-safe path through release status, PC setup, official news, and confirmed character watch pages."],
     ["Gun-Chip Hub", "/gun-chip", "A focused explanation of the publicly mentioned Gun-Chip system and the details that remain unconfirmed."],
-    ["Release Tracker", "/release-date", "The current 2026 public window, adjusted Early Access context, and source hierarchy."]
+    ["Release Tracker", "/release-date", "The current 2026 public window, adjusted Early Access context, and source hierarchy."],
+    ["Characters", "/characters", "Named Awakener watch pages with official-source boundaries and no speculative tier list."]
   ] as const;
   return (
     <>

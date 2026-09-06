@@ -22,6 +22,14 @@ const nextConfig = {
       { source: "/guides/boss-fight-third-party-guide", destination: "/beginner", permanent: true },
       { source: "/guides/gun-chip-build-scenarios", destination: "/gun-chip", permanent: true },
       { source: "/guides/gun-chip-progression-planning", destination: "/gun-chip", permanent: true },
+      { source: "/guides/fally-tata-bibi-character-watch", destination: "/characters", permanent: true },
+      { source: "/guides/fally-tata-bibi-role-comparison", destination: "/characters", permanent: true },
+      { source: "/database/characters/fally", destination: "/characters/fally", permanent: true },
+      { source: "/database/characters/tata-and-bibi", destination: "/characters/tata-and-bibi", permanent: true },
+      { source: "/database/weapons/gun-chip-system", destination: "/gun-chip", permanent: true },
+      { source: "/database/lore/platform-watch", destination: "/guides/ps5-steam-platform-choice-guide", permanent: true },
+      { source: "/database/lore/omnisight", destination: "/guides/omnisight-anti-cheat-fair-play-guide", permanent: true },
+      { source: "/database/lore/paleblight", destination: "/lore", permanent: true },
       { source: "/rankings", destination: "/characters", permanent: true }
     ];
   },

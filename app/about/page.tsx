@@ -2,7 +2,7 @@ import { Breadcrumbs, JsonLd, SourceList } from "@/components/site";
 import { siteContent } from "@/lib/content";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("About and Disclaimer", "Independent fan-made Fate Trigger guide disclaimer, source policy, and contact details.", "/about");
+export const metadata = { ...pageMeta("About and Disclaimer", "Independent fan-made Fate Trigger guide disclaimer, source policy, and contact details.", "/about"), robots: { index: false, follow: true } };
 
 export default function Page() {
   return (

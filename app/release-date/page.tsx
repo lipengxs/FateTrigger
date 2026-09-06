@@ -1,8 +1,8 @@
 import { Breadcrumbs, FactPanel, FaqBlock, JsonLd, ReleaseBlock, SourceList, SourceTimeline } from "@/components/site";
 import { breadcrumbJsonLd, faqJsonLd, pageMeta } from "@/lib/seo";
-import { siteContent } from "@/lib/content";
+import { pageVerification, siteContent } from "@/lib/content";
 
-export const metadata = pageMeta("Fate Trigger Release Date, Beta, Platforms, and Early Access Status", "Is Fate Trigger out? Current 2026 Steam release window, beta status, confirmed PC availability, platform watch, and official sources.", "/release-date");
+export const metadata = pageMeta("Fate Trigger Release Date 2026, Beta, PC, PS5, and Crossplay Status", "Fate Trigger release date 2026: Steam PC status, beta status, PS5 and crossplay confirmation boundaries, and official sources. No exact launch date is confirmed.", "/release-date");
 
 export default function Page() {
   return (
@@ -10,7 +10,7 @@ export default function Page() {
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", href: "/" }, { name: "Release Date", href: "/release-date" }])} />
       <JsonLd data={faqJsonLd()} />
       <Breadcrumbs items={[{ label: "Fate Trigger Release Date", href: "/release-date" }]} />
-      <header className="page-header"><span className="eyebrow">Official Status Watch</span><h1>Fate Trigger Release Date and Current Launch Status</h1><p>Fate Trigger is not released. Steam currently shows a 2026 release window, while an exact launch day, unlock time, and the next public beta have not been confirmed.</p></header>
+      <header className="page-header"><span className="eyebrow">Official Status Watch</span><h1>Fate Trigger Release Date 2026 and Current Launch Status</h1><p><strong>Fate Trigger is not released.</strong> Steam currently shows a 2026 release window; an exact launch day, unlock time, PS5 date, crossplay rules, and the next public beta are not confirmed.</p></header>
       <ReleaseBlock />
       <section className="section article-body">
         <article className="article-main">
@@ -21,6 +21,8 @@ export default function Page() {
             <tr><th>Console and cross-play</th><td>Do not treat reported platform plans as a launch promise. Cross-play, progression, account linking, and input matchmaking need an official platform or developer announcement.</td></tr>
             <tr><th>Earlier Early Access reports</th><td>They are historical context only. The later developer schedule adjustment is the current planning boundary.</td></tr>
           </tbody></table>
+          <h2>Verification rule</h2>
+          <table className="info-table"><tbody><tr><th>Last verified</th><td>{pageVerification.release.verifiedAt}</td></tr><tr><th>Evidence standard</th><td>{pageVerification.release.confidence}</td></tr><tr><th>Update trigger</th><td>{pageVerification.release.updateTrigger}</td></tr></tbody></table>
           <h2>Next official update trigger</h2>
           <p>This page changes only when Steam, Saroasis, an official platform store, or an official trailer card adds or revises a release date, beta, supported platform, or public access rule.</p>
         </article>

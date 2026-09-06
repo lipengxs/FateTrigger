@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Breadcrumbs, DetailHeaderImage, JsonLd, SourceList, Tags, cardImageFor } from "@/components/site";
-import { guideFreshnessFor, indexableGuideSlugs, redirectedGuideSlugs, siteContent } from "@/lib/content";
+import { guideFreshnessFor, indexableGuideSlugs, pageVerification, redirectedGuideSlugs, siteContent } from "@/lib/content";
 import { articleJsonLd, breadcrumbJsonLd, pageMeta, videoJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -116,7 +116,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <section className="section article-body">
         <article className="article-main">
           <figure className="article-figure"><img src={image} alt={`${item.title} Fate Trigger guide media`} /><figcaption>This locally hosted trailer still is credited in the media library. It illustrates the topic but does not prove unconfirmed systems or performance claims.</figcaption></figure>
-          <div className="content-block"><h2>Content status</h2><table className="info-table"><tbody><tr><th>Last checked</th><td>{freshness.lastChecked}</td></tr><tr><th>Confidence</th><td>{freshness.confidence}</td></tr><tr><th>Source type</th><td>{freshness.sourceType}</td></tr><tr><th>After launch</th><td>{freshness.needsUpdateAfterLaunch}</td></tr></tbody></table></div>
+          <div className="content-block"><h2>Content status</h2><table className="info-table"><tbody><tr><th>Last checked</th><td>{item.slug === "system-requirements-settings" ? pageVerification.requirements.verifiedAt : item.slug === "ps5-steam-platform-choice-guide" ? pageVerification.platforms.verifiedAt : freshness.lastChecked}</td></tr><tr><th>Confidence</th><td>{item.slug === "system-requirements-settings" ? pageVerification.requirements.confidence : item.slug === "ps5-steam-platform-choice-guide" ? pageVerification.platforms.confidence : freshness.confidence}</td></tr><tr><th>Source type</th><td>{freshness.sourceType}</td></tr><tr><th>Update trigger</th><td>{item.slug === "system-requirements-settings" ? pageVerification.requirements.updateTrigger : item.slug === "ps5-steam-platform-choice-guide" ? pageVerification.platforms.updateTrigger : freshness.needsUpdateAfterLaunch}</td></tr></tbody></table></div>
           <div className="content-block"><h2>Arena briefing</h2><p>{item.excerpt} Use this briefing to decide whether the next match question is movement, squad composition, weapon range, or a safe reset. The current read is {freshness.confidence.toLowerCase()} and should be re-briefed after an official beta, Awakener reveal, or live balance update.</p><p><a href={siteContent.sources[0][1]} target="_blank" rel="nofollow noopener noreferrer">Open the {siteContent.sources[0][0]} reference</a> before treating a community clip as final kit data.</p></div>
           {item.body.map((para) => <p key={para}>{para}</p>)}
           <table className="info-table"><thead><tr><th>Guide angle</th><th>Practical recommendation</th><th>Why it matters</th></tr></thead><tbody>{rows.map(([angle, recommendation, reason]) => <tr key={angle}><th>{angle}</th><td>{recommendation}</td><td>{reason}</td></tr>)}</tbody></table>

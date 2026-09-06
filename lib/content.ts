@@ -19,8 +19,8 @@ export const siteContent = {
   },
   "hero": {
     "eyebrow": "Fate Trigger Intel Hub",
-    "title": "Fate Trigger release status, official news, Awakeners, and platform watch",
-    "dek": "An independent Fate Trigger information hub for source-linked release status, official footage, confirmed character watch pages, Gun-Chip context, and platform updates.",
+    "title": "Fate Trigger release date 2026, official news, and character status",
+    "dek": "Fate Trigger is not released. Steam lists a 2026 window; use this independent source-linked hub for confirmed PC status, beta updates, Awakeners, Gun-Chip context, and platform watch.",
     "primaryCta": [
       "Track Release",
       "/release-date"
@@ -36,9 +36,7 @@ export const siteContent = {
     "countdownTarget": null,
     "countdownNote": "No countdown is shown until an exact official date is available.",
     "platforms": [
-      "PC via Steam",
-      "Steam lists cross-platform multiplayer; launch rules are unconfirmed",
-      "PlayStation plans reported by media, not a confirmed store listing"
+      "PC via Steam"
     ],
     "genre": "Free-to-play 3D anime-style hero-based tactical shooter",
     "developer": "Saroasis Studios",
@@ -129,7 +127,7 @@ export const siteContent = {
   ],
   "moreGroups": [
     [
-      "Database",
+      "Game Status",
       [
         [
           "Characters",
@@ -140,12 +138,8 @@ export const siteContent = {
           "/weapons"
         ],
         [
-          "Floating Maps",
+          "Arena Status",
           "/maps"
-        ],
-        [
-          "Lore",
-          "/lore"
         ],
         [
           "Gun-Chip",
@@ -1344,9 +1338,8 @@ export const navGroups = siteContent.moreGroups.map(([label, links]) => ({
 }));
 export const footerLinks = [
   { label: "Guides", href: "/guides" },
-  { label: "Beginner", href: "/beginner" },
   { label: "Gun-Chip", href: "/gun-chip" },
-  { label: "Database", href: "/database" },
+  { label: "Characters", href: "/characters" },
   { label: "Release Date", href: "/release-date" },
   { label: "Media", href: "/media" },
   { label: "About", href: "/about" },
@@ -1377,18 +1370,19 @@ export const redirectedGuideSlugs = new Set([
 ]);
 
 export const indexableGuideSlugs = new Set([
-  "fate-trigger-beginner-guide",
-  "awakeners-role-guide",
   "system-requirements-settings",
-  "controller-keyboard-settings",
-  "ps5-steam-platform-choice-guide",
-  "omnisight-anti-cheat-fair-play-guide",
-  "fally-tata-bibi-character-watch",
-  "fally-tata-bibi-role-comparison",
-  "paleblight-lore-explained"
+  "ps5-steam-platform-choice-guide"
 ]);
 
-export const indexableEntrySlugs = new Set(["fally", "tata-and-bibi", "gun-chip-system", "platform-watch", "omnisight", "paleblight"]);
+export const indexableEntrySlugs = new Set<string>();
+
+export const pageVerification = {
+  release: { verifiedAt: "2026-07-07", confidence: "Official-store baseline", updateTrigger: "A Steam, Saroasis, or official platform-store change to release date, beta access, or platform availability." },
+  news: { verifiedAt: "2026-07-07", confidence: "Primary sources first; reporting is supporting context", updateTrigger: "An official release, beta, platform, character, trailer, or system announcement." },
+  requirements: { verifiedAt: "2026-07-07", confidence: "Official Steam listing for requirement availability; no independent performance test", updateTrigger: "A Steam requirement-table revision or an official public build with reproducible test data." },
+  platforms: { verifiedAt: "2026-07-07", confidence: "Steam PC storefront confirmed; console and cross-play remain watch items", updateTrigger: "An official console store page or developer announcement about platform, cross-play, or account rules." },
+  characters: { verifiedAt: "2026-07-07", confidence: "Named-character watch pages; final kits and balance are not confirmed", updateTrigger: "An official character reveal, kit page, public test note, or patch note." }
+} as const;
 
 export const guideFreshness = {
   "fate-trigger-release-date-tracker": { lastChecked: siteContent.sourceChecked, confidence: "High for release-window wording; low for exact launch timing", sourceType: "Steam and official-channel baseline", needsUpdateAfterLaunch: "Yes: replace watch wording after an exact launch date or Early Access plan is official." },

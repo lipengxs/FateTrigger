@@ -9,7 +9,7 @@ const startingPoints = [
   ["Fate Trigger Official News", "/news", "Follow official announcements and trailer updates that can change the information above."]
 ] as const;
 
-export const metadata = pageMeta("Fate Trigger Beginner Guide: Official Information First", "A safe Fate Trigger beginner path for release status, official news, PC requirements, platform questions, and confirmed Awakener information.", "/beginner");
+export const metadata = { ...pageMeta("Fate Trigger Beginner Guide: Official Information First", "A safe Fate Trigger beginner path for release status, official news, PC requirements, platform questions, and confirmed Awakener information.", "/beginner"), robots: { index: false, follow: true } };
 
 export default function Page() {
   return (

@@ -573,8 +573,8 @@ h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: 0; }
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--panel) 88%, black);
 }
-.timeline-item { grid-template-columns: 2.4rem 7rem minmax(0, 1fr); align-items: center; }
-.timeline-index { color: var(--accent); font-weight: 900; }
+.timeline-item { grid-template-columns: 5.5rem 7rem minmax(0, 1fr); align-items: center; }
+.timeline-index { color: var(--accent); font-size: .72rem; font-weight: 900; overflow-wrap: anywhere; text-transform: uppercase; }
 .timeline-item img, .ledger-row img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .trailer-stage iframe, .shrine-main iframe, .ops-video-main iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
 .trailer-card img, .shrine-card img, .ops-video-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }

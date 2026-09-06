@@ -2,7 +2,7 @@ import { Breadcrumbs, Card, JsonLd, SectionHeading, Tags } from "@/components/si
 import { siteContent } from "@/lib/content";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Fate Trigger Lore and Story", "Worldbuilding, story hooks, and source-aware lore notes for Fate Trigger.", "/lore");
+export const metadata = { ...pageMeta("Fate Trigger Lore and Story", "Worldbuilding, story hooks, and source-aware lore notes for Fate Trigger.", "/lore"), robots: { index: false, follow: true } };
 
 export default function Page() {
   const items = siteContent.entries.filter((entry) => entry.category === "lore");

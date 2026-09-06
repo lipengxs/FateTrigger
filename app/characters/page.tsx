@@ -28,7 +28,7 @@ export default function Page() {
         {characters.map((entry) => <Card key={entry.slug} title={entry.title} eyebrow="Named character" href={`/characters/${entry.slug}`} image={cardImageFor("characters", entry.slug)} imageAlt={`${entry.title} Fate Trigger character media`}><><p>{entry.excerpt}</p><Tags tags={entry.tags} /></></Card>)}
       </div></section>
       <section className="section"><SectionHeading eyebrow="Awakener Context" title="Read the system before judging the meta" /><div className="grid-3">
-        <Card title="Fate Trigger Awakener Roles" eyebrow="Guide" href="/guides/awakeners-role-guide" image={cardImageFor("guide", "awakeners-role-guide")} imageAlt="Fate Trigger Awakener guide media"><p>Use role context to understand public footage without turning it into a tier list.</p></Card>
+        <Card title="Fate Trigger Official Footage" eyebrow="Trailer evidence" href="/media" image={cardImageFor("media")} imageAlt="Fate Trigger official trailer media"><p>Use official footage to track future character reveals without turning it into a tier list.</p></Card>
         <Card title="Fate Trigger News" eyebrow="Updates" href="/news" image={cardImageFor("news")} imageAlt="Fate Trigger news media"><p>Track the next official character reveal, beta note, or trailer announcement.</p></Card>
         <Card title="Fate Trigger Platform Status" eyebrow="Platforms" href="/guides/ps5-steam-platform-choice-guide" image={cardImageFor("guide", "ps5-steam-platform-choice-guide")} imageAlt="Fate Trigger platform media"><p>Keep access and platform questions separate from character speculation.</p></Card>
       </div></section>

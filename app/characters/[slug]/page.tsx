@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Breadcrumbs, Card, DetailHeaderImage, JsonLd, SectionHeading, SourceList, Tags, cardImageFor } from "@/components/site";
+import { Breadcrumbs, DetailHeaderImage, JsonLd, SourceList, Tags, cardImageFor } from "@/components/site";
 import { siteContent } from "@/lib/content";
 import { articleJsonLd, breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
@@ -7,15 +7,6 @@ const namedCharacterSlugs = ["fally", "tata-and-bibi"] as const;
 
 function getCharacter(slug: string) {
   return siteContent.entries.find((entry) => entry.category === "characters" && namedCharacterSlugs.includes(entry.slug as typeof namedCharacterSlugs[number]) && entry.slug === slug);
-}
-
-function relatedGuides(slug: string) {
-  const priority = slug === "fally"
-    ? ["fally-tata-bibi-character-watch", "fally-tata-bibi-role-comparison", "awakeners-role-guide"]
-    : ["fally-tata-bibi-character-watch", "fally-tata-bibi-role-comparison", "awakeners-role-guide"];
-  return priority
-    .map((guideSlug) => siteContent.guides.find((guide) => guide.slug === guideSlug))
-    .filter((guide): guide is typeof siteContent.guides[number] => Boolean(guide));
 }
 
 function characterRows(slug: string) {
@@ -63,7 +54,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const character = getCharacter(slug);
   if (!character) notFound();
-  const guides = relatedGuides(slug);
   const rows = characterRows(slug);
   const scenarios = scenarioRows(slug);
   return (
@@ -104,16 +94,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <aside className="article-aside">
           <h2>Trust boundary</h2>
           <p>This page does not claim official kit access, sell keys, host downloads, or provide account support.</p>
-          <p><a className="button primary" href="/guides/fally-tata-bibi-role-comparison">Character comparison</a></p>
-          <p><a className="button" href={`/database/characters/${character.slug}`}>Database note</a></p>
-          <p><a className="button" href="/about">Site disclaimer</a></p>
+          <p><a className="button primary" href="/characters">All named characters</a></p>
+          <p><a className="button" href="/news">Official updates</a></p>
+          <p><a className="button" href="/media">Official footage</a></p>
         </aside>
-      </section>
-      <section className="section">
-        <SectionHeading eyebrow="Read Next" title={`Guides related to ${character.title}`} />
-        <div className="grid-3">
-          {guides.map((guide) => <Card key={guide.slug} title={guide.title} eyebrow="Related guide" href={`/guides/${guide.slug}`} image={cardImageFor("guide", guide.slug)} imageAlt={`${guide.title} guide artwork`}><p>{guide.excerpt}</p><Tags tags={guide.keywords} /></Card>)}
-        </div>
       </section>
       <SourceList />
     </>

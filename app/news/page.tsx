@@ -1,11 +1,12 @@
 import { Breadcrumbs, Card, JsonLd, SectionHeading, SourceTimeline, Tags, cardImageFor } from "@/components/site";
-import { siteContent } from "@/lib/content";
+import { pageVerification, siteContent } from "@/lib/content";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta("Fate Trigger News and Official Updates", "Fate Trigger news, official release updates, beta signals, platform reporting, trailer announcements, and source-linked timelines.", "/news");
 
 export default function Page() {
   const [lead, ...rest] = siteContent.news;
+  const eventType = (tags: readonly string[]) => tags.includes("release date") ? "Release" : tags.includes("early access") ? "Beta" : tags.includes("platforms") ? "Platform" : tags.includes("gameplay") ? "Trailer" : "Official update";
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", href: "/" }, { name: "News", href: "/news" }])} />
@@ -13,14 +14,15 @@ export default function Page() {
       <header className="page-header news-command-header">
         <span className="eyebrow">Official Update Desk</span>
         <h1>Fate Trigger News and Official Updates</h1>
-        <p>Track release, beta, platform, trailer, and official character announcements in one place. Every entry links back to the primary source and distinguishes a confirmed update from editorial context.</p>
+        <p><strong>Latest verified site baseline: {pageVerification.news.verifiedAt}.</strong> Track release, beta, platform, trailer, and official character announcements in one place. Every entry separates confirmed information from editorial context.</p>
       </header>
+      <section className="section article-body"><article className="article-main"><h2>Current official-status summary</h2><p>Steam remains the public PC storefront and lists a 2026 release window. An exact release day, the next public beta, final console availability, and crossplay rules are not confirmed here.</p><table className="info-table"><tbody><tr><th>Evidence standard</th><td>{pageVerification.news.confidence}</td></tr><tr><th>Next update trigger</th><td>{pageVerification.news.updateTrigger}</td></tr></tbody></table></article><aside className="article-aside"><h2>Check first</h2><p><a className="button primary" href="/release-date">Release status</a></p><p><a className="button" href="/guides/ps5-steam-platform-choice-guide">Platform status</a></p></aside></section>
       <SourceTimeline />
       <section className="section fate-news-board">
         <a className="news-lead-panel" href={`/news/${lead.slug}`}>
           <img src={cardImageFor("news", lead.slug)} alt={`${lead.title} news artwork`} />
           <div>
-            <span className="eyebrow">{lead.date} / release watch</span>
+            <span className="eyebrow">{eventType(lead.tags)} / {lead.date}</span>
             <h2>{lead.title}</h2>
             <p>{lead.excerpt}</p>
             <Tags tags={lead.tags} />
@@ -29,7 +31,7 @@ export default function Page() {
         <div className="intel-timeline">
           {rest.map((item, index) => (
             <a className="timeline-item" key={item.slug} href={`/news/${item.slug}`}>
-              <span className="timeline-index">0{index + 2}</span>
+              <span className="timeline-index">{eventType(item.tags)}</span>
               <img src={cardImageFor("news", item.slug)} alt={`${item.title} visual briefing`} />
               <div>
                 <strong>{item.title}</strong>

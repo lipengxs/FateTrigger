@@ -10,7 +10,7 @@ function reviewedAt(url: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["/","/news","/guides","/beginner","/gun-chip","/database","/characters","/weapons","/maps","/media","/release-date","/resources","/about","/lore"];
+  const staticRoutes = ["/","/news","/guides","/gun-chip","/characters","/weapons","/maps","/media","/release-date"];
   const routes = [
     ...staticRoutes,
     ...siteContent.news.map((item) => "/news/" + item.slug),
