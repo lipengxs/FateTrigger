@@ -1,0 +1,33 @@
+name: IndexNow production submission
+on:
+  deployment_status:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: false
+jobs:
+  submit:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify live production pages and submit to Bing
+        run: python3 scripts/indexnow.py --submit
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: indexnow-receipt
+          path: .indexnow/report.json
+          include-hidden-files: true
+          retention-days: 30

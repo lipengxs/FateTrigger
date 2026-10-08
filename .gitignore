@@ -4,3 +4,7 @@ out/
 .env*.local
 *.tsbuildinfo
 _legacy-static-backup/
+
+# Local IndexNow receipts
+.indexnow/
+__pycache__/
