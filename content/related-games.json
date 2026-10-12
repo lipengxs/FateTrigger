@@ -1,0 +1,37 @@
+{
+  "game": "Fate Trigger",
+  "origin": "https://fatetriggerguide.com",
+  "updated": "2026-10-12",
+  "title": "Games to Explore After Fate Trigger",
+  "description": "Compare selected games for Fate Trigger readers, with clear reasons to explore each setting and links to independent guides.",
+  "intro": "Fate Trigger combines individual ability choices with team decisions. These guides help compare hero-led matches, tactical teamwork, and extraction objectives without treating their rules as interchangeable.",
+  "disclosure": "These independent guide websites are maintained by the same operator. Recommendations are editorial suggestions, not official partnerships or endorsements. Official game sources are listed separately.",
+  "entries": [
+    {
+      "name": "Marvel Rivals",
+      "url": "https://marvelrivals.net/",
+      "category": "Shooters & Extraction",
+      "tags": "Hero shooter · team composition",
+      "reason": "Read about hero roles and team combinations in a competitive shooter. This is a useful destination for players interested in how one character choice changes a team.",
+      "difference": "Marvel Rivals centres on team-based hero combat and role combinations; Fate Trigger centres on ability-driven shooting in a battle-royale setting. Similar interests do not imply identical mechanics or multiplayer support."
+    },
+    {
+      "name": "WARDOGS",
+      "url": "https://wardogsguide.com/",
+      "category": "Shooters & Extraction",
+      "tags": "Tactical shooting · squad coordination",
+      "reason": "Explore tactical squad roles and coordinated shooting. Its guide helps you compare team organisation rather than assuming hero abilities or extraction rules carry across games.",
+      "difference": "WARDOGS centres on tactical shooting and coordinated squad play; Fate Trigger centres on ability-driven shooting in a battle-royale setting. Similar interests do not imply identical mechanics or multiplayer support."
+    },
+    {
+      "name": "Beautiful Light",
+      "url": "https://beautifullightguide.com/",
+      "category": "Shooters & Extraction",
+      "tags": "Extraction · tactical shooting · horror",
+      "reason": "Research a shooter where extraction objectives meet horror imagery. Consider it for armed team encounters and tension rather than for a peaceful exploration loop.",
+      "difference": "Beautiful Light centres on tactical extraction shooting with horror elements; Fate Trigger centres on ability-driven shooting in a battle-royale setting. Similar interests do not imply identical mechanics or multiplayer support."
+    }
+  ],
+  "articles": [],
+  "guideRecommendations": []
+}

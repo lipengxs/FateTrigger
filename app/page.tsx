@@ -1,3 +1,4 @@
+import {DiscoveryHome} from "@/components/GameDiscovery";
 import Link from "next/link";
 import { Card, FactPanel, FaqBlock, FeaturedMediaWall, HomeHero, JsonLd, QuickStartRail, ReleaseBlock, SectionHeading, SourceList, Tags, VideoFeature, cardImageFor } from "@/components/site";
 import { siteContent } from "@/lib/content";
@@ -43,6 +44,6 @@ export default function Home() {
       </section>
       <FaqBlock />
       <SourceList />
-    </>
+    <DiscoveryHome /></>
   );
 }

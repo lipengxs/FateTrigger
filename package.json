@@ -6,7 +6,8 @@
     "typecheck": "tsc --noEmit",
     "fetch:official-media": "node scripts/fetch-official-media.mjs",
     "indexnow:check": "python3 scripts/indexnow.py",
-    "indexnow:submit": "python3 scripts/indexnow.py --submit"
+    "indexnow:submit": "python3 scripts/indexnow.py --submit",
+    "check:discovery": "node scripts/check-discovery.mjs"
   },
   "dependencies": {
     "@next/third-parties": "16.2.10",

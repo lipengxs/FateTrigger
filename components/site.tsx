@@ -1,3 +1,4 @@
+import {DiscoveryFooter} from "@/components/GameDiscovery";
 import Image from "next/image";
 import Link from "next/link";
 import { ReleaseCountdown } from "@/components/release-countdown";
@@ -28,7 +29,7 @@ export function Footer() {
         {footerLinks.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
       </div>
       <p className="fineprint">Feedback: <a href="mailto:zplpreviewcontract@gmail.com">zplpreviewcontract@gmail.com</a></p>
-    </footer>
+    <DiscoveryFooter /></footer>
   );
 }
 

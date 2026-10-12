@@ -1,0 +1,3 @@
+"use client";
+import {useEffect} from "react";
+export function DiscoveryAnalytics(){useEffect(()=>{const listener=(event:MouseEvent)=>{const target=event.target instanceof Element?event.target.closest<HTMLAnchorElement>("a[data-guide-domain]"):null;if(!target)return;const analytics=(window as Window & {gtag?:(...args:unknown[])=>void}).gtag;if(typeof analytics==="function")analytics("event","game_guide_click",{source_page:location.pathname,target_domain:target.dataset.guideDomain,placement:target.closest(".gd-section")?"further_reading":"directory",transport_type:"beacon"});};document.addEventListener("click",listener);return()=>document.removeEventListener("click",listener);},[]);return null;}

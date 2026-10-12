@@ -1,3 +1,5 @@
+import {DiscoveryAnalytics} from "@/components/DiscoveryAnalytics";
+import "./game-discovery.css";
 import type { Metadata } from "next";
 import { Header } from "@/components/header-nav";
 import { Footer, IndependenceBanner, JsonLd } from "@/components/site";
@@ -56,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <AdSlot placement="rectangle" />
         <Footer />
-      </body>
+      <DiscoveryAnalytics /></body>
     </html>
   );
 }

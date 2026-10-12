@@ -9,7 +9,7 @@ function reviewedAt(url: string) {
   return undefined;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+function originalSitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["/","/news","/guides","/gun-chip","/characters","/weapons","/maps","/media","/release-date"];
   const routes = [
     ...staticRoutes,
@@ -33,4 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: url === "/" ? 1 : isRelease ? 0.95 : isNews || isGuide ? 0.85 : isDatabase ? 0.75 : 0.65
     };
   });
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+ const original=originalSitemap();
+ if (!((!process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production"))) return original;
+ const additions=[{"url": "https://fatetriggerguide.com/related-games", "lastModified": "2026-10-12"}];
+ return [...original,...additions.filter(item=>!original.some(existing=>existing.url===item.url))];
 }
