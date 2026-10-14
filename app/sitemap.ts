@@ -38,6 +38,6 @@ function originalSitemap(): MetadataRoute.Sitemap {
 export default function sitemap(): MetadataRoute.Sitemap {
  const original=originalSitemap();
  if (!((!process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production"))) return original;
- const additions=[{"url": "https://fatetriggerguide.com/related-games", "lastModified": "2026-10-12"}];
+ const additions=[{"url": "https://fatetriggerguide.com/related-games", "lastModified": "2026-10-14"}];
  return [...original,...additions.filter(item=>!original.some(existing=>existing.url===item.url))];
 }
